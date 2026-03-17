@@ -433,20 +433,20 @@ export function Portfolio() {
               <div className="section-divider"></div>
             </div>
 
-            <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-              <div className="glass-card p-8 backdrop-blur-sm lg:p-10">
-                <form className="space-y-6">
-                  <div>
+            <div className="contact-grid">
+              <div className="contact-panel">
+                <form className="contact-form">
+                  <div className="contact-field">
                     <label className="contact-label">Name</label>
                     <input type="text" className="contact-input" placeholder="Your name" />
                   </div>
 
-                  <div>
+                  <div className="contact-field">
                     <label className="contact-label">Email</label>
                     <input type="email" className="contact-input" placeholder="your@email.com" />
                   </div>
 
-                  <div>
+                  <div className="contact-field">
                     <label className="contact-label">Message</label>
                     <textarea
                       className="contact-input resize-none"
@@ -461,14 +461,14 @@ export function Portfolio() {
                 </form>
               </div>
 
-              <div className="space-y-6">
-                <div className="glass-card p-6">
-                  <div className="flex items-center gap-4">
+              <div className="contact-stack">
+                <div className="contact-card">
+                  <div className="contact-row">
                     <div className="contact-icon-box">
                       <Mail size={20} className="text-white" />
                     </div>
                     <div>
-                      <h3 className="mb-1 font-medium text-white">Email</h3>
+                      <h3 className="contact-title">Email</h3>
                       <a href="mailto:oskarortiz124@gmail.com" className="contact-link">
                         oskarortiz124@gmail.com
                       </a>
@@ -476,13 +476,13 @@ export function Portfolio() {
                   </div>
                 </div>
 
-                <div className="glass-card p-6">
-                  <div className="flex items-center gap-4">
+                <div className="contact-card">
+                  <div className="contact-row">
                     <div className="contact-icon-box">
                       <Phone size={20} className="text-white" />
                     </div>
                     <div>
-                      <h3 className="mb-1 font-medium text-white">Phone</h3>
+                      <h3 className="contact-title">Phone</h3>
                       <a href="tel:+573225959974" className="contact-link">
                         +57 3225959974
                       </a>
@@ -490,14 +490,14 @@ export function Portfolio() {
                   </div>
                 </div>
 
-                <div className="glass-card p-6">
-                  <div className="flex items-center gap-4">
+                <div className="contact-card">
+                  <div className="contact-row">
                     <div className="contact-icon-box">
                       <MapPin size={20} className="text-white" />
                     </div>
                     <div>
-                      <h3 className="mb-1 font-medium text-white">Location</h3>
-                      <p className="text-sm text-zinc-500">Pasto, Narino, Colombia</p>
+                      <h3 className="contact-title">Location</h3>
+                      <p className="contact-text">Pasto, Narino, Colombia</p>
                     </div>
                   </div>
                 </div>
