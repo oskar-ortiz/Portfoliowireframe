@@ -159,14 +159,12 @@ export function Portfolio() {
       <div className="relative z-10">
         <nav className="nav-shell">
           <div className="content-shell">
-            <div className="flex h-16 items-center justify-between">
-              <div className="flex items-center gap-3">
+            <div className="nav-row">
+              <div className="brand-stack">
                 <div className="brand-mark">
                   <Code2 size={18} className="text-white" />
                 </div>
-                <span className="bg-gradient-to-r from-white to-white/60 bg-clip-text text-lg font-semibold text-transparent">
-                  Oskar Ortiz
-                </span>
+                <span className="brand-copy">Oskar Ortiz</span>
               </div>
 
               <div className="hidden items-center gap-1 md:flex">
@@ -177,17 +175,14 @@ export function Portfolio() {
                 ))}
               </div>
 
-              <button
-                className="p-2 text-white md:hidden"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              >
+              <button className="menu-toggle" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
                 {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
               </button>
             </div>
 
             {mobileMenuOpen && (
-              <div className="border-t border-white/[0.06] py-4 md:hidden">
-                <div className="flex flex-col space-y-1">
+              <div className="mobile-nav-panel">
+                <div className="mobile-nav-list">
                   {navigationItems.map((item) => (
                     <a
                       key={item}
