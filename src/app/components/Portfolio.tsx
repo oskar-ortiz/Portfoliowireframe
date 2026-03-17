@@ -1,7 +1,9 @@
+"use client";
+
 import { Menu, X, Github, Linkedin, Instagram, Mail, Phone, MapPin, Download, ExternalLink, Calendar, User, Briefcase, Code2, Sparkles, Star, Award } from 'lucide-react';
 import { useState } from 'react';
-import { FaReact, FaNodeJs, FaPython, FaJava, FaGitAlt, FaAws, FaCss3Alt, FaHtml5 } from 'react-icons/fa';
-import { SiTypescript, SiJavascript, SiNextdotjs, SiTailwindcss, SiMongodb, SiPostman } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaPython, FaJava, FaGitAlt, FaAws, FaCss3Alt } from 'react-icons/fa';
+import { SiTypescript, SiNextdotjs, SiTailwindcss, SiMongodb, SiPostman } from 'react-icons/si';
 const profilePhoto = 'https://via.placeholder.com/400';
 
 export function Portfolio() {

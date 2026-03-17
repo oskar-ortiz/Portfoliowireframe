@@ -1,11 +1,12 @@
 
-  # Software Engineering Portfolio Wireframe
+## Software Engineering Portfolio
 
-  This is a code bundle for Software Engineering Portfolio Wireframe. The original project is available at https://www.figma.com/design/iyOWaqpnRdHI7Umq59wNDy/Software-Engineering-Portfolio-Wireframe.
+This project now runs on Next.js App Router with TypeScript and Tailwind CSS.
 
-  ## Running the code
+### Scripts
 
-  Run `npm i` to install the dependencies.
-
-  Run `npm run dev` to start the development server.
+- `npm install`
+- `npm run dev`
+- `npm run build`
+- `npm run start`
   
