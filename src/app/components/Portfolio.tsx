@@ -271,10 +271,10 @@ export function Portfolio() {
             </div>
 
             <div className="section-solo-card">
-              <div className="glass-card relative p-8 backdrop-blur-sm lg:p-12">
-                <div className="absolute left-0 top-0 h-32 w-32 rounded-full bg-violet-500/10 blur-3xl"></div>
-                <div className="absolute bottom-0 right-0 h-32 w-32 rounded-full bg-fuchsia-500/10 blur-3xl"></div>
-                <div className="relative">
+              <div className="about-card">
+                <div className="about-orb-start"></div>
+                <div className="about-orb-end"></div>
+                <div className="about-body">
                   <p className="hero-copy mb-6">
                     Oskar is an extroverted and sociable person who enjoys collaborating and
                     maintaining a positive work environment. In his free time he enjoys walking,

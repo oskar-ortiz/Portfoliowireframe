@@ -1,0 +1,24 @@
+@layer components {
+  .about-card {
+    @apply relative rounded-2xl border p-8 backdrop-blur-sm transition-all duration-300 lg:p-12;
+    background: rgb(255 255 255 / 0.02);
+    border-color: rgb(255 255 255 / 0.06);
+  }
+
+  .about-card:hover {
+    background: rgb(255 255 255 / 0.04);
+    border-color: rgb(255 255 255 / 0.1);
+  }
+
+  .about-orb-start {
+    @apply absolute left-0 top-0 h-32 w-32 rounded-full bg-violet-500/10 blur-3xl;
+  }
+
+  .about-orb-end {
+    @apply absolute bottom-0 right-0 h-32 w-32 rounded-full bg-fuchsia-500/10 blur-3xl;
+  }
+
+  .about-body {
+    @apply relative;
+  }
+}
