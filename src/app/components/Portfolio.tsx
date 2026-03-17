@@ -162,7 +162,7 @@ export function Portfolio() {
             <div className="nav-row">
               <div className="brand-stack">
                 <div className="brand-mark">
-                  <Code2 size={18} className="text-white" />
+                  <Code2 size={18} className="icon-white" />
                 </div>
                 <span className="brand-copy">Oskar Ortiz</span>
               </div>
@@ -372,9 +372,9 @@ export function Portfolio() {
                 <div key={testimonial.name} className="testimonial-card">
                   <div className="testimonial-head">
                     <div className="avatar-badge">
-                      <User size={24} className="text-white" />
+                      <User size={24} className="icon-white" />
                     </div>
-                    <div>
+                    <div className="testimonial-copy-block">
                       <h3 className="testimonial-meta">{testimonial.name}</h3>
                       <p className="testimonial-role">{testimonial.role}</p>
                     </div>
@@ -405,7 +405,7 @@ export function Portfolio() {
                 <div key={item.year} className="experience-item">
                   <div className="experience-rail">
                     <div className="avatar-badge">
-                      <Briefcase size={20} className="text-white" />
+                      <Briefcase size={20} className="icon-white" />
                     </div>
                     {index < experience.length - 1 && <div className="timeline-line"></div>}
                   </div>
@@ -414,7 +414,7 @@ export function Portfolio() {
                     <div className="experience-panel">
                       <div className="experience-meta">
                         <Calendar size={16} />
-                        <span className="text-sm font-medium">{item.year}</span>
+                        <span className="experience-year">{item.year}</span>
                       </div>
                       <h3 className="experience-title">{item.title}</h3>
                       <p className="experience-copy">{item.description}</p>
@@ -465,9 +465,9 @@ export function Portfolio() {
                 <div className="contact-card">
                   <div className="contact-row">
                     <div className="contact-icon-box">
-                      <Mail size={20} className="text-white" />
+                      <Mail size={20} className="icon-white" />
                     </div>
-                    <div>
+                    <div className="contact-copy">
                       <h3 className="contact-title">Email</h3>
                       <a href="mailto:oskarortiz124@gmail.com" className="contact-link">
                         oskarortiz124@gmail.com
@@ -479,9 +479,9 @@ export function Portfolio() {
                 <div className="contact-card">
                   <div className="contact-row">
                     <div className="contact-icon-box">
-                      <Phone size={20} className="text-white" />
+                      <Phone size={20} className="icon-white" />
                     </div>
-                    <div>
+                    <div className="contact-copy">
                       <h3 className="contact-title">Phone</h3>
                       <a href="tel:+573225959974" className="contact-link">
                         +57 3225959974
@@ -493,9 +493,9 @@ export function Portfolio() {
                 <div className="contact-card">
                   <div className="contact-row">
                     <div className="contact-icon-box">
-                      <MapPin size={20} className="text-white" />
+                      <MapPin size={20} className="icon-white" />
                     </div>
-                    <div>
+                    <div className="contact-copy">
                       <h3 className="contact-title">Location</h3>
                       <p className="contact-text">Pasto, Narino, Colombia</p>
                     </div>

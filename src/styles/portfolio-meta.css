@@ -1,0 +1,17 @@
+@layer components {
+  .icon-white {
+    @apply text-white;
+  }
+
+  .contact-copy {
+    @apply space-y-0;
+  }
+
+  .testimonial-copy-block {
+    @apply space-y-0;
+  }
+
+  .experience-year {
+    @apply text-sm font-medium;
+  }
+}
