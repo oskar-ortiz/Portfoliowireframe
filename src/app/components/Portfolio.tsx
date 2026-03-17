@@ -199,10 +199,10 @@ export function Portfolio() {
           </div>
         </nav>
 
-        <section id="about" className="relative pb-24 pt-20 lg:pb-32 lg:pt-28">
+        <section id="about" className="hero-section">
           <div className="content-shell">
-            <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-20">
-              <div className="order-2 max-w-2xl flex-1 text-center lg:order-1 lg:text-left">
+            <div className="hero-layout">
+              <div className="hero-copy-column">
                 <div className="status-pill">
                   <span className="relative flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
@@ -211,18 +211,14 @@ export function Portfolio() {
                   <span className="text-zinc-400">Available for work</span>
                 </div>
 
-                <h1 className="mb-6 text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
-                  <span className="mb-2 block text-white">Oskar Julian</span>
-                  <span className="block bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
-                    Ortiz Ortiz
-                  </span>
+                <h1 className="hero-title">
+                  <span className="hero-title-first">Oskar Julian</span>
+                  <span className="hero-title-last">Ortiz Ortiz</span>
                 </h1>
 
-                <p className="mb-4 text-2xl font-medium text-zinc-400 lg:text-3xl">
-                  Full Stack Developer
-                </p>
+                <p className="hero-role">Full Stack Developer</p>
 
-                <div className="mb-8 flex items-center justify-center gap-2 text-zinc-500 lg:justify-start">
+                <div className="hero-location">
                   <MapPin size={18} />
                   <span className="text-sm">Pasto, Narino, Colombia</span>
                 </div>
@@ -233,7 +229,7 @@ export function Portfolio() {
                   continuously learning new technologies.
                 </p>
 
-                <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
+                <div className="hero-actions">
                   <button className="btn-primary group">
                     <Download size={18} />
                     Download CV
@@ -247,11 +243,11 @@ export function Portfolio() {
                 </div>
               </div>
 
-              <div className="relative order-1 lg:order-2">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-violet-600/20 to-fuchsia-600/20 blur-3xl"></div>
-                <div className="relative h-72 w-72 lg:h-[400px] lg:w-[400px]">
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-violet-500 via-fuchsia-500 to-cyan-500 opacity-75 blur-2xl"></div>
-                  <div className="relative h-full w-full overflow-hidden rounded-full border border-white/10 shadow-2xl">
+              <div className="hero-portrait">
+                <div className="hero-portrait-halo"></div>
+                <div className="hero-portrait-shell">
+                  <div className="hero-portrait-aura"></div>
+                  <div className="hero-portrait-frame">
                     <Image
                       src={profilePhoto}
                       alt="Oskar Ortiz - Profile Photo"
