@@ -506,15 +506,15 @@ export function Portfolio() {
           </div>
         </section>
 
-        <footer className="mt-20 border-t border-white/[0.06] py-12">
+        <footer className="footer-shell">
           <div className="content-shell">
-            <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-              <div className="text-center md:text-left">
-                <h3 className="mb-1 text-lg font-semibold text-white">Oskar Julian Ortiz Ortiz</h3>
-                <p className="text-sm text-zinc-500">Full Stack Developer</p>
+            <div className="footer-row">
+              <div className="footer-copy">
+                <h3 className="footer-name">Oskar Julian Ortiz Ortiz</h3>
+                <p className="footer-role">Full Stack Developer</p>
               </div>
 
-              <div className="flex gap-3">
+              <div className="footer-socials">
                 <a
                   href="https://github.com/oskar-ortiz"
                   target="_blank"
@@ -542,8 +542,8 @@ export function Portfolio() {
               </div>
             </div>
 
-            <div className="mt-8 border-t border-white/[0.06] pt-8 text-center">
-              <p className="text-sm text-zinc-600">(c) 2026 Oskar Ortiz. All rights reserved.</p>
+            <div className="footer-legal">
+              <p className="footer-legal-copy">(c) 2026 Oskar Ortiz. All rights reserved.</p>
             </div>
           </div>
         </footer>
