@@ -167,7 +167,7 @@ export function Portfolio() {
                 <span className="brand-copy">Oskar Ortiz</span>
               </div>
 
-              <div className="hidden items-center gap-1 md:flex">
+              <div className="desktop-nav">
                 {navigationItems.map((item) => (
                   <a key={item} href={`#${item.toLowerCase()}`} className="nav-link">
                     {item}
@@ -230,14 +230,14 @@ export function Portfolio() {
                 </p>
 
                 <div className="hero-actions">
-                  <button className="btn-primary group">
+                  <button className="hero-primary-action group">
                     <Download size={18} />
                     Download CV
                   </button>
-                  <a href="#projects" className="btn-secondary">
+                  <a href="#projects" className="hero-secondary-action">
                     View Projects
                   </a>
-                  <a href="#contact" className="btn-secondary">
+                  <a href="#contact" className="hero-secondary-action">
                     Contact
                   </a>
                 </div>
@@ -344,11 +344,11 @@ export function Portfolio() {
                     </div>
 
                     <div className="project-actions">
-                      <button className="action-button-secondary flex-1">
+                      <button className="action-button-secondary project-action">
                         <Github size={16} />
                         GitHub
                       </button>
-                      <button className="action-button-primary flex-1">
+                      <button className="action-button-primary project-action">
                         <ExternalLink size={16} />
                         Demo
                       </button>
@@ -455,7 +455,7 @@ export function Portfolio() {
                     />
                   </div>
 
-                  <button type="submit" className="btn-primary w-full justify-center">
+                  <button type="submit" className="contact-submit">
                     Send Message
                   </button>
                 </form>
