@@ -1,10 +1,11 @@
 "use client";
 
+import Image from 'next/image';
 import { Menu, X, Github, Linkedin, Instagram, Mail, Phone, MapPin, Download, ExternalLink, Calendar, User, Briefcase, Code2, Sparkles, Star, Award } from 'lucide-react';
 import { useState } from 'react';
 import { FaReact, FaNodeJs, FaPython, FaJava, FaGitAlt, FaAws, FaCss3Alt } from 'react-icons/fa';
 import { SiTypescript, SiNextdotjs, SiTailwindcss, SiMongodb, SiPostman } from 'react-icons/si';
-const profilePhoto = 'https://via.placeholder.com/400';
+import profilePhoto from '../../assets/dd46f9bf116f2c66285468845d839373c782ceec.png';
 
 export function Portfolio() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -220,10 +221,13 @@ export function Portfolio() {
                 <div className="relative w-72 h-72 lg:w-[400px] lg:h-[400px]">
                   <div className="absolute inset-0 bg-gradient-to-br from-violet-500 via-fuchsia-500 to-cyan-500 rounded-full opacity-75 blur-2xl"></div>
                   <div className="relative w-full h-full rounded-full overflow-hidden border border-white/10 shadow-2xl">
-                    <img 
-                      src={profilePhoto} 
-                      alt="Oskar Ortiz - Profile Photo" 
-                      className="w-full h-full object-cover"
+                    <Image
+                      src={profilePhoto}
+                      alt="Oskar Ortiz - Profile Photo"
+                      fill
+                      priority
+                      sizes="(min-width: 1024px) 400px, 288px"
+                      className="object-cover"
                     />
                   </div>
                 </div>
