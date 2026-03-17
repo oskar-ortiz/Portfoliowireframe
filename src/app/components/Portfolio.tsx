@@ -400,24 +400,24 @@ export function Portfolio() {
               <div className="section-divider"></div>
             </div>
 
-            <div className="mx-auto max-w-3xl space-y-8">
+            <div className="experience-list">
               {experience.map((item, index) => (
-                <div key={item.year} className="flex gap-6">
-                  <div className="flex flex-col items-center">
+                <div key={item.year} className="experience-item">
+                  <div className="experience-rail">
                     <div className="avatar-badge">
                       <Briefcase size={20} className="text-white" />
                     </div>
                     {index < experience.length - 1 && <div className="timeline-line"></div>}
                   </div>
 
-                  <div className="flex-1 pb-8">
-                    <div className="glass-card p-6">
-                      <div className="mb-3 flex items-center gap-2 text-violet-400">
+                  <div className="experience-panel-wrap">
+                    <div className="experience-panel">
+                      <div className="experience-meta">
                         <Calendar size={16} />
                         <span className="text-sm font-medium">{item.year}</span>
                       </div>
-                      <h3 className="mb-3 text-xl font-semibold text-white">{item.title}</h3>
-                      <p className="leading-relaxed text-zinc-500">{item.description}</p>
+                      <h3 className="experience-title">{item.title}</h3>
+                      <p className="experience-copy">{item.description}</p>
                     </div>
                   </div>
                 </div>

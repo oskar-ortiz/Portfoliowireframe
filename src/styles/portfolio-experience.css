@@ -1,0 +1,40 @@
+@layer components {
+  .experience-list {
+    @apply mx-auto max-w-3xl space-y-8;
+  }
+
+  .experience-item {
+    @apply flex gap-6;
+  }
+
+  .experience-rail {
+    @apply flex flex-col items-center;
+  }
+
+  .experience-panel-wrap {
+    @apply flex-1 pb-8;
+  }
+
+  .experience-panel {
+    @apply rounded-2xl border p-6 transition-all duration-300;
+    background: rgb(255 255 255 / 0.02);
+    border-color: rgb(255 255 255 / 0.06);
+  }
+
+  .experience-panel:hover {
+    background: rgb(255 255 255 / 0.04);
+    border-color: rgb(255 255 255 / 0.1);
+  }
+
+  .experience-meta {
+    @apply mb-3 flex items-center gap-2 text-violet-400;
+  }
+
+  .experience-title {
+    @apply mb-3 text-xl font-semibold text-white;
+  }
+
+  .experience-copy {
+    @apply leading-relaxed text-zinc-500;
+  }
+}
