@@ -1,0 +1,13 @@
+@layer components {
+  .skills-grid {
+    @apply grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6;
+  }
+
+  .skill-body {
+    @apply flex flex-col items-center gap-4 text-center;
+  }
+
+  .skill-name {
+    @apply text-sm font-medium text-zinc-300 transition-colors group-hover:text-white;
+  }
+}

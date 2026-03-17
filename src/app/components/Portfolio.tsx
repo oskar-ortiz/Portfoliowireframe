@@ -297,19 +297,17 @@ export function Portfolio() {
               <div className="section-divider"></div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
+            <div className="skills-grid">
               {technologies.map((tech) => {
                 const IconComponent = tech.icon;
 
                 return (
                   <div key={tech.name} className="skill-card group">
-                    <div className="flex flex-col items-center gap-4 text-center">
+                    <div className="skill-body">
                       <div className={`skill-icon-frame bg-gradient-to-br ${tech.color}`}>
                         <IconComponent className="h-full w-full text-white" />
                       </div>
-                      <h3 className="text-sm font-medium text-zinc-300 transition-colors group-hover:text-white">
-                        {tech.name}
-                      </h3>
+                      <h3 className="skill-name">{tech.name}</h3>
                     </div>
                   </div>
                 );
