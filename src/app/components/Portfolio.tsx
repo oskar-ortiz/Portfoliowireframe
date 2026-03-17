@@ -263,14 +263,14 @@ export function Portfolio() {
           </div>
         </section>
 
-        <section className="section-shell">
-          <div className="content-shell">
-            <div className="section-heading">
+        <section className="section-wrapper">
+          <div className="section-container">
+            <div className="section-header">
               <h2 className="section-title">About Me</h2>
               <div className="section-divider"></div>
             </div>
 
-            <div className="mx-auto max-w-3xl">
+            <div className="section-solo-card">
               <div className="glass-card relative p-8 backdrop-blur-sm lg:p-12">
                 <div className="absolute left-0 top-0 h-32 w-32 rounded-full bg-violet-500/10 blur-3xl"></div>
                 <div className="absolute bottom-0 right-0 h-32 w-32 rounded-full bg-fuchsia-500/10 blur-3xl"></div>
@@ -290,9 +290,9 @@ export function Portfolio() {
           </div>
         </section>
 
-        <section id="skills" className="section-shell">
-          <div className="content-shell">
-            <div className="section-heading">
+        <section id="skills" className="section-wrapper">
+          <div className="section-container">
+            <div className="section-header">
               <h2 className="section-title">Skills & Technologies</h2>
               <div className="section-divider"></div>
             </div>
@@ -318,9 +318,9 @@ export function Portfolio() {
           </div>
         </section>
 
-        <section id="projects" className="section-shell">
-          <div className="content-shell">
-            <div className="section-heading">
+        <section id="projects" className="section-wrapper">
+          <div className="section-container">
+            <div className="section-header">
               <h2 className="section-title">Featured Projects</h2>
               <div className="section-divider"></div>
             </div>
@@ -366,9 +366,9 @@ export function Portfolio() {
           </div>
         </section>
 
-        <section id="testimonials" className="section-shell">
-          <div className="content-shell">
-            <div className="section-heading">
+        <section id="testimonials" className="section-wrapper">
+          <div className="section-container">
+            <div className="section-header">
               <h2 className="section-title">Testimonials</h2>
               <div className="section-divider"></div>
             </div>
@@ -399,9 +399,9 @@ export function Portfolio() {
           </div>
         </section>
 
-        <section id="experience" className="section-shell">
-          <div className="content-shell">
-            <div className="section-heading">
+        <section id="experience" className="section-wrapper">
+          <div className="section-container">
+            <div className="section-header">
               <h2 className="section-title">Academic & Work Experience</h2>
               <div className="section-divider"></div>
             </div>
@@ -432,9 +432,9 @@ export function Portfolio() {
           </div>
         </section>
 
-        <section id="contact" className="section-shell">
-          <div className="content-shell">
-            <div className="section-heading">
+        <section id="contact" className="section-wrapper">
+          <div className="section-container">
+            <div className="section-header">
               <h2 className="section-title">Get In Touch</h2>
               <div className="section-divider"></div>
             </div>
