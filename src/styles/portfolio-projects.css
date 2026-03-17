@@ -1,0 +1,29 @@
+@layer components {
+  .projects-grid {
+    @apply grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8;
+  }
+
+  .project-panel {
+    @apply p-6;
+  }
+
+  .project-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent;
+  }
+
+  .project-title {
+    @apply mb-3 text-xl font-semibold text-white transition-colors group-hover:text-violet-300;
+  }
+
+  .project-copy {
+    @apply mb-4 text-sm leading-relaxed text-zinc-500;
+  }
+
+  .project-chips {
+    @apply mb-6 flex flex-wrap gap-2;
+  }
+
+  .project-actions {
+    @apply flex gap-3;
+  }
+}

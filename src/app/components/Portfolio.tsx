@@ -323,23 +323,19 @@ export function Portfolio() {
               <div className="section-divider"></div>
             </div>
 
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+            <div className="projects-grid">
               {projects.map((project) => (
                 <div key={project.title} className="project-card group">
                   <div className="project-image-frame">
                     <img src={project.image} alt={project.title} className="project-image" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div className="project-overlay"></div>
                   </div>
 
-                  <div className="p-6">
-                    <h3 className="mb-3 text-xl font-semibold text-white transition-colors group-hover:text-violet-300">
-                      {project.title}
-                    </h3>
-                    <p className="mb-4 text-sm leading-relaxed text-zinc-500">
-                      {project.description}
-                    </p>
+                  <div className="project-panel">
+                    <h3 className="project-title">{project.title}</h3>
+                    <p className="project-copy">{project.description}</p>
 
-                    <div className="mb-6 flex flex-wrap gap-2">
+                    <div className="project-chips">
                       {project.tech.map((tech) => (
                         <span key={tech} className="project-chip">
                           {tech}
@@ -347,7 +343,7 @@ export function Portfolio() {
                       ))}
                     </div>
 
-                    <div className="flex gap-3">
+                    <div className="project-actions">
                       <button className="action-button-secondary flex-1">
                         <Github size={16} />
                         GitHub
