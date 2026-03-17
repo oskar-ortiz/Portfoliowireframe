@@ -2,7 +2,7 @@ import { Menu, X, Github, Linkedin, Instagram, Mail, Phone, MapPin, Download, Ex
 import { useState } from 'react';
 import { FaReact, FaNodeJs, FaPython, FaJava, FaGitAlt, FaAws, FaCss3Alt, FaHtml5 } from 'react-icons/fa';
 import { SiTypescript, SiJavascript, SiNextdotjs, SiTailwindcss, SiMongodb, SiPostman } from 'react-icons/si';
-import profilePhoto from 'figma:asset/dd46f9bf116f2c66285468845d839373c782ceec.png';
+const profilePhoto = 'https://via.placeholder.com/400';
 
 export function Portfolio() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
