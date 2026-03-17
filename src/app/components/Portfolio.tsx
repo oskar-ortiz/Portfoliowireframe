@@ -367,22 +367,22 @@ export function Portfolio() {
               <div className="section-divider"></div>
             </div>
 
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+            <div className="testimonials-grid">
               {testimonials.map((testimonial) => (
-                <div key={testimonial.name} className="glass-card relative p-8">
-                  <div className="mb-6 flex items-start gap-4">
+                <div key={testimonial.name} className="testimonial-card">
+                  <div className="testimonial-head">
                     <div className="avatar-badge">
                       <User size={24} className="text-white" />
                     </div>
                     <div>
-                      <h3 className="mb-1 font-semibold text-white">{testimonial.name}</h3>
-                      <p className="text-sm text-zinc-500">{testimonial.role}</p>
+                      <h3 className="testimonial-meta">{testimonial.name}</h3>
+                      <p className="testimonial-role">{testimonial.role}</p>
                     </div>
                   </div>
 
-                  <p className="leading-relaxed text-zinc-400 italic">"{testimonial.comment}"</p>
+                  <p className="testimonial-copy">"{testimonial.comment}"</p>
 
-                  <div className="mt-4 flex gap-1">
+                  <div className="testimonial-stars">
                     {[...Array(5)].map((_, index) => (
                       <Star key={index} size={14} className="fill-yellow-500 text-yellow-500" />
                     ))}
