@@ -1,0 +1,196 @@
+@layer components {
+  .portfolio-shell {
+    @apply min-h-screen text-white antialiased;
+    background: #0a0a0a;
+  }
+
+  .portfolio-grid-bg {
+    @apply pointer-events-none fixed inset-0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, #000, transparent);
+  }
+
+  .portfolio-overlay {
+    @apply pointer-events-none fixed inset-0 overflow-hidden;
+  }
+
+  .portfolio-glow-left {
+    @apply absolute left-1/4 top-0 h-[500px] w-[500px] rounded-full blur-[120px];
+    background: rgb(124 58 237 / 0.1);
+  }
+
+  .portfolio-glow-right {
+    @apply absolute right-1/4 top-1/3 h-[500px] w-[500px] rounded-full blur-[120px];
+    background: rgb(8 145 178 / 0.1);
+  }
+
+  .content-shell {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-shell {
+    @apply py-20 lg:py-24;
+  }
+
+  .section-heading {
+    @apply mb-16 text-center;
+  }
+
+  .section-title {
+    @apply mb-4 text-3xl font-bold tracking-tight text-white lg:text-5xl;
+  }
+
+  .section-divider {
+    @apply mx-auto h-1 w-16 rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500;
+  }
+
+  .nav-shell {
+    @apply sticky top-0 z-50 border-b backdrop-blur-xl;
+    background: rgb(0 0 0 / 0.4);
+    border-color: rgb(255 255 255 / 0.06);
+  }
+
+  .nav-link {
+    @apply rounded-lg px-4 py-2 text-sm text-zinc-400 transition-colors hover:bg-white/[0.03] hover:text-white;
+  }
+
+  .mobile-nav-link {
+    @apply rounded-lg px-4 py-3 text-sm text-zinc-400 transition-colors hover:bg-white/[0.03] hover:text-white;
+  }
+
+  .brand-mark {
+    @apply relative flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-500 text-white shadow-lg;
+    box-shadow: 0 12px 30px rgb(139 92 246 / 0.25);
+  }
+
+  .status-pill {
+    @apply mb-6 inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm;
+    background: rgb(255 255 255 / 0.03);
+    border-color: rgb(255 255 255 / 0.06);
+  }
+
+  .glass-card {
+    @apply rounded-2xl border transition-all duration-300;
+    background: rgb(255 255 255 / 0.02);
+    border-color: rgb(255 255 255 / 0.06);
+  }
+
+  .glass-card:hover {
+    background: rgb(255 255 255 / 0.04);
+    border-color: rgb(255 255 255 / 0.1);
+  }
+
+  .hero-copy {
+    @apply text-lg leading-relaxed text-zinc-400;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 font-medium text-black transition-all hover:bg-white/90;
+    box-shadow: 0 16px 32px rgb(255 255 255 / 0.1);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 20px 36px rgb(255 255 255 / 0.2);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 rounded-lg border px-6 py-3 font-medium text-white transition-all hover:bg-white/[0.06];
+    background: rgb(255 255 255 / 0.03);
+    border-color: rgb(255 255 255 / 0.06);
+  }
+
+  .action-button-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border px-4 py-2.5 text-sm font-medium text-white transition-all hover:bg-white/[0.06];
+    background: rgb(255 255 255 / 0.03);
+    border-color: rgb(255 255 255 / 0.06);
+  }
+
+  .action-button-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-medium text-black transition-all hover:bg-white/90;
+    box-shadow: 0 16px 32px rgb(255 255 255 / 0.1);
+  }
+
+  .skill-card {
+    @apply relative rounded-xl border p-6 transition-all duration-300;
+    background: rgb(255 255 255 / 0.02);
+    border-color: rgb(255 255 255 / 0.06);
+  }
+
+  .skill-card:hover {
+    background: rgb(255 255 255 / 0.04);
+    border-color: rgb(255 255 255 / 0.1);
+  }
+
+  .skill-icon-frame {
+    @apply flex h-14 w-14 items-center justify-center rounded-lg p-3 shadow-lg transition-transform duration-300 group-hover:scale-110;
+  }
+
+  .project-card {
+    @apply relative overflow-hidden rounded-2xl border transition-all duration-300;
+    background: rgb(255 255 255 / 0.02);
+    border-color: rgb(255 255 255 / 0.06);
+  }
+
+  .project-card:hover {
+    background: rgb(255 255 255 / 0.04);
+    border-color: rgb(255 255 255 / 0.1);
+  }
+
+  .project-image-frame {
+    @apply relative h-48 overflow-hidden bg-zinc-900/50;
+  }
+
+  .project-image {
+    @apply h-full w-full object-cover transition-transform duration-500 group-hover:scale-105;
+  }
+
+  .project-chip {
+    @apply rounded-md border px-2.5 py-1 text-xs font-medium text-zinc-400;
+    background: rgb(255 255 255 / 0.05);
+    border-color: rgb(255 255 255 / 0.08);
+  }
+
+  .avatar-badge {
+    @apply flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-500 text-white shadow-lg;
+  }
+
+  .contact-icon-box {
+    @apply flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-500 text-white shadow-lg;
+  }
+
+  .timeline-line {
+    @apply mt-2 h-full w-[2px] rounded-full bg-gradient-to-b from-violet-500/50 to-fuchsia-500/50;
+  }
+
+  .contact-label {
+    @apply mb-2 block text-sm font-medium text-zinc-400;
+  }
+
+  .contact-input {
+    @apply w-full rounded-lg px-4 py-3 text-white placeholder:text-zinc-600 transition-all focus:outline-none focus:ring-2 focus:ring-violet-500/20;
+    background: rgb(255 255 255 / 0.03);
+    border: 1px solid rgb(255 255 255 / 0.08);
+  }
+
+  .contact-input:focus {
+    border-color: rgb(139 92 246 / 0.5);
+  }
+
+  .contact-link {
+    @apply text-sm text-zinc-500 transition-colors hover:text-violet-400;
+  }
+
+  .social-link {
+    @apply flex h-10 w-10 items-center justify-center rounded-lg transition-all;
+    background: rgb(255 255 255 / 0.03);
+    border: 1px solid rgb(255 255 255 / 0.06);
+  }
+
+  .social-link:hover {
+    background: rgb(255 255 255 / 0.06);
+    border-color: rgb(255 255 255 / 0.1);
+  }
+}
