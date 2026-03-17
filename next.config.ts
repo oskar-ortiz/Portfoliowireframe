@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  distDir: ".next-app",
+  ...(process.env.VERCEL ? {} : { distDir: ".next-app" }),
 };
 
 export default nextConfig;
