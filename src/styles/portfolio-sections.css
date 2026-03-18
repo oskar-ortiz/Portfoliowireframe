@@ -4,11 +4,27 @@
   }
 
   .section-container {
-    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+    @apply relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
   }
 
   .section-header {
-    @apply mb-16 text-center;
+    @apply relative mb-16 text-center;
+  }
+
+  .section-header::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -18px;
+    height: 112px;
+    width: min(440px, 78vw);
+    transform: translateX(-50%);
+    border-radius: 9999px;
+    background:
+      radial-gradient(circle, rgb(124 58 237 / 0.13) 0%, rgb(34 211 238 / 0.08) 42%, transparent 74%);
+    filter: blur(28px);
+    opacity: 0.78;
+    z-index: -1;
   }
 
   .section-solo-card {

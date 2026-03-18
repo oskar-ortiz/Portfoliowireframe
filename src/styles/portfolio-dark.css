@@ -50,6 +50,13 @@
     color: var(--portfolio-text);
   }
 
+  .dark .testimonial-card,
+  .dark .experience-panel {
+    background:
+      linear-gradient(180deg, rgb(15 23 42 / 0.82), rgb(15 23 42 / 0.66)),
+      var(--portfolio-surface-strong);
+  }
+
   .dark .portfolio-ambient-panel {
     opacity: 0.76;
     border-color: rgb(148 163 184 / 0.1);

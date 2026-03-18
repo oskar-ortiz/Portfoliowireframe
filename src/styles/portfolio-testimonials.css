@@ -22,7 +22,8 @@
   }
 
   .testimonial-meta {
-    @apply mb-1 font-semibold text-white;
+    @apply mb-1 font-semibold;
+    color: var(--portfolio-text);
   }
 
   .testimonial-role {
