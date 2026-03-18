@@ -165,6 +165,9 @@ export function Portfolio() {
       <div className="portfolio-overlay">
         <div className="portfolio-glow-left"></div>
         <div className="portfolio-glow-right"></div>
+        <div className="portfolio-glow-core"></div>
+        <div className="portfolio-glow-beam"></div>
+        <div className="portfolio-glow-orbit"></div>
       </div>
 
       <div className="relative z-10">
