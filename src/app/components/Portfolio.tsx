@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { BrandMonogram } from "./BrandMonogram";
 import {
   Award,
   Briefcase,
   Calendar,
-  Code2,
   Download,
   ExternalLink,
   Github,
@@ -173,7 +173,7 @@ export function Portfolio() {
             <div className="nav-row">
               <div className="brand-stack">
                 <div className="brand-mark">
-                  <Code2 size={18} className="icon-white" />
+                  <BrandMonogram className="h-[22px] w-[22px]" />
                 </div>
                 <span className="brand-copy">Oskar Ortiz</span>
               </div>
