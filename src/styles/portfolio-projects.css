@@ -12,11 +12,13 @@
   }
 
   .project-title {
-    @apply mb-3 text-xl font-semibold text-white transition-colors group-hover:text-violet-300;
+    @apply mb-3 text-xl font-semibold transition-colors;
+    color: var(--portfolio-text);
   }
 
   .project-copy {
-    @apply mb-4 text-sm leading-relaxed text-zinc-500;
+    @apply mb-4 text-sm leading-relaxed;
+    color: var(--portfolio-text-soft);
   }
 
   .project-chips {
@@ -25,5 +27,9 @@
 
   .project-actions {
     @apply flex gap-3;
+  }
+
+  .project-card:hover .project-title {
+    color: var(--portfolio-primary-strong);
   }
 }

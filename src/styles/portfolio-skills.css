@@ -8,6 +8,11 @@
   }
 
   .skill-name {
-    @apply text-sm font-medium text-zinc-300 transition-colors group-hover:text-white;
+    @apply text-sm font-medium transition-colors;
+    color: var(--portfolio-text-soft);
+  }
+
+  .skill-card:hover .skill-name {
+    color: var(--portfolio-text);
   }
 }
