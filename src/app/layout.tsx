@@ -1,5 +1,18 @@
 import type { Metadata } from "next";
+import { Inter, Poppins } from "next/font/google";
+import { Providers } from "./providers";
 import "../styles/index.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-ui",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-display",
+});
 
 export const metadata: Metadata = {
   title: "Oskar Ortiz Portfolio",
@@ -12,8 +25,10 @@ type RootLayoutProps = Readonly<{
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} ${poppins.variable}`}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
