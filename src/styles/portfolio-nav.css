@@ -7,6 +7,10 @@
     @apply flex items-center gap-3;
   }
 
+  .brand-monogram-icon {
+    @apply h-[22px] w-[22px];
+  }
+
   .brand-copy {
     @apply text-lg font-semibold tracking-tight;
     color: rgb(30 41 59 / 0.9);
@@ -20,6 +24,10 @@
 
   .menu-toggle {
     @apply p-2 text-white md:hidden;
+  }
+
+  .menu-toggle-icon {
+    @apply h-5 w-5;
   }
 
   .mobile-nav-panel {

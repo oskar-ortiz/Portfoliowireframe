@@ -24,6 +24,10 @@
     @apply pointer-events-none fixed inset-0 overflow-hidden;
   }
 
+  .portfolio-content {
+    @apply relative z-10;
+  }
+
   .portfolio-glow-left {
     @apply absolute left-1/4 top-0 h-[500px] w-[500px] rounded-full blur-[120px];
     background: var(--portfolio-ambient-violet);

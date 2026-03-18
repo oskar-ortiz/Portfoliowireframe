@@ -173,13 +173,13 @@ export function Portfolio() {
         <div className="portfolio-glow-orbit"></div>
       </div>
 
-      <div className="relative z-10">
+      <div className="portfolio-content">
         <nav className="nav-shell">
           <div className="content-shell">
             <div className="nav-row">
               <div className="brand-stack">
                 <div className="brand-mark">
-                  <BrandMonogram className="h-[22px] w-[22px]" />
+                  <BrandMonogram className="brand-monogram-icon" />
                 </div>
                 <span className="brand-copy">Oskar Ortiz</span>
               </div>
@@ -222,7 +222,11 @@ export function Portfolio() {
                 </button>
 
                 <button className="menu-toggle" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-                  {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+                  {mobileMenuOpen ? (
+                    <X className="menu-toggle-icon" />
+                  ) : (
+                    <Menu className="menu-toggle-icon" />
+                  )}
                 </button>
               </div>
             </div>
