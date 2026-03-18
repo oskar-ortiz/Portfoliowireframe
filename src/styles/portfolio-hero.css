@@ -16,19 +16,23 @@
   }
 
   .hero-title-first {
-    @apply mb-2 block text-white;
+    @apply mb-2 block;
+    color: var(--portfolio-text);
   }
 
   .hero-title-last {
-    @apply block bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent;
+    @apply block bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #4338ca 0%, #6366f1 46%, #ec4899 100%);
   }
 
   .hero-role {
-    @apply mb-4 text-2xl font-medium text-zinc-400 lg:text-3xl;
+    @apply mb-4 text-2xl font-medium lg:text-3xl;
+    color: var(--portfolio-text-soft);
   }
 
   .hero-location {
-    @apply mb-8 flex items-center justify-center gap-2 text-zinc-500 lg:justify-start;
+    @apply mb-8 flex items-center justify-center gap-2 lg:justify-start;
+    color: var(--portfolio-text-muted);
   }
 
   .hero-actions {
@@ -40,7 +44,8 @@
   }
 
   .hero-portrait-halo {
-    @apply absolute inset-0 rounded-full bg-gradient-to-r from-violet-600/20 to-fuchsia-600/20 blur-3xl;
+    @apply absolute inset-0 rounded-full blur-3xl;
+    background: radial-gradient(circle, rgb(99 102 241 / 0.2) 0%, rgb(236 72 153 / 0.12) 46%, transparent 72%);
   }
 
   .hero-portrait-shell {
@@ -48,10 +53,18 @@
   }
 
   .hero-portrait-aura {
-    @apply absolute inset-0 rounded-full bg-gradient-to-br from-violet-500 via-fuchsia-500 to-cyan-500 opacity-75 blur-2xl;
+    @apply absolute inset-0 rounded-full blur-2xl;
+    background: linear-gradient(135deg, rgb(255 255 255 / 0.2), rgb(99 102 241 / 0.22), rgb(236 72 153 / 0.16));
   }
 
   .hero-portrait-frame {
-    @apply relative h-full w-full overflow-hidden rounded-full border border-white/10 shadow-2xl;
+    @apply relative h-full w-full overflow-hidden rounded-full border shadow-2xl;
+    border-color: rgb(255 255 255 / 0.75);
+    box-shadow: 0 30px 90px rgb(15 23 42 / 0.12);
+  }
+
+  .dark .hero-portrait-frame {
+    border-color: rgb(148 163 184 / 0.2);
+    box-shadow: 0 30px 90px rgb(2 6 23 / 0.35);
   }
 }
