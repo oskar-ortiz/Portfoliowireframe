@@ -1,14 +1,18 @@
 @layer components {
   .portfolio-shell {
-    @apply min-h-screen text-white antialiased;
-    background: #0a0a0a;
+    @apply min-h-screen antialiased;
+    color: var(--portfolio-text);
+    background:
+      radial-gradient(circle at top left, rgb(99 102 241 / 0.12), transparent 28%),
+      radial-gradient(circle at top right, rgb(236 72 153 / 0.1), transparent 24%),
+      var(--portfolio-canvas);
   }
 
   .portfolio-grid-bg {
     @apply pointer-events-none fixed inset-0;
     background-image:
-      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      linear-gradient(var(--portfolio-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--portfolio-line) 1px, transparent 1px);
     background-size: 72px 72px;
     mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, #000, transparent);
   }
@@ -19,12 +23,12 @@
 
   .portfolio-glow-left {
     @apply absolute left-1/4 top-0 h-[500px] w-[500px] rounded-full blur-[120px];
-    background: rgb(124 58 237 / 0.1);
+    background: rgb(99 102 241 / 0.16);
   }
 
   .portfolio-glow-right {
     @apply absolute right-1/4 top-1/3 h-[500px] w-[500px] rounded-full blur-[120px];
-    background: rgb(8 145 178 / 0.1);
+    background: rgb(236 72 153 / 0.12);
   }
 
   .content-shell {
@@ -40,7 +44,8 @@
   }
 
   .section-title {
-    @apply mb-4 text-3xl font-bold tracking-tight text-white lg:text-5xl;
+    @apply mb-4 text-3xl font-bold tracking-tight lg:text-5xl;
+    color: var(--portfolio-text);
   }
 
   .section-divider {
@@ -49,8 +54,13 @@
 
   .nav-shell {
     @apply sticky top-0 z-50 border-b backdrop-blur-xl;
-    background: rgb(0 0 0 / 0.4);
-    border-color: rgb(255 255 255 / 0.06);
+    background: rgb(255 255 255 / 0.72);
+    border-color: var(--portfolio-border);
+    box-shadow: 0 10px 30px rgb(15 23 42 / 0.05);
+  }
+
+  .dark .nav-shell {
+    background: rgb(15 23 42 / 0.72);
   }
 
   .nav-link {
@@ -68,23 +78,26 @@
 
   .status-pill {
     @apply mb-6 inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm;
-    background: rgb(255 255 255 / 0.03);
-    border-color: rgb(255 255 255 / 0.06);
+    background: var(--portfolio-surface);
+    border-color: var(--portfolio-border);
+    color: var(--portfolio-text-soft);
   }
 
   .glass-card {
     @apply rounded-2xl border transition-all duration-300;
-    background: rgb(255 255 255 / 0.02);
-    border-color: rgb(255 255 255 / 0.06);
+    background: var(--portfolio-surface-strong);
+    border-color: var(--portfolio-border);
+    box-shadow: var(--portfolio-shadow);
   }
 
   .glass-card:hover {
-    background: rgb(255 255 255 / 0.04);
-    border-color: rgb(255 255 255 / 0.1);
+    border-color: rgb(99 102 241 / 0.18);
+    box-shadow: var(--portfolio-shadow-hover);
   }
 
   .hero-copy {
-    @apply text-lg leading-relaxed text-zinc-400;
+    @apply text-lg leading-relaxed;
+    color: var(--portfolio-text-soft);
   }
 
   .btn-primary {
