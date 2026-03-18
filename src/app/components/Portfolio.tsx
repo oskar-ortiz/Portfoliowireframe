@@ -52,20 +52,20 @@ const navigationItems = [
 ];
 
 const technologies = [
-  { name: "CSS", icon: FaCss3Alt, color: "from-[#1572B6] to-[#33A9DC]" },
-  { name: "TypeScript", icon: SiTypescript, color: "from-[#3178C6] to-[#235A97]" },
-  { name: "React", icon: FaReact, color: "from-[#61DAFB] to-[#00D8FF]" },
-  { name: "Next.js", icon: SiNextdotjs, color: "from-zinc-800 to-zinc-950" },
-  { name: "Tailwind CSS", icon: SiTailwindcss, color: "from-[#06B6D4] to-[#0891B2]" },
-  { name: "Node.js", icon: FaNodeJs, color: "from-[#339933] to-[#66BB6A]" },
-  { name: "Git", icon: FaGitAlt, color: "from-[#F05032] to-[#DE4C36]" },
-  { name: "Python", icon: FaPython, color: "from-[#3776AB] to-[#FFD43B]" },
-  { name: "Java", icon: FaJava, color: "from-[#007396] to-[#EA2D2E]" },
-  { name: "MongoDB", icon: SiMongodb, color: "from-[#47A248] to-[#4DB33D]" },
-  { name: "Postman", icon: SiPostman, color: "from-[#FF6C37] to-[#FF8552]" },
-  { name: "AWS Cloud", icon: FaAws, color: "from-[#FF9900] to-[#EC7211]" },
-  { name: "DevSecOps", icon: Award, color: "from-violet-600 to-fuchsia-600" },
-  { name: "LLM Integration", icon: Sparkles, color: "from-purple-600 to-pink-600" },
+  { name: "CSS", icon: FaCss3Alt, toneClass: "skill-tone-css" },
+  { name: "TypeScript", icon: SiTypescript, toneClass: "skill-tone-typescript" },
+  { name: "React", icon: FaReact, toneClass: "skill-tone-react" },
+  { name: "Next.js", icon: SiNextdotjs, toneClass: "skill-tone-nextjs" },
+  { name: "Tailwind CSS", icon: SiTailwindcss, toneClass: "skill-tone-tailwind" },
+  { name: "Node.js", icon: FaNodeJs, toneClass: "skill-tone-nodejs" },
+  { name: "Git", icon: FaGitAlt, toneClass: "skill-tone-git" },
+  { name: "Python", icon: FaPython, toneClass: "skill-tone-python" },
+  { name: "Java", icon: FaJava, toneClass: "skill-tone-java" },
+  { name: "MongoDB", icon: SiMongodb, toneClass: "skill-tone-mongodb" },
+  { name: "Postman", icon: SiPostman, toneClass: "skill-tone-postman" },
+  { name: "AWS Cloud", icon: FaAws, toneClass: "skill-tone-aws" },
+  { name: "DevSecOps", icon: Award, toneClass: "skill-tone-devsecops" },
+  { name: "LLM Integration", icon: Sparkles, toneClass: "skill-tone-llm" },
 ];
 
 const projects = [
@@ -356,7 +356,7 @@ export function Portfolio() {
                 return (
                   <div key={tech.name} className="skill-card group">
                     <div className="skill-body">
-                      <div className={`skill-icon-frame bg-gradient-to-br ${tech.color}`}>
+                      <div className={`skill-icon-frame ${tech.toneClass}`}>
                         <IconComponent className="h-full w-full text-white" />
                       </div>
                       <h3 className="skill-name">{tech.name}</h3>

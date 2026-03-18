@@ -15,4 +15,60 @@
   .skill-card:hover .skill-name {
     color: var(--portfolio-text);
   }
+
+  .skill-tone-css {
+    background-image: linear-gradient(135deg, #1572b6 0%, #33a9dc 100%);
+  }
+
+  .skill-tone-typescript {
+    background-image: linear-gradient(135deg, #3178c6 0%, #235a97 100%);
+  }
+
+  .skill-tone-react {
+    background-image: linear-gradient(135deg, #61dafb 0%, #00d8ff 100%);
+  }
+
+  .skill-tone-nextjs {
+    background-image: linear-gradient(135deg, #27272a 0%, #09090b 100%);
+  }
+
+  .skill-tone-tailwind {
+    background-image: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  }
+
+  .skill-tone-nodejs {
+    background-image: linear-gradient(135deg, #339933 0%, #66bb6a 100%);
+  }
+
+  .skill-tone-git {
+    background-image: linear-gradient(135deg, #f05032 0%, #de4c36 100%);
+  }
+
+  .skill-tone-python {
+    background-image: linear-gradient(135deg, #3776ab 0%, #ffd43b 100%);
+  }
+
+  .skill-tone-java {
+    background-image: linear-gradient(135deg, #007396 0%, #ea2d2e 100%);
+  }
+
+  .skill-tone-mongodb {
+    background-image: linear-gradient(135deg, #47a248 0%, #4db33d 100%);
+  }
+
+  .skill-tone-postman {
+    background-image: linear-gradient(135deg, #ff6c37 0%, #ff8552 100%);
+  }
+
+  .skill-tone-aws {
+    background-image: linear-gradient(135deg, #ff9900 0%, #ec7211 100%);
+  }
+
+  .skill-tone-devsecops {
+    background-image: linear-gradient(135deg, #7c3aed 0%, #d946ef 100%);
+  }
+
+  .skill-tone-llm {
+    background-image: linear-gradient(135deg, #9333ea 0%, #ec4899 100%);
+  }
 }
