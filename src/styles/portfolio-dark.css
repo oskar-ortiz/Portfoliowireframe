@@ -1,103 +1,126 @@
 @layer components {
   .dark .nav-link:hover,
   .dark .mobile-nav-link:hover {
-    background: rgb(30 41 59 / 0.86);
+    background: rgb(24 24 27 / 0.92);
     color: var(--portfolio-text);
   }
 
   .dark .theme-toggle {
-    background: rgb(30 41 59 / 0.86);
-    border-color: rgb(148 163 184 / 0.2);
+    background: rgb(12 12 16 / 0.9);
+    border-color: rgb(168 85 247 / 0.14);
     color: var(--portfolio-text-soft);
-    box-shadow: 0 16px 34px rgb(2 6 23 / 0.24);
+    box-shadow: 0 16px 34px rgb(0 0 0 / 0.32);
   }
 
   .dark .hero-secondary-action {
-    background: rgb(30 41 59 / 0.86);
-    border-color: rgb(148 163 184 / 0.2);
+    background: rgb(12 12 16 / 0.9);
+    border-color: rgb(168 85 247 / 0.14);
     color: var(--portfolio-text-soft);
-    box-shadow: 0 14px 32px rgb(2 6 23 / 0.18);
+    box-shadow: 0 14px 32px rgb(0 0 0 / 0.24);
   }
 
   .dark .hero-secondary-action:hover {
-    background: rgb(51 65 85 / 0.92);
-    border-color: rgb(129 140 248 / 0.28);
+    background: rgb(24 24 27 / 0.96);
+    border-color: rgb(192 132 252 / 0.22);
     color: var(--portfolio-text);
-    box-shadow: 0 20px 42px rgb(2 6 23 / 0.26);
+    box-shadow: 0 20px 42px rgb(0 0 0 / 0.3);
   }
 
   .dark .project-chip {
-    background: rgb(30 41 59 / 0.82);
-    border-color: rgb(129 140 248 / 0.18);
+    background: rgb(18 18 24 / 0.9);
+    border-color: rgb(168 85 247 / 0.16);
     color: var(--portfolio-text-soft);
   }
 
   .dark .contact-input {
-    background: rgb(15 23 42 / 0.72);
-    border-color: rgb(148 163 184 / 0.16);
+    background: rgb(10 10 14 / 0.9);
+    border-color: rgb(168 85 247 / 0.12);
     color: var(--portfolio-text);
-    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.03);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.02);
   }
 
   .dark .contact-input:focus {
     box-shadow:
-      inset 0 1px 0 rgb(255 255 255 / 0.04),
-      0 0 0 4px rgb(129 140 248 / 0.14);
+      inset 0 1px 0 rgb(255 255 255 / 0.03),
+      0 0 0 4px rgb(168 85 247 / 0.14);
   }
 
   .dark .social-link:hover {
-    background: rgb(30 41 59 / 0.94);
+    background: rgb(18 18 24 / 0.96);
     color: var(--portfolio-text);
   }
 
   .dark .testimonial-card,
   .dark .experience-panel {
     background:
-      linear-gradient(180deg, rgb(15 23 42 / 0.82), rgb(15 23 42 / 0.66)),
+      linear-gradient(180deg, rgb(10 10 14 / 0.9), rgb(10 10 14 / 0.74)),
       var(--portfolio-surface-strong);
   }
 
   .dark .portfolio-ambient-panel {
-    opacity: 0.76;
-    border-color: rgb(148 163 184 / 0.1);
+    opacity: 0.82;
+    border-color: rgb(168 85 247 / 0.08);
   }
 
   .dark .portfolio-ambient-panel::before {
-    opacity: 0.22;
+    opacity: 0.16;
   }
 
   .dark .portfolio-ambient-panel::after {
-    border-color: rgb(129 140 248 / 0.14);
+    border-color: rgb(168 85 247 / 0.12);
   }
 
   .dark .portfolio-ambient-arc {
-    border-color: rgb(148 163 184 / 0.22);
+    border-color: rgb(255 255 255 / 0.2);
     box-shadow:
-      inset 0 0 0 1px rgb(129 140 248 / 0.08),
-      0 18px 56px rgb(2 6 23 / 0.26);
+      inset 0 0 0 1px rgb(168 85 247 / 0.08),
+      0 18px 56px rgb(0 0 0 / 0.32);
   }
 
   .dark .portfolio-ambient-pulse {
-    opacity: 0.7;
+    opacity: 0.52;
   }
 
   .dark .hero-portrait-panel {
     background:
-      linear-gradient(145deg, rgb(30 41 59 / 0.48), rgb(15 23 42 / 0.16)),
+      linear-gradient(145deg, rgb(31 10 48 / 0.52), rgb(10 10 14 / 0.22)),
       var(--portfolio-hero-panel);
   }
 
   .dark .hero-portrait-panel::before {
     background:
-      linear-gradient(180deg, rgb(255 255 255 / 0.04), transparent 52%),
-      linear-gradient(135deg, rgb(129 140 248 / 0.08), rgb(34 211 238 / 0.05));
-    border-color: rgb(148 163 184 / 0.12);
+      linear-gradient(180deg, rgb(255 255 255 / 0.03), transparent 52%),
+      linear-gradient(135deg, rgb(168 85 247 / 0.08), rgb(34 211 238 / 0.03));
+    border-color: rgb(168 85 247 / 0.12);
   }
 
   .dark .hero-portrait-panel::after {
     background:
-      radial-gradient(circle at 30% 30%, rgb(255 255 255 / 0.12), transparent 24%),
-      linear-gradient(145deg, rgb(30 41 59 / 0.46), rgb(129 140 248 / 0.08));
-    border-color: rgb(148 163 184 / 0.14);
+      radial-gradient(circle at 30% 30%, rgb(255 255 255 / 0.08), transparent 24%),
+      linear-gradient(145deg, rgb(18 18 24 / 0.52), rgb(168 85 247 / 0.08));
+    border-color: rgb(168 85 247 / 0.12);
+  }
+
+  .dark .nav-shell {
+    background:
+      linear-gradient(180deg, rgb(7 7 10 / 0.94), rgb(7 7 10 / 0.82)),
+      linear-gradient(90deg, rgb(168 85 247 / 0.05), transparent 42%, rgb(236 72 153 / 0.03));
+    box-shadow: 0 12px 34px rgb(0 0 0 / 0.34);
+  }
+
+  .dark .brand-mark {
+    background:
+      linear-gradient(180deg, rgb(22 11 31 / 0.96), rgb(10 10 14 / 0.92)),
+      radial-gradient(circle at top, rgb(168 85 247 / 0.18), transparent 70%);
+    border-color: rgb(168 85 247 / 0.2);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.04),
+      0 16px 34px rgb(168 85 247 / 0.16);
+  }
+
+  .dark .avatar-badge,
+  .dark .contact-icon-box {
+    background: linear-gradient(135deg, #7e22ce 0%, #a855f7 64%, #ec4899 100%);
+    box-shadow: 0 18px 36px rgb(168 85 247 / 0.2);
   }
 }
