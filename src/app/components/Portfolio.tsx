@@ -251,11 +251,11 @@ export function Portfolio() {
             <div className="hero-layout">
               <div className="hero-copy-column">
                 <div className="status-pill">
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+                  <span className="status-indicator">
+                    <span className="status-indicator-ping"></span>
+                    <span className="status-indicator-core"></span>
                   </span>
-                  <span className="text-zinc-400">Available for work</span>
+                  <span className="status-label">Available for work</span>
                 </div>
 
                 <h1 className="hero-title">
@@ -267,10 +267,10 @@ export function Portfolio() {
 
                 <div className="hero-location">
                   <MapPin size={18} />
-                  <span className="text-sm">Pasto, Narino, Colombia</span>
+                  <span className="hero-location-copy">Pasto, Narino, Colombia</span>
                 </div>
 
-                <p className="hero-copy mb-10">
+                <p className="hero-copy hero-copy-lead">
                   An extroverted and sociable person who enjoys collaborating and maintaining a
                   positive work environment. Passionate about building modern web applications and
                   continuously learning new technologies.

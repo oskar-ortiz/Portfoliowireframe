@@ -14,4 +14,20 @@
   .experience-year {
     @apply text-sm font-medium;
   }
+
+  .status-indicator {
+    @apply relative flex h-2 w-2;
+  }
+
+  .status-indicator-ping {
+    @apply absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75;
+  }
+
+  .status-indicator-core {
+    @apply relative inline-flex h-2 w-2 rounded-full bg-emerald-500;
+  }
+
+  .status-label {
+    color: var(--portfolio-text-muted);
+  }
 }

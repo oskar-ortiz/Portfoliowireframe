@@ -35,8 +35,16 @@
     color: var(--portfolio-text-muted);
   }
 
+  .hero-location-copy {
+    @apply text-sm;
+  }
+
   .hero-actions {
     @apply flex flex-wrap justify-center gap-3 lg:justify-start;
+  }
+
+  .hero-copy-lead {
+    @apply mb-10;
   }
 
   .hero-portrait {
