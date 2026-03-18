@@ -12,11 +12,13 @@
   }
 
   .footer-name {
-    @apply mb-1 text-lg font-semibold text-white;
+    @apply mb-1 text-lg font-semibold;
+    color: var(--portfolio-text);
   }
 
   .footer-role {
-    @apply text-sm text-zinc-500;
+    @apply text-sm;
+    color: var(--portfolio-text-muted);
   }
 
   .footer-socials {
@@ -28,6 +30,7 @@
   }
 
   .footer-legal-copy {
-    @apply text-sm text-zinc-600;
+    @apply text-sm;
+    color: var(--portfolio-text-muted);
   }
 }
