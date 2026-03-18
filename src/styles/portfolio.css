@@ -136,25 +136,29 @@
   }
 
   .action-button-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg border px-4 py-2.5 text-sm font-medium text-white transition-all hover:bg-white/[0.06];
-    background: rgb(255 255 255 / 0.03);
-    border-color: rgb(255 255 255 / 0.06);
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl border px-4 py-2.5 text-sm font-medium transition-all hover:-translate-y-0.5;
+    background: var(--portfolio-surface);
+    border-color: var(--portfolio-border);
+    color: var(--portfolio-text-soft);
+    box-shadow: 0 12px 30px rgb(15 23 42 / 0.05);
   }
 
   .action-button-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-medium text-black transition-all hover:bg-white/90;
-    box-shadow: 0 16px 32px rgb(255 255 255 / 0.1);
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-medium text-white transition-all hover:scale-[1.01];
+    background: linear-gradient(135deg, #4338ca 0%, #6366f1 58%, #8b5cf6 100%);
+    box-shadow: 0 16px 40px rgb(79 70 229 / 0.18);
   }
 
   .skill-card {
     @apply relative rounded-xl border p-6 transition-all duration-300;
-    background: rgb(255 255 255 / 0.02);
-    border-color: rgb(255 255 255 / 0.06);
+    background: var(--portfolio-surface-strong);
+    border-color: var(--portfolio-border);
+    box-shadow: var(--portfolio-shadow);
   }
 
   .skill-card:hover {
-    background: rgb(255 255 255 / 0.04);
-    border-color: rgb(255 255 255 / 0.1);
+    border-color: rgb(99 102 241 / 0.16);
+    box-shadow: var(--portfolio-shadow-hover);
   }
 
   .skill-icon-frame {
@@ -163,17 +167,19 @@
 
   .project-card {
     @apply relative overflow-hidden rounded-2xl border transition-all duration-300;
-    background: rgb(255 255 255 / 0.02);
-    border-color: rgb(255 255 255 / 0.06);
+    background: var(--portfolio-surface-strong);
+    border-color: var(--portfolio-border);
+    box-shadow: var(--portfolio-shadow);
   }
 
   .project-card:hover {
-    background: rgb(255 255 255 / 0.04);
-    border-color: rgb(255 255 255 / 0.1);
+    border-color: rgb(99 102 241 / 0.16);
+    box-shadow: var(--portfolio-shadow-hover);
   }
 
   .project-image-frame {
-    @apply relative h-48 overflow-hidden bg-zinc-900/50;
+    @apply relative h-48 overflow-hidden;
+    background: linear-gradient(180deg, rgb(226 232 240 / 0.55), rgb(255 255 255 / 0.18));
   }
 
   .project-image {
@@ -182,16 +188,21 @@
 
   .project-chip {
     @apply rounded-md border px-2.5 py-1 text-xs font-medium text-zinc-400;
-    background: rgb(255 255 255 / 0.05);
-    border-color: rgb(255 255 255 / 0.08);
+    background: rgb(248 250 252 / 0.92);
+    border-color: rgb(99 102 241 / 0.14);
+    color: var(--portfolio-text-muted);
   }
 
   .avatar-badge {
-    @apply flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-500 text-white shadow-lg;
+    @apply flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl text-white shadow-lg;
+    background: linear-gradient(135deg, #4338ca 0%, #6366f1 62%, #ec4899 100%);
+    box-shadow: 0 18px 36px rgb(99 102 241 / 0.22);
   }
 
   .contact-icon-box {
-    @apply flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-500 text-white shadow-lg;
+    @apply flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl text-white shadow-lg;
+    background: linear-gradient(135deg, #4338ca 0%, #6366f1 62%, #ec4899 100%);
+    box-shadow: 0 18px 36px rgb(99 102 241 / 0.22);
   }
 
   .timeline-line {
