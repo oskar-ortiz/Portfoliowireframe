@@ -2,7 +2,7 @@
   .about-card {
     @apply relative rounded-2xl border p-8 backdrop-blur-sm transition-all duration-300 lg:p-12;
     background:
-      linear-gradient(180deg, rgb(255 255 255 / 0.96), rgb(255 255 255 / 0.82)),
+      linear-gradient(180deg, rgb(255 255 255 / 0.9), rgb(255 255 255 / 0.76)),
       var(--portfolio-surface-strong);
     border-color: var(--portfolio-border);
     box-shadow: var(--portfolio-shadow);
