@@ -3,10 +3,11 @@
     @apply min-h-screen antialiased;
     color: var(--portfolio-text);
     background:
-      radial-gradient(circle at 12% 8%, rgb(124 58 237 / 0.14), transparent 24%),
-      radial-gradient(circle at 88% 12%, rgb(244 114 182 / 0.12), transparent 20%),
-      radial-gradient(circle at 52% 36%, rgb(167 139 250 / 0.1), transparent 24%),
-      radial-gradient(circle at 72% 82%, rgb(34 211 238 / 0.08), transparent 20%),
+      radial-gradient(circle at 14% 10%, rgb(99 102 241 / 0.22), transparent 28%),
+      radial-gradient(circle at 82% 14%, rgb(244 114 182 / 0.18), transparent 22%),
+      radial-gradient(circle at 56% 34%, rgb(129 140 248 / 0.18), transparent 28%),
+      radial-gradient(circle at 76% 78%, rgb(34 211 238 / 0.14), transparent 24%),
+      linear-gradient(135deg, rgb(255 255 255 / 0.2), transparent 48%),
       var(--portfolio-canvas);
   }
 
@@ -16,7 +17,7 @@
       linear-gradient(var(--portfolio-line) 1px, transparent 1px),
       linear-gradient(90deg, var(--portfolio-line) 1px, transparent 1px);
     background-size: 72px 72px;
-    mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, #000, transparent);
+    mask-image: radial-gradient(ellipse 92% 68% at 50% 12%, #000 58%, transparent 100%);
   }
 
   .portfolio-overlay {
@@ -56,9 +57,11 @@
 
   .nav-shell {
     @apply sticky top-0 z-50 border-b backdrop-blur-xl;
-    background: rgb(255 255 255 / 0.72);
+    background:
+      linear-gradient(180deg, rgb(255 255 255 / 0.72), rgb(255 255 255 / 0.56)),
+      linear-gradient(90deg, rgb(129 140 248 / 0.06), rgb(34 211 238 / 0.04));
     border-color: var(--portfolio-border);
-    box-shadow: 0 10px 30px rgb(15 23 42 / 0.05);
+    box-shadow: 0 10px 30px rgb(79 70 229 / 0.06);
   }
 
   .dark .nav-shell {

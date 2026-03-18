@@ -1,12 +1,12 @@
 @layer base {
   :root {
-    --portfolio-bg: #f5f7fb;
-    --portfolio-bg-accent: #eef2ff;
-    --portfolio-bg-accent-soft: #fdf2f8;
-    --portfolio-surface: rgb(255 255 255 / 0.74);
-    --portfolio-surface-strong: rgb(255 255 255 / 0.9);
-    --portfolio-border: rgb(148 163 184 / 0.18);
-    --portfolio-line: rgb(148 163 184 / 0.12);
+    --portfolio-bg: #edeaf7;
+    --portfolio-bg-accent: #e4e9fb;
+    --portfolio-bg-accent-soft: #f4e7f3;
+    --portfolio-surface: rgb(255 255 255 / 0.7);
+    --portfolio-surface-strong: rgb(255 255 255 / 0.84);
+    --portfolio-border: rgb(129 140 248 / 0.18);
+    --portfolio-line: rgb(124 58 237 / 0.08);
     --portfolio-text: #111827;
     --portfolio-text-soft: #334155;
     --portfolio-text-muted: #64748b;
@@ -17,17 +17,17 @@
     --portfolio-secondary: #a78bfa;
     --portfolio-accent: #f472b6;
     --portfolio-cyan: #22d3ee;
-    --portfolio-ambient-violet: rgb(124 58 237 / 0.2);
-    --portfolio-ambient-pink: rgb(244 114 182 / 0.16);
-    --portfolio-ambient-cyan: rgb(34 211 238 / 0.16);
-    --portfolio-ambient-border: rgb(124 58 237 / 0.18);
-    --portfolio-ambient-line: rgb(255 255 255 / 0.58);
-    --portfolio-ambient-panel: rgb(255 255 255 / 0.34);
+    --portfolio-ambient-violet: rgb(99 102 241 / 0.28);
+    --portfolio-ambient-pink: rgb(244 114 182 / 0.18);
+    --portfolio-ambient-cyan: rgb(34 211 238 / 0.18);
+    --portfolio-ambient-border: rgb(99 102 241 / 0.24);
+    --portfolio-ambient-line: rgb(255 255 255 / 0.36);
+    --portfolio-ambient-panel: rgb(101 115 194 / 0.12);
     --portfolio-hero-panel:
-      linear-gradient(145deg, rgb(255 255 255 / 0.68), rgb(255 255 255 / 0.16));
-    --portfolio-hero-grid: rgb(124 58 237 / 0.1);
+      linear-gradient(145deg, rgb(255 255 255 / 0.52), rgb(126 137 204 / 0.16));
+    --portfolio-hero-grid: rgb(124 58 237 / 0.14);
     --portfolio-canvas:
-      linear-gradient(180deg, #f7f9fd 0%, #f4f7fb 38%, #f7f5ff 72%, #fbfbff 100%);
+      linear-gradient(180deg, #ece8f7 0%, #e8ebf8 34%, #ece9f6 68%, #f3eef8 100%);
   }
 
   .dark {
