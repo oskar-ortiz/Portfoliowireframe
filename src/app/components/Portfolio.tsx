@@ -270,7 +270,7 @@ export function Portfolio() {
                 <p className="hero-role">Full Stack Developer</p>
 
                 <div className="hero-location">
-                  <MapPin size={18} />
+                  <MapPin className="hero-location-icon" />
                   <span className="hero-location-copy">Pasto, Narino, Colombia</span>
                 </div>
 
@@ -310,7 +310,7 @@ export function Portfolio() {
                       fill
                       priority
                       sizes="(min-width: 1024px) 400px, 288px"
-                      className="object-cover"
+                      className="hero-portrait-image"
                     />
                   </div>
                 </div>
@@ -331,7 +331,7 @@ export function Portfolio() {
                 <div className="about-orb-start"></div>
                 <div className="about-orb-end"></div>
                 <div className="about-body">
-                  <p className="hero-copy mb-6">
+                  <p className="hero-copy about-copy-lead">
                     Oskar is an extroverted and sociable person who enjoys collaborating and
                     maintaining a positive work environment. In his free time he enjoys walking,
                     playing football, listening to music, and he is also a professional musician.
@@ -505,7 +505,7 @@ export function Portfolio() {
                   <div className="contact-field">
                     <label className="contact-label">Message</label>
                     <textarea
-                      className="contact-input resize-none"
+                      className="contact-input contact-textarea"
                       placeholder="Your message"
                       rows={5}
                     />

@@ -24,4 +24,8 @@
   .about-body {
     @apply relative;
   }
+
+  .about-copy-lead {
+    @apply mb-6;
+  }
 }

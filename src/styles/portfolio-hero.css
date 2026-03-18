@@ -35,6 +35,10 @@
     color: var(--portfolio-text-muted);
   }
 
+  .hero-location-icon {
+    @apply h-[18px] w-[18px];
+  }
+
   .hero-location-copy {
     @apply text-sm;
   }
@@ -176,6 +180,10 @@
     box-shadow:
       0 30px 90px rgb(79 70 229 / 0.12),
       0 0 0 14px rgb(255 255 255 / 0.08);
+  }
+
+  .hero-portrait-image {
+    @apply object-cover;
   }
 
   .dark .hero-portrait-frame {

@@ -43,6 +43,10 @@
     box-shadow: var(--portfolio-shadow-hover);
   }
 
+  .contact-textarea {
+    @apply resize-none;
+  }
+
   .contact-row {
     @apply flex items-center gap-4;
   }
