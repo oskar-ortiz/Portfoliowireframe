@@ -50,6 +50,13 @@
 
   .hero-portrait-shell {
     @apply relative h-72 w-72 lg:h-[400px] lg:w-[400px];
+    transform: perspective(1200px) rotateY(-4deg) rotateX(2deg);
+    transform-style: preserve-3d;
+    transition: transform 0.35s ease;
+  }
+
+  .hero-portrait-shell:hover {
+    transform: perspective(1200px) rotateY(-1deg) rotateX(0deg) translateY(-4px);
   }
 
   .hero-portrait-aura {

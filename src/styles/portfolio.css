@@ -110,11 +110,14 @@
     background: var(--portfolio-surface-strong);
     border-color: var(--portfolio-border);
     box-shadow: var(--portfolio-shadow);
+    transform: perspective(1200px) translate3d(0, 0, 0) rotateX(0) rotateY(0);
+    transform-style: preserve-3d;
   }
 
   .glass-card:hover {
     border-color: rgb(99 102 241 / 0.18);
     box-shadow: var(--portfolio-shadow-hover);
+    transform: perspective(1200px) translate3d(0, -4px, 0) rotateX(1.6deg);
   }
 
   .hero-copy {
@@ -156,11 +159,13 @@
     background: var(--portfolio-surface-strong);
     border-color: var(--portfolio-border);
     box-shadow: var(--portfolio-shadow);
+    transform: perspective(1200px) translate3d(0, 0, 0) rotateX(0);
   }
 
   .skill-card:hover {
     border-color: rgb(99 102 241 / 0.16);
     box-shadow: var(--portfolio-shadow-hover);
+    transform: perspective(1200px) translate3d(0, -6px, 0) rotateX(2deg);
   }
 
   .skill-icon-frame {
@@ -172,11 +177,13 @@
     background: var(--portfolio-surface-strong);
     border-color: var(--portfolio-border);
     box-shadow: var(--portfolio-shadow);
+    transform: perspective(1200px) translate3d(0, 0, 0) rotateX(0);
   }
 
   .project-card:hover {
     border-color: rgb(99 102 241 / 0.16);
     box-shadow: var(--portfolio-shadow-hover);
+    transform: perspective(1200px) translate3d(0, -7px, 0) rotateX(2deg);
   }
 
   .project-image-frame {
