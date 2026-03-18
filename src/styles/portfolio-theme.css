@@ -1,20 +1,24 @@
 @layer base {
   :root {
-    --portfolio-bg: #f8fafc;
-    --portfolio-bg-accent: #eef4ff;
-    --portfolio-surface: rgb(255 255 255 / 0.7);
-    --portfolio-surface-strong: rgb(255 255 255 / 0.92);
-    --portfolio-border: rgb(148 163 184 / 0.2);
-    --portfolio-line: rgb(148 163 184 / 0.14);
+    --portfolio-bg: #f5f7fb;
+    --portfolio-bg-accent: #eef2ff;
+    --portfolio-bg-accent-soft: #fdf2f8;
+    --portfolio-surface: rgb(255 255 255 / 0.74);
+    --portfolio-surface-strong: rgb(255 255 255 / 0.9);
+    --portfolio-border: rgb(148 163 184 / 0.18);
+    --portfolio-line: rgb(148 163 184 / 0.12);
     --portfolio-text: #111827;
     --portfolio-text-soft: #334155;
     --portfolio-text-muted: #64748b;
-    --portfolio-shadow: 0 18px 48px rgb(15 23 42 / 0.08);
-    --portfolio-shadow-hover: 0 26px 72px rgb(15 23 42 / 0.12);
-    --portfolio-primary: #4f46e5;
-    --portfolio-primary-strong: #4338ca;
-    --portfolio-accent: #ec4899;
-    --portfolio-canvas: linear-gradient(180deg, #f8fafc 0%, #fdfcff 100%);
+    --portfolio-shadow: 0 18px 48px rgb(15 23 42 / 0.07);
+    --portfolio-shadow-hover: 0 28px 80px rgb(15 23 42 / 0.11);
+    --portfolio-primary: #7c3aed;
+    --portfolio-primary-strong: #6d28d9;
+    --portfolio-secondary: #a78bfa;
+    --portfolio-accent: #f472b6;
+    --portfolio-cyan: #22d3ee;
+    --portfolio-canvas:
+      linear-gradient(180deg, #f7f9fd 0%, #f4f7fb 38%, #f7f5ff 72%, #fbfbff 100%);
   }
 
   .dark {
