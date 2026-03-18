@@ -292,6 +292,11 @@ export function Portfolio() {
 
               <div className="hero-portrait">
                 <div className="hero-portrait-halo"></div>
+                <div className="hero-portrait-panel"></div>
+                <div className="hero-portrait-gridplate"></div>
+                <div className="hero-portrait-rings"></div>
+                <div className="hero-portrait-spark hero-portrait-spark-primary"></div>
+                <div className="hero-portrait-spark hero-portrait-spark-secondary"></div>
                 <div className="hero-portrait-shell">
                   <div className="hero-portrait-aura"></div>
                   <div className="hero-portrait-frame">
