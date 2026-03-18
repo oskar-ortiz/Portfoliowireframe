@@ -282,7 +282,7 @@ export function Portfolio() {
 
                 <div className="hero-actions">
                   <button className="hero-primary-action group">
-                    <Download size={18} />
+                    <Download className="hero-action-icon" />
                     Download CV
                   </button>
                   <a href="#projects" className="hero-secondary-action">
@@ -361,7 +361,7 @@ export function Portfolio() {
                   <div key={tech.name} className="skill-card group">
                     <div className="skill-body">
                       <div className={`skill-icon-frame ${tech.toneClass}`}>
-                        <IconComponent className="h-full w-full text-white" />
+                        <IconComponent className="skill-icon-glyph" />
                       </div>
                       <h3 className="skill-name">{tech.name}</h3>
                     </div>
@@ -401,11 +401,11 @@ export function Portfolio() {
 
                     <div className="project-actions">
                       <button className="action-button-secondary project-action">
-                        <Github size={16} />
+                        <Github className="project-action-icon" />
                         GitHub
                       </button>
                       <button className="action-button-primary project-action">
-                        <ExternalLink size={16} />
+                        <ExternalLink className="project-action-icon" />
                         Demo
                       </button>
                     </div>
@@ -428,7 +428,7 @@ export function Portfolio() {
                 <div key={testimonial.name} className="testimonial-card">
                   <div className="testimonial-head">
                     <div className="avatar-badge">
-                      <User size={24} className="icon-white" />
+                      <User className="testimonial-avatar-icon" />
                     </div>
                     <div className="testimonial-copy-block">
                       <h3 className="testimonial-meta">{testimonial.name}</h3>
@@ -440,7 +440,7 @@ export function Portfolio() {
 
                   <div className="testimonial-stars">
                     {[...Array(5)].map((_, index) => (
-                      <Star key={index} size={14} className="fill-yellow-500 text-yellow-500" />
+                      <Star key={index} className="testimonial-star-icon" />
                     ))}
                   </div>
                 </div>
@@ -461,7 +461,7 @@ export function Portfolio() {
                 <div key={item.year} className="experience-item">
                   <div className="experience-rail">
                     <div className="avatar-badge">
-                      <Briefcase size={20} className="icon-white" />
+                      <Briefcase className="experience-badge-icon" />
                     </div>
                     {index < experience.length - 1 && <div className="timeline-line"></div>}
                   </div>
@@ -521,7 +521,7 @@ export function Portfolio() {
                 <div className="contact-card">
                   <div className="contact-row">
                     <div className="contact-icon-box">
-                      <Mail size={20} className="icon-white" />
+                      <Mail className="contact-method-icon" />
                     </div>
                     <div className="contact-copy">
                       <h3 className="contact-title">Email</h3>
@@ -535,7 +535,7 @@ export function Portfolio() {
                 <div className="contact-card">
                   <div className="contact-row">
                     <div className="contact-icon-box">
-                      <Phone size={20} className="icon-white" />
+                      <Phone className="contact-method-icon" />
                     </div>
                     <div className="contact-copy">
                       <h3 className="contact-title">Phone</h3>
@@ -549,7 +549,7 @@ export function Portfolio() {
                 <div className="contact-card">
                   <div className="contact-row">
                     <div className="contact-icon-box">
-                      <MapPin size={20} className="icon-white" />
+                      <MapPin className="contact-method-icon" />
                     </div>
                     <div className="contact-copy">
                       <h3 className="contact-title">Location</h3>

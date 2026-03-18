@@ -3,6 +3,10 @@
     @apply text-white;
   }
 
+  .skill-icon-glyph {
+    @apply h-full w-full text-white;
+  }
+
   .contact-copy {
     @apply space-y-0;
   }
@@ -13,6 +17,30 @@
 
   .experience-year {
     @apply text-sm font-medium;
+  }
+
+  .hero-action-icon {
+    @apply h-[18px] w-[18px];
+  }
+
+  .project-action-icon {
+    @apply h-4 w-4;
+  }
+
+  .contact-method-icon {
+    @apply h-5 w-5 text-white;
+  }
+
+  .experience-badge-icon {
+    @apply h-5 w-5 text-white;
+  }
+
+  .testimonial-avatar-icon {
+    @apply h-6 w-6 text-white;
+  }
+
+  .testimonial-star-icon {
+    @apply h-[14px] w-[14px] fill-yellow-500 text-yellow-500;
   }
 
   .status-indicator {
