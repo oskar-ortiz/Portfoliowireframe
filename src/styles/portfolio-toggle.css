@@ -1,0 +1,28 @@
+@layer components {
+  .nav-tools {
+    @apply hidden items-center gap-3 md:flex;
+  }
+
+  .mobile-tools {
+    @apply flex items-center gap-2 md:hidden;
+  }
+
+  .theme-toggle {
+    @apply inline-flex h-11 w-11 items-center justify-center rounded-2xl border transition-all duration-300;
+    background: var(--portfolio-surface);
+    border-color: var(--portfolio-border);
+    box-shadow: 0 10px 30px rgb(15 23 42 / 0.06);
+    color: var(--portfolio-text-soft);
+  }
+
+  .theme-toggle:hover {
+    transform: translateY(-1px);
+    border-color: rgb(99 102 241 / 0.24);
+    box-shadow: 0 16px 34px rgb(15 23 42 / 0.1);
+    color: var(--portfolio-text);
+  }
+
+  .theme-toggle-icon {
+    @apply h-[18px] w-[18px];
+  }
+}

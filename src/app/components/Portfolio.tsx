@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Award,
   Briefcase,
@@ -15,9 +15,11 @@ import {
   Mail,
   MapPin,
   Menu,
+  Moon,
   Phone,
   Sparkles,
   Star,
+  Sun,
   User,
   X,
 } from "lucide-react";
@@ -37,6 +39,7 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
+import { useTheme } from "next-themes";
 import profilePhoto from "../../assets/dd46f9bf116f2c66285468845d839373c782ceec.png";
 
 const navigationItems = [
@@ -146,6 +149,14 @@ const experience = [
 
 export function Portfolio() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isDark = mounted && resolvedTheme === "dark";
 
   return (
     <div className="portfolio-shell">
@@ -167,17 +178,47 @@ export function Portfolio() {
                 <span className="brand-copy">Oskar Ortiz</span>
               </div>
 
-              <div className="desktop-nav">
-                {navigationItems.map((item) => (
-                  <a key={item} href={`#${item.toLowerCase()}`} className="nav-link">
-                    {item}
-                  </a>
-                ))}
+              <div className="nav-tools">
+                <div className="desktop-nav">
+                  {navigationItems.map((item) => (
+                    <a key={item} href={`#${item.toLowerCase()}`} className="nav-link">
+                      {item}
+                    </a>
+                  ))}
+                </div>
+
+                <button
+                  type="button"
+                  aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+                  className="theme-toggle"
+                  onClick={() => setTheme(isDark ? "light" : "dark")}
+                >
+                  {isDark ? (
+                    <Sun className="theme-toggle-icon" />
+                  ) : (
+                    <Moon className="theme-toggle-icon" />
+                  )}
+                </button>
               </div>
 
-              <button className="menu-toggle" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-                {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
-              </button>
+              <div className="mobile-tools">
+                <button
+                  type="button"
+                  aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+                  className="theme-toggle"
+                  onClick={() => setTheme(isDark ? "light" : "dark")}
+                >
+                  {isDark ? (
+                    <Sun className="theme-toggle-icon" />
+                  ) : (
+                    <Moon className="theme-toggle-icon" />
+                  )}
+                </button>
+
+                <button className="menu-toggle" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                  {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+                </button>
+              </div>
             </div>
 
             {mobileMenuOpen && (
