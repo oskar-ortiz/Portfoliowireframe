@@ -31,30 +31,32 @@
   }
 
   .dark {
-    --portfolio-bg: #0f172a;
-    --portfolio-bg-accent: #111c34;
-    --portfolio-surface: rgb(15 23 42 / 0.72);
-    --portfolio-surface-strong: rgb(15 23 42 / 0.84);
-    --portfolio-border: rgb(148 163 184 / 0.18);
-    --portfolio-line: rgb(148 163 184 / 0.08);
-    --portfolio-text: #f8fafc;
-    --portfolio-text-soft: #cbd5e1;
-    --portfolio-text-muted: #94a3b8;
-    --portfolio-shadow: 0 24px 60px rgb(2 6 23 / 0.35);
-    --portfolio-shadow-hover: 0 30px 90px rgb(2 6 23 / 0.45);
-    --portfolio-primary: #818cf8;
-    --portfolio-primary-strong: #a78bfa;
-    --portfolio-accent: #f472b6;
-    --portfolio-ambient-violet: rgb(129 140 248 / 0.22);
-    --portfolio-ambient-pink: rgb(244 114 182 / 0.12);
-    --portfolio-ambient-cyan: rgb(34 211 238 / 0.12);
-    --portfolio-ambient-border: rgb(129 140 248 / 0.22);
-    --portfolio-ambient-line: rgb(255 255 255 / 0.14);
-    --portfolio-ambient-panel: rgb(15 23 42 / 0.3);
+    --portfolio-bg: #050507;
+    --portfolio-bg-accent: #0b0912;
+    --portfolio-surface: rgb(10 10 14 / 0.76);
+    --portfolio-surface-strong: rgb(10 10 14 / 0.88);
+    --portfolio-border: rgb(168 85 247 / 0.14);
+    --portfolio-line: rgb(168 85 247 / 0.08);
+    --portfolio-text: #fafafa;
+    --portfolio-text-soft: #d4d4d8;
+    --portfolio-text-muted: #a1a1aa;
+    --portfolio-shadow: 0 24px 60px rgb(0 0 0 / 0.42);
+    --portfolio-shadow-hover: 0 30px 90px rgb(0 0 0 / 0.56);
+    --portfolio-primary: #a855f7;
+    --portfolio-primary-strong: #c084fc;
+    --portfolio-accent: #ec4899;
+    --portfolio-cyan: #22d3ee;
+    --portfolio-ambient-violet: rgb(168 85 247 / 0.2);
+    --portfolio-ambient-pink: rgb(236 72 153 / 0.12);
+    --portfolio-ambient-cyan: rgb(34 211 238 / 0.08);
+    --portfolio-ambient-border: rgb(168 85 247 / 0.22);
+    --portfolio-ambient-line: rgb(255 255 255 / 0.08);
+    --portfolio-ambient-panel: rgb(80 18 142 / 0.12);
     --portfolio-hero-panel:
-      linear-gradient(145deg, rgb(30 41 59 / 0.56), rgb(15 23 42 / 0.14));
-    --portfolio-hero-grid: rgb(129 140 248 / 0.12);
-    --portfolio-canvas: linear-gradient(180deg, #0f172a 0%, #111827 100%);
+      linear-gradient(145deg, rgb(31 10 48 / 0.54), rgb(8 8 11 / 0.18));
+    --portfolio-hero-grid: rgb(192 132 252 / 0.12);
+    --portfolio-canvas:
+      linear-gradient(180deg, #050507 0%, #07070a 36%, #09080d 72%, #050507 100%);
   }
 
   body {
