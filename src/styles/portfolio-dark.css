@@ -1,0 +1,52 @@
+@layer components {
+  .dark .nav-link:hover,
+  .dark .mobile-nav-link:hover {
+    background: rgb(30 41 59 / 0.86);
+    color: var(--portfolio-text);
+  }
+
+  .dark .theme-toggle {
+    background: rgb(30 41 59 / 0.86);
+    border-color: rgb(148 163 184 / 0.2);
+    color: var(--portfolio-text-soft);
+    box-shadow: 0 16px 34px rgb(2 6 23 / 0.24);
+  }
+
+  .dark .hero-secondary-action {
+    background: rgb(30 41 59 / 0.86);
+    border-color: rgb(148 163 184 / 0.2);
+    color: var(--portfolio-text-soft);
+    box-shadow: 0 14px 32px rgb(2 6 23 / 0.18);
+  }
+
+  .dark .hero-secondary-action:hover {
+    background: rgb(51 65 85 / 0.92);
+    border-color: rgb(129 140 248 / 0.28);
+    color: var(--portfolio-text);
+    box-shadow: 0 20px 42px rgb(2 6 23 / 0.26);
+  }
+
+  .dark .project-chip {
+    background: rgb(30 41 59 / 0.82);
+    border-color: rgb(129 140 248 / 0.18);
+    color: var(--portfolio-text-soft);
+  }
+
+  .dark .contact-input {
+    background: rgb(15 23 42 / 0.72);
+    border-color: rgb(148 163 184 / 0.16);
+    color: var(--portfolio-text);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.03);
+  }
+
+  .dark .contact-input:focus {
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.04),
+      0 0 0 4px rgb(129 140 248 / 0.14);
+  }
+
+  .dark .social-link:hover {
+    background: rgb(30 41 59 / 0.94);
+    color: var(--portfolio-text);
+  }
+}
