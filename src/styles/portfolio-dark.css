@@ -57,6 +57,37 @@
       var(--portfolio-surface-strong);
   }
 
+  .dark .about-card,
+  .dark .contact-panel,
+  .dark .contact-card {
+    background:
+      linear-gradient(180deg, rgb(10 10 14 / 0.92), rgb(10 10 14 / 0.78)),
+      var(--portfolio-surface-strong);
+    border-color: rgb(168 85 247 / 0.12);
+    box-shadow: var(--portfolio-shadow);
+  }
+
+  .dark .about-card:hover,
+  .dark .contact-panel:hover,
+  .dark .contact-card:hover {
+    border-color: rgb(192 132 252 / 0.2);
+    box-shadow: var(--portfolio-shadow-hover);
+  }
+
+  .dark .contact-label,
+  .dark .contact-title {
+    color: var(--portfolio-text);
+  }
+
+  .dark .contact-link,
+  .dark .contact-text {
+    color: var(--portfolio-text-muted);
+  }
+
+  .dark .contact-link:hover {
+    color: var(--portfolio-primary-strong);
+  }
+
   .dark .portfolio-ambient-panel {
     opacity: 0.82;
     border-color: rgb(168 85 247 / 0.08);
