@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { BrandMonogram } from "./BrandMonogram";
+import { PortfolioHeader } from "./PortfolioHeader";
 import {
   Award,
   Briefcase,
@@ -14,14 +11,10 @@ import {
   Linkedin,
   Mail,
   MapPin,
-  Menu,
-  Moon,
   Phone,
   Sparkles,
   Star,
-  Sun,
   User,
-  X,
 } from "lucide-react";
 import {
   FaAws,
@@ -39,7 +32,6 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
-import { useTheme } from "next-themes";
 import profilePhoto from "../../assets/dd46f9bf116f2c66285468845d839373c782ceec.png";
 
 const navigationItems = [
@@ -148,21 +140,18 @@ const experience = [
 ];
 
 export function Portfolio() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const { resolvedTheme, setTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const isDark = mounted && resolvedTheme === "dark";
-
   return (
     <div className="portfolio-shell">
-      <div className="portfolio-grid-bg"></div>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-xl focus:bg-white focus:px-4 focus:py-2 focus:text-slate-950"
+      >
+        Skip to main content
+      </a>
 
-      <div className="portfolio-overlay">
+      <div className="portfolio-grid-bg" aria-hidden="true"></div>
+
+      <div className="portfolio-overlay" aria-hidden="true">
         <div className="portfolio-glow-left"></div>
         <div className="portfolio-glow-right"></div>
         <div className="portfolio-ambient-panel"></div>
@@ -174,155 +163,91 @@ export function Portfolio() {
       </div>
 
       <div className="portfolio-content">
-        <nav className="nav-shell">
-          <div className="content-shell">
-            <div className="nav-row">
-              <div className="brand-stack">
-                <div className="brand-mark">
-                  <BrandMonogram className="brand-monogram-icon" />
-                </div>
-                <span className="brand-copy">Oskar Ortiz</span>
-              </div>
+        <PortfolioHeader navigationItems={navigationItems} />
 
-              <div className="nav-tools">
-                <div className="desktop-nav">
-                  {navigationItems.map((item) => (
-                    <a key={item} href={`#${item.toLowerCase()}`} className="nav-link">
-                      {item}
-                    </a>
-                  ))}
-                </div>
+        <main id="main-content">
+          <section id="about" className="hero-section" aria-labelledby="hero-title">
+            <div className="content-shell">
+              <div className="hero-layout">
+                <div className="hero-copy-column">
+                  <div className="status-pill">
+                    <span className="status-indicator">
+                      <span className="status-indicator-ping"></span>
+                      <span className="status-indicator-core"></span>
+                    </span>
+                    <span className="status-label">Available for work</span>
+                  </div>
 
-                <button
-                  type="button"
-                  aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-                  className="theme-toggle"
-                  onClick={() => setTheme(isDark ? "light" : "dark")}
-                >
-                  {isDark ? (
-                    <Sun className="theme-toggle-icon" />
-                  ) : (
-                    <Moon className="theme-toggle-icon" />
-                  )}
-                </button>
-              </div>
+                  <h1 id="hero-title" className="hero-title">
+                    <span className="hero-title-first">Oskar Julian</span>
+                    <span className="hero-title-last">Ortiz Ortiz</span>
+                  </h1>
 
-              <div className="mobile-tools">
-                <button
-                  type="button"
-                  aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-                  className="theme-toggle"
-                  onClick={() => setTheme(isDark ? "light" : "dark")}
-                >
-                  {isDark ? (
-                    <Sun className="theme-toggle-icon" />
-                  ) : (
-                    <Moon className="theme-toggle-icon" />
-                  )}
-                </button>
+                  <p className="hero-role">Full Stack Developer</p>
 
-                <button className="menu-toggle" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-                  {mobileMenuOpen ? (
-                    <X className="menu-toggle-icon" />
-                  ) : (
-                    <Menu className="menu-toggle-icon" />
-                  )}
-                </button>
-              </div>
-            </div>
+                  <div className="hero-location">
+                    <MapPin className="hero-location-icon" aria-hidden="true" />
+                    <span className="hero-location-copy">Pasto, Narino, Colombia</span>
+                  </div>
 
-            {mobileMenuOpen && (
-              <div className="mobile-nav-panel">
-                <div className="mobile-nav-list">
-                  {navigationItems.map((item) => (
-                    <a
-                      key={item}
-                      href={`#${item.toLowerCase()}`}
-                      className="mobile-nav-link"
-                      onClick={() => setMobileMenuOpen(false)}
+                  <p className="hero-copy hero-copy-lead">
+                    An extroverted and sociable person who enjoys collaborating and maintaining a
+                    positive work environment. Passionate about building modern web applications and
+                    continuously learning new technologies.
+                  </p>
+
+                  <div className="hero-actions">
+                    <button
+                      type="button"
+                      className="hero-primary-action group"
+                      aria-label="Download Oskar Ortiz CV"
+                      title="Download Oskar Ortiz CV"
                     >
-                      {item}
+                      <Download className="hero-action-icon" aria-hidden="true" />
+                      Download CV
+                    </button>
+                    <a href="#projects" className="hero-secondary-action">
+                      View Projects
                     </a>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </nav>
-
-        <section id="about" className="hero-section">
-          <div className="content-shell">
-            <div className="hero-layout">
-              <div className="hero-copy-column">
-                <div className="status-pill">
-                  <span className="status-indicator">
-                    <span className="status-indicator-ping"></span>
-                    <span className="status-indicator-core"></span>
-                  </span>
-                  <span className="status-label">Available for work</span>
+                    <a href="#contact" className="hero-secondary-action">
+                      Contact
+                    </a>
+                  </div>
                 </div>
 
-                <h1 className="hero-title">
-                  <span className="hero-title-first">Oskar Julian</span>
-                  <span className="hero-title-last">Ortiz Ortiz</span>
-                </h1>
-
-                <p className="hero-role">Full Stack Developer</p>
-
-                <div className="hero-location">
-                  <MapPin className="hero-location-icon" />
-                  <span className="hero-location-copy">Pasto, Narino, Colombia</span>
-                </div>
-
-                <p className="hero-copy hero-copy-lead">
-                  An extroverted and sociable person who enjoys collaborating and maintaining a
-                  positive work environment. Passionate about building modern web applications and
-                  continuously learning new technologies.
-                </p>
-
-                <div className="hero-actions">
-                  <button className="hero-primary-action group">
-                    <Download className="hero-action-icon" />
-                    Download CV
-                  </button>
-                  <a href="#projects" className="hero-secondary-action">
-                    View Projects
-                  </a>
-                  <a href="#contact" className="hero-secondary-action">
-                    Contact
-                  </a>
-                </div>
-              </div>
-
-              <div className="hero-portrait">
-                <div className="hero-portrait-halo"></div>
-                <div className="hero-portrait-panel"></div>
-                <div className="hero-portrait-gridplate"></div>
-                <div className="hero-portrait-rings"></div>
-                <div className="hero-portrait-spark hero-portrait-spark-primary"></div>
-                <div className="hero-portrait-spark hero-portrait-spark-secondary"></div>
-                <div className="hero-portrait-shell">
-                  <div className="hero-portrait-aura"></div>
-                  <div className="hero-portrait-frame">
-                    <Image
-                      src={profilePhoto}
-                      alt="Oskar Ortiz - Profile Photo"
-                      fill
-                      priority
-                      sizes="(min-width: 1024px) 400px, 288px"
-                      className="hero-portrait-image"
-                    />
+                <div className="hero-portrait">
+                  <div className="hero-portrait-halo"></div>
+                  <div className="hero-portrait-panel"></div>
+                  <div className="hero-portrait-gridplate"></div>
+                  <div className="hero-portrait-rings"></div>
+                  <div className="hero-portrait-spark hero-portrait-spark-primary"></div>
+                  <div className="hero-portrait-spark hero-portrait-spark-secondary"></div>
+                  <div className="hero-portrait-shell">
+                    <div className="hero-portrait-aura"></div>
+                    <div className="hero-portrait-frame">
+                      <Image
+                        src={profilePhoto}
+                        alt="Portrait of Oskar Ortiz"
+                        fill
+                        priority
+                        fetchPriority="high"
+                        decoding="async"
+                        sizes="(min-width: 1024px) 400px, 288px"
+                        className="hero-portrait-image"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="section-wrapper">
+        <section className="section-wrapper" aria-labelledby="about-me-title">
           <div className="section-container">
             <div className="section-header">
-              <h2 className="section-title">About Me</h2>
+              <h2 id="about-me-title" className="section-title">
+                About Me
+              </h2>
               <div className="section-divider"></div>
             </div>
 
@@ -346,10 +271,12 @@ export function Portfolio() {
           </div>
         </section>
 
-        <section id="skills" className="section-wrapper">
+        <section id="skills" className="section-wrapper" aria-labelledby="skills-title">
           <div className="section-container">
             <div className="section-header">
-              <h2 className="section-title">Skills & Technologies</h2>
+              <h2 id="skills-title" className="section-title">
+                Skills & Technologies
+              </h2>
               <div className="section-divider"></div>
             </div>
 
@@ -361,7 +288,7 @@ export function Portfolio() {
                   <div key={tech.name} className="skill-card group">
                     <div className="skill-body">
                       <div className={`skill-icon-frame ${tech.toneClass}`}>
-                        <IconComponent className="skill-icon-glyph" />
+                        <IconComponent className="skill-icon-glyph" aria-hidden="true" />
                       </div>
                       <h3 className="skill-name">{tech.name}</h3>
                     </div>
@@ -372,10 +299,12 @@ export function Portfolio() {
           </div>
         </section>
 
-        <section id="projects" className="section-wrapper">
+        <section id="projects" className="section-wrapper" aria-labelledby="projects-title">
           <div className="section-container">
             <div className="section-header">
-              <h2 className="section-title">Featured Projects</h2>
+              <h2 id="projects-title" className="section-title">
+                Featured Projects
+              </h2>
               <div className="section-divider"></div>
             </div>
 
@@ -383,7 +312,15 @@ export function Portfolio() {
               {projects.map((project) => (
                 <div key={project.title} className="project-card group">
                   <div className="project-image-frame">
-                    <img src={project.image} alt={project.title} className="project-image" />
+                    <Image
+                      src={project.image}
+                      alt={`Preview of ${project.title}`}
+                      fill
+                      sizes="(min-width: 1280px) 360px, (min-width: 768px) 50vw, 100vw"
+                      loading="lazy"
+                      decoding="async"
+                      className="project-image"
+                    />
                     <div className="project-overlay"></div>
                   </div>
 
@@ -400,12 +337,22 @@ export function Portfolio() {
                     </div>
 
                     <div className="project-actions">
-                      <button className="action-button-secondary project-action">
-                        <Github className="project-action-icon" />
+                      <button
+                        type="button"
+                        className="action-button-secondary project-action"
+                        aria-label={`Open GitHub repository for ${project.title}`}
+                        title={`Open GitHub repository for ${project.title}`}
+                      >
+                        <Github className="project-action-icon" aria-hidden="true" />
                         GitHub
                       </button>
-                      <button className="action-button-primary project-action">
-                        <ExternalLink className="project-action-icon" />
+                      <button
+                        type="button"
+                        className="action-button-primary project-action"
+                        aria-label={`Open live demo for ${project.title}`}
+                        title={`Open live demo for ${project.title}`}
+                      >
+                        <ExternalLink className="project-action-icon" aria-hidden="true" />
                         Demo
                       </button>
                     </div>
@@ -416,10 +363,16 @@ export function Portfolio() {
           </div>
         </section>
 
-        <section id="testimonials" className="section-wrapper">
+        <section
+          id="testimonials"
+          className="section-wrapper"
+          aria-labelledby="testimonials-title"
+        >
           <div className="section-container">
             <div className="section-header">
-              <h2 className="section-title">Testimonials</h2>
+              <h2 id="testimonials-title" className="section-title">
+                Testimonials
+              </h2>
               <div className="section-divider"></div>
             </div>
 
@@ -428,7 +381,7 @@ export function Portfolio() {
                 <div key={testimonial.name} className="testimonial-card">
                   <div className="testimonial-head">
                     <div className="avatar-badge">
-                      <User className="testimonial-avatar-icon" />
+                      <User className="testimonial-avatar-icon" aria-hidden="true" />
                     </div>
                     <div className="testimonial-copy-block">
                       <h3 className="testimonial-meta">{testimonial.name}</h3>
@@ -440,7 +393,7 @@ export function Portfolio() {
 
                   <div className="testimonial-stars">
                     {[...Array(5)].map((_, index) => (
-                      <Star key={index} className="testimonial-star-icon" />
+                      <Star key={index} className="testimonial-star-icon" aria-hidden="true" />
                     ))}
                   </div>
                 </div>
@@ -449,10 +402,12 @@ export function Portfolio() {
           </div>
         </section>
 
-        <section id="experience" className="section-wrapper">
+        <section id="experience" className="section-wrapper" aria-labelledby="experience-title">
           <div className="section-container">
             <div className="section-header">
-              <h2 className="section-title">Academic & Work Experience</h2>
+              <h2 id="experience-title" className="section-title">
+                Academic & Work Experience
+              </h2>
               <div className="section-divider"></div>
             </div>
 
@@ -461,7 +416,7 @@ export function Portfolio() {
                 <div key={item.year} className="experience-item">
                   <div className="experience-rail">
                     <div className="avatar-badge">
-                      <Briefcase className="experience-badge-icon" />
+                      <Briefcase className="experience-badge-icon" aria-hidden="true" />
                     </div>
                     {index < experience.length - 1 && <div className="timeline-line"></div>}
                   </div>
@@ -469,7 +424,7 @@ export function Portfolio() {
                   <div className="experience-panel-wrap">
                     <div className="experience-panel">
                       <div className="experience-meta">
-                        <Calendar size={16} />
+                        <Calendar size={16} aria-hidden="true" />
                         <span className="experience-year">{item.year}</span>
                       </div>
                       <h3 className="experience-title">{item.title}</h3>
@@ -482,10 +437,12 @@ export function Portfolio() {
           </div>
         </section>
 
-        <section id="contact" className="section-wrapper">
+        <section id="contact" className="section-wrapper" aria-labelledby="contact-title">
           <div className="section-container">
             <div className="section-header">
-              <h2 className="section-title">Get In Touch</h2>
+              <h2 id="contact-title" className="section-title">
+                Get In Touch
+              </h2>
               <div className="section-divider"></div>
             </div>
 
@@ -493,18 +450,40 @@ export function Portfolio() {
               <div className="contact-panel">
                 <form className="contact-form">
                   <div className="contact-field">
-                    <label className="contact-label">Name</label>
-                    <input type="text" className="contact-input" placeholder="Your name" />
+                    <label className="contact-label" htmlFor="name">
+                      Name
+                    </label>
+                    <input
+                      id="name"
+                      name="name"
+                      type="text"
+                      className="contact-input"
+                      placeholder="Your name"
+                      autoComplete="name"
+                    />
                   </div>
 
                   <div className="contact-field">
-                    <label className="contact-label">Email</label>
-                    <input type="email" className="contact-input" placeholder="your@email.com" />
+                    <label className="contact-label" htmlFor="email">
+                      Email
+                    </label>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      className="contact-input"
+                      placeholder="your@email.com"
+                      autoComplete="email"
+                    />
                   </div>
 
                   <div className="contact-field">
-                    <label className="contact-label">Message</label>
+                    <label className="contact-label" htmlFor="message">
+                      Message
+                    </label>
                     <textarea
+                      id="message"
+                      name="message"
                       className="contact-input contact-textarea"
                       placeholder="Your message"
                       rows={5}
@@ -521,7 +500,7 @@ export function Portfolio() {
                 <div className="contact-card">
                   <div className="contact-row">
                     <div className="contact-icon-box">
-                      <Mail className="contact-method-icon" />
+                      <Mail className="contact-method-icon" aria-hidden="true" />
                     </div>
                     <div className="contact-copy">
                       <h3 className="contact-title">Email</h3>
@@ -535,7 +514,7 @@ export function Portfolio() {
                 <div className="contact-card">
                   <div className="contact-row">
                     <div className="contact-icon-box">
-                      <Phone className="contact-method-icon" />
+                      <Phone className="contact-method-icon" aria-hidden="true" />
                     </div>
                     <div className="contact-copy">
                       <h3 className="contact-title">Phone</h3>
@@ -549,7 +528,7 @@ export function Portfolio() {
                 <div className="contact-card">
                   <div className="contact-row">
                     <div className="contact-icon-box">
-                      <MapPin className="contact-method-icon" />
+                      <MapPin className="contact-method-icon" aria-hidden="true" />
                     </div>
                     <div className="contact-copy">
                       <h3 className="contact-title">Location</h3>
@@ -560,7 +539,8 @@ export function Portfolio() {
               </div>
             </div>
           </div>
-        </section>
+          </section>
+        </main>
 
         <footer className="footer-shell">
           <div className="content-shell">
@@ -576,24 +556,30 @@ export function Portfolio() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-link"
+                  aria-label="GitHub profile of Oskar Ortiz"
+                  title="GitHub profile of Oskar Ortiz"
                 >
-                  <Github size={18} />
+                  <Github size={18} aria-hidden="true" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/oskar-ortiz-4862233b8/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-link"
+                  aria-label="LinkedIn profile of Oskar Ortiz"
+                  title="LinkedIn profile of Oskar Ortiz"
                 >
-                  <Linkedin size={18} />
+                  <Linkedin size={18} aria-hidden="true" />
                 </a>
                 <a
                   href="https://www.instagram.com/oskar_ortiz02"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-link"
+                  aria-label="Instagram profile of Oskar Ortiz"
+                  title="Instagram profile of Oskar Ortiz"
                 >
-                  <Instagram size={18} />
+                  <Instagram size={18} aria-hidden="true" />
                 </a>
               </div>
             </div>
