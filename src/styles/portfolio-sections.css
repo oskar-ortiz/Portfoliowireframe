@@ -30,4 +30,19 @@
   .section-solo-card {
     @apply mx-auto max-w-3xl;
   }
+
+  @supports (content-visibility: auto) {
+    .section-wrapper:not(#about) {
+      content-visibility: auto;
+      contain-intrinsic-size: 1px 960px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .section-header::before {
+      height: 88px;
+      filter: blur(18px);
+      opacity: 0.68;
+    }
+  }
 }

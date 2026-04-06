@@ -53,6 +53,7 @@
 
   .hero-portrait {
     @apply relative order-1 lg:order-2;
+    contain: paint;
   }
 
   .hero-portrait-halo {
@@ -73,6 +74,7 @@
       0 26px 60px rgb(79 70 229 / 0.1);
     transform: rotate(-8deg);
     animation: portfolio-drift 16s ease-in-out infinite;
+    will-change: transform;
   }
 
   .hero-portrait-panel::before,
@@ -115,6 +117,7 @@
     opacity: 0.94;
     transform: rotate(6deg);
     animation: portfolio-float 13s ease-in-out infinite;
+    will-change: transform;
   }
 
   .hero-portrait-rings {
@@ -124,6 +127,7 @@
       inset 0 0 0 1px rgb(124 58 237 / 0.14),
       0 20px 52px rgb(79 70 229 / 0.08);
     animation: portfolio-rotate-slow 36s linear infinite;
+    will-change: transform;
   }
 
   .hero-portrait-rings::before,
@@ -148,6 +152,7 @@
     background: linear-gradient(135deg, #7c3aed 0%, #22d3ee 100%);
     box-shadow: 0 16px 34px rgb(99 102 241 / 0.22);
     animation: portfolio-pulse-soft 8s ease-in-out infinite;
+    will-change: transform;
   }
 
   .hero-portrait-spark-primary {
@@ -163,6 +168,7 @@
     transform: perspective(1200px) rotateY(-4deg) rotateX(2deg);
     transform-style: preserve-3d;
     transition: transform 0.35s ease;
+    will-change: transform;
   }
 
   .hero-portrait-shell:hover {
@@ -198,8 +204,15 @@
   }
 
   @media (max-width: 640px) {
+    .hero-portrait-halo {
+      filter: blur(28px);
+    }
+
     .hero-portrait-panel {
       @apply h-[78%] w-[88%];
+      box-shadow:
+        inset 0 1px 0 rgb(255 255 255 / 0.28),
+        0 18px 42px rgb(79 70 229 / 0.08);
     }
 
     .hero-portrait-gridplate {
@@ -209,6 +222,19 @@
 
     .hero-portrait-rings {
       @apply left-[11%] top-[13%] h-[76%] w-[76%];
+      box-shadow:
+        inset 0 0 0 1px rgb(124 58 237 / 0.12),
+        0 14px 34px rgb(79 70 229 / 0.06);
+    }
+
+    .hero-portrait-aura {
+      filter: blur(18px);
+    }
+
+    .hero-portrait-frame {
+      box-shadow:
+        0 20px 54px rgb(79 70 229 / 0.1),
+        0 0 0 10px rgb(255 255 255 / 0.06);
     }
   }
 }

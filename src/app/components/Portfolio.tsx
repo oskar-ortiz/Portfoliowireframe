@@ -230,6 +230,7 @@ export function Portfolio() {
                         alt="Portrait of Oskar Ortiz"
                         fill
                         priority
+                        placeholder="blur"
                         fetchPriority="high"
                         decoding="async"
                         sizes="(min-width: 1024px) 400px, 288px"

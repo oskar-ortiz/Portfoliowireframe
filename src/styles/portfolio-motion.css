@@ -46,6 +46,8 @@
     @apply absolute left-[8%] top-[18%] h-52 w-52 rounded-full blur-[90px];
     background: rgb(167 139 250 / 0.16);
     animation: portfolio-float 11s ease-in-out infinite;
+    will-change: transform;
+    transform: translateZ(0);
   }
 
   .portfolio-glow-orbit {
@@ -54,6 +56,8 @@
     box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.24);
     animation: portfolio-rotate-slow 28s linear infinite;
     filter: blur(0.2px);
+    will-change: transform;
+    transform: translateZ(0);
   }
 
   .portfolio-glow-orbit::after {
@@ -74,6 +78,8 @@
       rgb(124 58 237 / 0.08)
     );
     animation: portfolio-drift 15s ease-in-out infinite;
+    will-change: transform;
+    transform: translateZ(0);
   }
 
   .portfolio-ambient-panel {
@@ -116,6 +122,8 @@
       inset 0 0 0 1px rgb(255 255 255 / 0.24),
       0 18px 56px rgb(15 23 42 / 0.08);
     animation: portfolio-float 14s ease-in-out infinite;
+    will-change: transform;
+    transform: translateZ(0);
   }
 
   .portfolio-ambient-arc::before,
@@ -140,5 +148,44 @@
     @apply absolute bottom-[26%] right-[14%] h-28 w-28 rounded-full blur-2xl;
     background: radial-gradient(circle, var(--portfolio-ambient-cyan) 0%, transparent 72%);
     animation: portfolio-pulse-soft 9s ease-in-out infinite;
+    will-change: transform;
+    transform: translateZ(0);
+  }
+
+  @media (max-width: 768px) {
+    .portfolio-glow-core {
+      height: 168px;
+      width: 168px;
+      filter: blur(64px);
+    }
+
+    .portfolio-glow-beam {
+      height: 320px;
+      width: 320px;
+      filter: blur(72px);
+    }
+
+    .portfolio-ambient-panel {
+      height: 420px;
+      width: 88%;
+    }
+
+    .portfolio-ambient-panel::before {
+      background-size: 56px 56px;
+    }
+
+    .portfolio-ambient-arc {
+      height: 220px;
+      width: 220px;
+      box-shadow:
+        inset 0 0 0 1px rgb(255 255 255 / 0.18),
+        0 12px 34px rgb(15 23 42 / 0.06);
+    }
+
+    .portfolio-ambient-pulse {
+      height: 88px;
+      width: 88px;
+      filter: blur(18px);
+    }
   }
 }

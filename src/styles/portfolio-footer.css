@@ -33,4 +33,11 @@
     @apply text-sm;
     color: var(--portfolio-text-muted);
   }
+
+  @supports (content-visibility: auto) {
+    .footer-shell {
+      content-visibility: auto;
+      contain-intrinsic-size: 1px 240px;
+    }
+  }
 }
