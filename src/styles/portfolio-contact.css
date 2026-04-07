@@ -18,11 +18,23 @@
   }
 
   .contact-form {
-    @apply space-y-6;
+    @apply grid gap-6;
+    align-content: start;
   }
 
   .contact-field {
-    @apply space-y-0;
+    @apply grid;
+    grid-template-rows: auto minmax(3.5rem, auto) minmax(1.75rem, auto);
+    align-items: start;
+  }
+
+  .contact-field-message {
+    grid-template-rows: auto minmax(8.75rem, auto) minmax(1.75rem, auto);
+  }
+
+  .contact-hidden-field {
+    @apply absolute h-px w-px overflow-hidden opacity-0;
+    pointer-events: none;
   }
 
   .contact-stack {
@@ -45,6 +57,29 @@
 
   .contact-textarea {
     @apply resize-none;
+    min-height: 8.75rem;
+  }
+
+  .contact-field-status {
+    @apply pt-2 text-sm;
+    min-height: 1.75rem;
+    line-height: 1.25rem;
+    color: #dc2626;
+  }
+
+  .contact-feedback {
+    @apply text-sm;
+    min-height: 1.75rem;
+    line-height: 1.25rem;
+    color: var(--portfolio-text-muted);
+  }
+
+  .contact-feedback-success {
+    color: #059669;
+  }
+
+  .contact-feedback-error {
+    color: #dc2626;
   }
 
   .contact-row {

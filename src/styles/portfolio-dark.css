@@ -88,6 +88,22 @@
     color: var(--portfolio-primary-strong);
   }
 
+  .dark .contact-field-status {
+    color: #fda4af;
+  }
+
+  .dark .contact-feedback {
+    color: var(--portfolio-text-muted);
+  }
+
+  .dark .contact-feedback-success {
+    color: #6ee7b7;
+  }
+
+  .dark .contact-feedback-error {
+    color: #fda4af;
+  }
+
   .dark .portfolio-ambient-panel {
     opacity: 0.82;
     border-color: rgb(168 85 247 / 0.08);

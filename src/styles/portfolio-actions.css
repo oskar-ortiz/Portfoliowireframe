@@ -43,4 +43,11 @@
   .contact-submit:hover {
     box-shadow: 0 24px 56px rgb(79 70 229 / 0.28);
   }
+
+  .contact-submit:disabled {
+    cursor: not-allowed;
+    opacity: 0.78;
+    box-shadow: 0 14px 36px rgb(79 70 229 / 0.16);
+    transform: none;
+  }
 }

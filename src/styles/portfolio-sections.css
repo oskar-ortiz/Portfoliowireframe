@@ -1,4 +1,8 @@
 @layer components {
+  section[id] {
+    scroll-margin-top: 5.5rem;
+  }
+
   .section-wrapper {
     @apply py-20 lg:py-24;
   }

@@ -1,5 +1,22 @@
+"use client";
+
+import type { ChangeEvent, FormEvent } from "react";
+import { useEffect, useState, useTransition } from "react";
 import Image from "next/image";
+import { toast } from "sonner";
 import { PortfolioHeader } from "./PortfolioHeader";
+import {
+  ContactField,
+  copy,
+  DEFAULT_FORM_VALUES,
+  experience,
+  LOCALE_STORAGE_KEY,
+  navigationIds,
+  projects,
+  testimonials,
+  validateForm,
+} from "./portfolio-content";
+import type { FieldErrors, Locale } from "./portfolio-content";
 import {
   Award,
   Briefcase,
@@ -7,7 +24,6 @@ import {
   Download,
   ExternalLink,
   Github,
-  Instagram,
   Linkedin,
   Mail,
   MapPin,
@@ -34,15 +50,6 @@ import {
 } from "react-icons/si";
 import profilePhoto from "../../assets/dd46f9bf116f2c66285468845d839373c782ceec.png";
 
-const navigationItems = [
-  "About",
-  "Skills",
-  "Projects",
-  "Testimonials",
-  "Experience",
-  "Contact",
-];
-
 const technologies = [
   { name: "CSS", icon: FaCss3Alt, toneClass: "skill-tone-css" },
   { name: "TypeScript", icon: SiTypescript, toneClass: "skill-tone-typescript" },
@@ -60,93 +67,124 @@ const technologies = [
   { name: "LLM Integration", icon: Sparkles, toneClass: "skill-tone-llm" },
 ];
 
-const projects = [
-  {
-    title: "KickLite Streaming Platform",
-    description:
-      "A streaming platform inspired by Kick where users can watch and interact with live streams.",
-    image:
-      "https://images.unsplash.com/photo-1762340275704-020e669014e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHJlYW1pbmclMjBwbGF0Zm9ybSUyMGludGVyZmFjZXxlbnwxfHx8fDE3NzM2OTM5MjJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    tech: ["React", "Node.js", "WebRTC"],
-  },
-  {
-    title: "Food Delivery Web App",
-    description:
-      "A modern food delivery platform where users can browse restaurants and order food online.",
-    image:
-      "https://images.unsplash.com/photo-1729860649884-40ec104f9dfd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb29kJTIwZGVsaXZlcnklMjBtb2JpbGUlMjBhcHB8ZW58MXx8fHwxNzczNjUyNzYzfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    tech: ["Next.js", "MongoDB", "Tailwind"],
-  },
-  {
-    title: "Music Player Web Application",
-    description:
-      "A responsive music player with playlists, playback controls, and audio visualization.",
-    image:
-      "https://images.unsplash.com/photo-1762222687051-4c9926eba36d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdXNpYyUyMHBsYXllciUyMGludGVyZmFjZXxlbnwxfHx8fDE3NzM3MjAxMzR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    tech: ["React", "Web Audio API", "CSS"],
-  },
-  {
-    title: "Mathematics and Graph Visualization Platform",
-    description:
-      "A web application for solving mathematical problems and visualizing graphs in 3D and 4D.",
-    image:
-      "https://images.unsplash.com/photo-1717501217912-933d2792d493?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXRoZW1hdGljcyUyMDNkJTIwZ3JhcGglMjB2aXN1YWxpemF0aW9ufGVufDF8fHx8MTc3MzcyMDEzNHww&ixlib=rb-4.1.0&q=80&w=1080",
-    tech: ["Python", "Three.js", "TypeScript"],
-  },
-  {
-    title: "Smart Clock with Calendar",
-    description:
-      "A digital clock application with calendar integration and time-based utilities.",
-    image:
-      "https://images.unsplash.com/photo-1641567535859-c58187ac4954?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwY2xvY2slMjBjYWxlbmRhciUyMGludGVyZmFjZXxlbnwxfHx8fDE3NzM3MjAxMzR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    tech: ["JavaScript", "HTML", "CSS"],
-  },
-];
-
-const testimonials = [
-  {
-    name: "Maria Gonzalez",
-    role: "Product Manager",
-    comment:
-      "Oskar is an exceptional developer with great attention to detail. His work ethic is outstanding.",
-  },
-  {
-    name: "Carlos Rodriguez",
-    role: "Senior Developer",
-    comment:
-      "Working with Oskar was a pleasure. He brings creativity and technical excellence to every project.",
-  },
-  {
-    name: "Ana Martinez",
-    role: "UX Designer",
-    comment:
-      "Oskar has excellent collaboration skills and always delivers high-quality, pixel-perfect implementations.",
-  },
-];
-
-const experience = [
-  {
-    year: "2024 - Present",
-    title: "Software Engineering Student",
-    description:
-      "Currently pursuing software engineering degree, focusing on modern web development and software architecture.",
-  },
-  {
-    year: "2023",
-    title: "Web Development Course",
-    description:
-      "Completed comprehensive web development training covering full-stack technologies and best practices.",
-  },
-];
-
 export function Portfolio() {
+  const [locale, setLocale] = useState<Locale>("es");
+  const [formValues, setFormValues] = useState(DEFAULT_FORM_VALUES);
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
+  const [submitState, setSubmitState] = useState<"idle" | "submitting" | "success" | "error">(
+    "idle",
+  );
+  const [submitMessage, setSubmitMessage] = useState("");
+  const [, startLocaleTransition] = useTransition();
+  const currentCopy = copy[locale];
+
+  useEffect(() => {
+    const storedLocale = window.localStorage.getItem(LOCALE_STORAGE_KEY);
+
+    if (storedLocale === "es" || storedLocale === "en") {
+      setLocale(storedLocale);
+    }
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.lang = locale;
+    window.localStorage.setItem(LOCALE_STORAGE_KEY, locale);
+  }, [locale]);
+
+  const navigationItems = navigationIds.map((id) => ({
+    id,
+    label: currentCopy.navigation[id],
+  }));
+
+  const handleLocaleToggle = () => {
+    startLocaleTransition(() => {
+      setLocale((currentLocale) => (currentLocale === "es" ? "en" : "es"));
+    });
+  };
+
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name } = event.target;
+    const rawValue = event.target.value;
+    const value =
+      name === "email"
+        ? rawValue.replace(/\s+/g, "")
+        : rawValue.replace(/^\s+/, "");
+
+    setFormValues((currentValues) => ({
+      ...currentValues,
+      [name]: value,
+    }));
+
+    if (name !== "honey") {
+      setFieldErrors((currentErrors) => {
+        if (!(name in currentErrors)) {
+          return currentErrors;
+        }
+
+        const nextErrors = { ...currentErrors };
+        delete nextErrors[name as ContactField];
+        return nextErrors;
+      });
+    }
+
+    if (submitState !== "idle") {
+      setSubmitState("idle");
+      setSubmitMessage("");
+    }
+  };
+
+  const handleCvClick = () => {
+    toast.info(currentCopy.hero.primaryActionPending);
+  };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const nextErrors = validateForm(formValues, locale);
+
+    if (Object.keys(nextErrors).length > 0) {
+      setFieldErrors(nextErrors);
+      setSubmitState("error");
+      setSubmitMessage(currentCopy.contact.feedbackInvalid);
+      toast.error(currentCopy.contact.feedbackInvalid);
+      return;
+    }
+
+    try {
+      setSubmitState("submitting");
+      setSubmitMessage("");
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formValues),
+      });
+
+      if (!response.ok) {
+        throw new Error("Contact request failed.");
+      }
+
+      setFormValues(DEFAULT_FORM_VALUES);
+      setFieldErrors({});
+      setSubmitState("success");
+      setSubmitMessage(currentCopy.contact.feedbackSuccess);
+      toast.success(currentCopy.contact.feedbackSuccess);
+    } catch {
+      setSubmitState("error");
+      setSubmitMessage(currentCopy.contact.feedbackError);
+      toast.error(currentCopy.contact.feedbackError);
+    }
+  };
+
   return (
     <div className="portfolio-shell">
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-xl focus:bg-white focus:px-4 focus:py-2 focus:text-slate-950"
       >
-        Skip to main content
+        {currentCopy.skipToContent}
       </a>
 
       <div className="portfolio-grid-bg" aria-hidden="true"></div>
@@ -163,7 +201,15 @@ export function Portfolio() {
       </div>
 
       <div className="portfolio-content">
-        <PortfolioHeader navigationItems={navigationItems} />
+        <PortfolioHeader
+          navigationItems={navigationItems}
+          localeToggleLabel={currentCopy.navigation.localeToggle}
+          menuOpenLabel={currentCopy.navigation.menuOpen}
+          menuCloseLabel={currentCopy.navigation.menuClose}
+          onToggleLocale={handleLocaleToggle}
+          themeLightLabel={currentCopy.navigation.themeLight}
+          themeDarkLabel={currentCopy.navigation.themeDark}
+        />
 
         <main id="main-content">
           <section id="about" className="hero-section" aria-labelledby="hero-title">
@@ -175,7 +221,7 @@ export function Portfolio() {
                       <span className="status-indicator-ping"></span>
                       <span className="status-indicator-core"></span>
                     </span>
-                    <span className="status-label">Available for work</span>
+                    <span className="status-label">{currentCopy.hero.status}</span>
                   </div>
 
                   <h1 id="hero-title" className="hero-title">
@@ -183,34 +229,31 @@ export function Portfolio() {
                     <span className="hero-title-last">Ortiz Ortiz</span>
                   </h1>
 
-                  <p className="hero-role">Full Stack Developer</p>
+                  <p className="hero-role">{currentCopy.hero.role}</p>
 
                   <div className="hero-location">
                     <MapPin className="hero-location-icon" aria-hidden="true" />
-                    <span className="hero-location-copy">Pasto, Narino, Colombia</span>
+                    <span className="hero-location-copy">{currentCopy.hero.location}</span>
                   </div>
 
-                  <p className="hero-copy hero-copy-lead">
-                    An extroverted and sociable person who enjoys collaborating and maintaining a
-                    positive work environment. Passionate about building modern web applications and
-                    continuously learning new technologies.
-                  </p>
+                  <p className="hero-copy hero-copy-lead">{currentCopy.hero.intro}</p>
 
                   <div className="hero-actions">
                     <button
                       type="button"
                       className="hero-primary-action group"
-                      aria-label="Download Oskar Ortiz CV"
-                      title="Download Oskar Ortiz CV"
+                      aria-label={currentCopy.hero.primaryActionLabel}
+                      title={currentCopy.hero.primaryActionLabel}
+                      onClick={handleCvClick}
                     >
                       <Download className="hero-action-icon" aria-hidden="true" />
-                      Download CV
+                      {currentCopy.hero.primaryAction}
                     </button>
                     <a href="#projects" className="hero-secondary-action">
-                      View Projects
+                      {currentCopy.hero.projectsAction}
                     </a>
                     <a href="#contact" className="hero-secondary-action">
-                      Contact
+                      {currentCopy.hero.contactAction}
                     </a>
                   </div>
                 </div>
@@ -243,303 +286,357 @@ export function Portfolio() {
             </div>
           </section>
 
-        <section className="section-wrapper" aria-labelledby="about-me-title">
-          <div className="section-container">
-            <div className="section-header">
-              <h2 id="about-me-title" className="section-title">
-                About Me
-              </h2>
-              <div className="section-divider"></div>
-            </div>
+          <section className="section-wrapper" aria-labelledby="about-me-title">
+            <div className="section-container">
+              <div className="section-header">
+                <h2 id="about-me-title" className="section-title">
+                  {currentCopy.sections.about}
+                </h2>
+                <div className="section-divider"></div>
+              </div>
 
-            <div className="section-solo-card">
-              <div className="about-card">
-                <div className="about-orb-start"></div>
-                <div className="about-orb-end"></div>
-                <div className="about-body">
-                  <p className="hero-copy about-copy-lead">
-                    Oskar is an extroverted and sociable person who enjoys collaborating and
-                    maintaining a positive work environment. In his free time he enjoys walking,
-                    playing football, listening to music, and he is also a professional musician.
-                  </p>
-                  <p className="hero-copy">
-                    He is passionate about building modern web applications and continuously
-                    learning new technologies to stay at the forefront of software development.
-                  </p>
+              <div className="section-solo-card">
+                <div className="about-card">
+                  <div className="about-orb-start"></div>
+                  <div className="about-orb-end"></div>
+                  <div className="about-body">
+                    <p className="hero-copy about-copy-lead">{currentCopy.about.lead}</p>
+                    <p className="hero-copy">{currentCopy.about.body}</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section id="skills" className="section-wrapper" aria-labelledby="skills-title">
-          <div className="section-container">
-            <div className="section-header">
-              <h2 id="skills-title" className="section-title">
-                Skills & Technologies
-              </h2>
-              <div className="section-divider"></div>
-            </div>
+          <section id="skills" className="section-wrapper" aria-labelledby="skills-title">
+            <div className="section-container">
+              <div className="section-header">
+                <h2 id="skills-title" className="section-title">
+                  {currentCopy.sections.skills}
+                </h2>
+                <div className="section-divider"></div>
+              </div>
 
-            <div className="skills-grid">
-              {technologies.map((tech) => {
-                const IconComponent = tech.icon;
+              <div className="skills-grid">
+                {technologies.map((tech) => {
+                  const IconComponent = tech.icon;
 
-                return (
-                  <div key={tech.name} className="skill-card group">
-                    <div className="skill-body">
-                      <div className={`skill-icon-frame ${tech.toneClass}`}>
-                        <IconComponent className="skill-icon-glyph" aria-hidden="true" />
+                  return (
+                    <div key={tech.name} className="skill-card group">
+                      <div className="skill-body">
+                        <div className={`skill-icon-frame ${tech.toneClass}`}>
+                          <IconComponent className="skill-icon-glyph" aria-hidden="true" />
+                        </div>
+                        <h3 className="skill-name">{tech.name}</h3>
                       </div>
-                      <h3 className="skill-name">{tech.name}</h3>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+
+          <section id="projects" className="section-wrapper" aria-labelledby="projects-title">
+            <div className="section-container">
+              <div className="section-header">
+                <h2 id="projects-title" className="section-title">
+                  {currentCopy.sections.projects}
+                </h2>
+                <div className="section-divider"></div>
+              </div>
+
+              <div className="projects-grid">
+                {projects.map((project) => (
+                  <div key={project.title.en} className="project-card group">
+                    <div className="project-image-frame">
+                      <Image
+                        src={project.image}
+                        alt={`Preview of ${project.title[locale]}`}
+                        fill
+                        sizes="(min-width: 1280px) 360px, (min-width: 768px) 50vw, 100vw"
+                        loading="lazy"
+                        decoding="async"
+                        className="project-image"
+                      />
+                      <div className="project-overlay"></div>
+                    </div>
+
+                    <div className="project-panel">
+                      <h3 className="project-title">{project.title[locale]}</h3>
+                      <p className="project-copy">{project.description[locale]}</p>
+
+                      <div className="project-chips">
+                        {project.tech.map((tech) => (
+                          <span key={tech} className="project-chip">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div className="project-actions">
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="action-button-secondary project-action"
+                          aria-label={`${currentCopy.projectActions.githubLabel} ${project.title[locale]}`}
+                          title={`${currentCopy.projectActions.githubLabel} ${project.title[locale]}`}
+                        >
+                          <Github className="project-action-icon" aria-hidden="true" />
+                          {currentCopy.projectActions.github}
+                        </a>
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="action-button-primary project-action"
+                          aria-label={`${currentCopy.projectActions.demoLabel} ${project.title[locale]}`}
+                          title={`${currentCopy.projectActions.demoLabel} ${project.title[locale]}`}
+                        >
+                          <ExternalLink className="project-action-icon" aria-hidden="true" />
+                          {currentCopy.projectActions.demo}
+                        </a>
+                      </div>
                     </div>
                   </div>
-                );
-              })}
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section id="projects" className="section-wrapper" aria-labelledby="projects-title">
-          <div className="section-container">
-            <div className="section-header">
-              <h2 id="projects-title" className="section-title">
-                Featured Projects
-              </h2>
-              <div className="section-divider"></div>
-            </div>
+          <section
+            id="testimonials"
+            className="section-wrapper"
+            aria-labelledby="testimonials-title"
+          >
+            <div className="section-container">
+              <div className="section-header">
+                <h2 id="testimonials-title" className="section-title">
+                  {currentCopy.sections.testimonials}
+                </h2>
+                <div className="section-divider"></div>
+              </div>
 
-            <div className="projects-grid">
-              {projects.map((project) => (
-                <div key={project.title} className="project-card group">
-                  <div className="project-image-frame">
-                    <Image
-                      src={project.image}
-                      alt={`Preview of ${project.title}`}
-                      fill
-                      sizes="(min-width: 1280px) 360px, (min-width: 768px) 50vw, 100vw"
-                      loading="lazy"
-                      decoding="async"
-                      className="project-image"
-                    />
-                    <div className="project-overlay"></div>
-                  </div>
+              <div className="testimonials-grid">
+                {testimonials.map((testimonial) => (
+                  <div key={testimonial.name} className="testimonial-card">
+                    <div className="testimonial-head">
+                      <div className="avatar-badge">
+                        <User className="testimonial-avatar-icon" aria-hidden="true" />
+                      </div>
+                      <div className="testimonial-copy-block">
+                        <h3 className="testimonial-meta">{testimonial.name}</h3>
+                        <p className="testimonial-role">{testimonial.role[locale]}</p>
+                      </div>
+                    </div>
 
-                  <div className="project-panel">
-                    <h3 className="project-title">{project.title}</h3>
-                    <p className="project-copy">{project.description}</p>
+                    <p className="testimonial-copy">"{testimonial.comment[locale]}"</p>
 
-                    <div className="project-chips">
-                      {project.tech.map((tech) => (
-                        <span key={tech} className="project-chip">
-                          {tech}
-                        </span>
+                    <div className="testimonial-stars">
+                      {[...Array(5)].map((_, index) => (
+                        <Star key={index} className="testimonial-star-icon" aria-hidden="true" />
                       ))}
                     </div>
-
-                    <div className="project-actions">
-                      <button
-                        type="button"
-                        className="action-button-secondary project-action"
-                        aria-label={`Open GitHub repository for ${project.title}`}
-                        title={`Open GitHub repository for ${project.title}`}
-                      >
-                        <Github className="project-action-icon" aria-hidden="true" />
-                        GitHub
-                      </button>
-                      <button
-                        type="button"
-                        className="action-button-primary project-action"
-                        aria-label={`Open live demo for ${project.title}`}
-                        title={`Open live demo for ${project.title}`}
-                      >
-                        <ExternalLink className="project-action-icon" aria-hidden="true" />
-                        Demo
-                      </button>
-                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section
-          id="testimonials"
-          className="section-wrapper"
-          aria-labelledby="testimonials-title"
-        >
-          <div className="section-container">
-            <div className="section-header">
-              <h2 id="testimonials-title" className="section-title">
-                Testimonials
-              </h2>
-              <div className="section-divider"></div>
-            </div>
+          <section id="experience" className="section-wrapper" aria-labelledby="experience-title">
+            <div className="section-container">
+              <div className="section-header">
+                <h2 id="experience-title" className="section-title">
+                  {currentCopy.sections.experience}
+                </h2>
+                <div className="section-divider"></div>
+              </div>
 
-            <div className="testimonials-grid">
-              {testimonials.map((testimonial) => (
-                <div key={testimonial.name} className="testimonial-card">
-                  <div className="testimonial-head">
-                    <div className="avatar-badge">
-                      <User className="testimonial-avatar-icon" aria-hidden="true" />
-                    </div>
-                    <div className="testimonial-copy-block">
-                      <h3 className="testimonial-meta">{testimonial.name}</h3>
-                      <p className="testimonial-role">{testimonial.role}</p>
-                    </div>
-                  </div>
-
-                  <p className="testimonial-copy">"{testimonial.comment}"</p>
-
-                  <div className="testimonial-stars">
-                    {[...Array(5)].map((_, index) => (
-                      <Star key={index} className="testimonial-star-icon" aria-hidden="true" />
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="experience" className="section-wrapper" aria-labelledby="experience-title">
-          <div className="section-container">
-            <div className="section-header">
-              <h2 id="experience-title" className="section-title">
-                Academic & Work Experience
-              </h2>
-              <div className="section-divider"></div>
-            </div>
-
-            <div className="experience-list">
-              {experience.map((item, index) => (
-                <div key={item.year} className="experience-item">
-                  <div className="experience-rail">
-                    <div className="avatar-badge">
-                      <Briefcase className="experience-badge-icon" aria-hidden="true" />
-                    </div>
-                    {index < experience.length - 1 && <div className="timeline-line"></div>}
-                  </div>
-
-                  <div className="experience-panel-wrap">
-                    <div className="experience-panel">
-                      <div className="experience-meta">
-                        <Calendar size={16} aria-hidden="true" />
-                        <span className="experience-year">{item.year}</span>
+              <div className="experience-list">
+                {experience.map((item, index) => (
+                  <div key={item.year} className="experience-item">
+                    <div className="experience-rail">
+                      <div className="avatar-badge">
+                        <Briefcase className="experience-badge-icon" aria-hidden="true" />
                       </div>
-                      <h3 className="experience-title">{item.title}</h3>
-                      <p className="experience-copy">{item.description}</p>
+                      {index < experience.length - 1 && <div className="timeline-line"></div>}
+                    </div>
+
+                    <div className="experience-panel-wrap">
+                      <div className="experience-panel">
+                        <div className="experience-meta">
+                          <Calendar size={16} aria-hidden="true" />
+                          <span className="experience-year">{item.year}</span>
+                        </div>
+                        <h3 className="experience-title">{item.title[locale]}</h3>
+                        <p className="experience-copy">{item.description[locale]}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section id="contact" className="section-wrapper" aria-labelledby="contact-title">
-          <div className="section-container">
-            <div className="section-header">
-              <h2 id="contact-title" className="section-title">
-                Get In Touch
-              </h2>
-              <div className="section-divider"></div>
-            </div>
+          <section id="contact" className="section-wrapper" aria-labelledby="contact-title">
+            <div className="section-container">
+              <div className="section-header">
+                <h2 id="contact-title" className="section-title">
+                  {currentCopy.sections.contact}
+                </h2>
+                <div className="section-divider"></div>
+              </div>
 
-            <div className="contact-grid">
-              <div className="contact-panel">
-                <form className="contact-form">
-                  <div className="contact-field">
-                    <label className="contact-label" htmlFor="name">
-                      Name
-                    </label>
+              <div className="contact-grid">
+                <div className="contact-panel">
+                  <form className="contact-form" onSubmit={handleSubmit} noValidate>
                     <input
-                      id="name"
-                      name="name"
                       type="text"
-                      className="contact-input"
-                      placeholder="Your name"
-                      autoComplete="name"
+                      name="honey"
+                      value={formValues.honey}
+                      onChange={handleInputChange}
+                      className="contact-hidden-field"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      aria-hidden="true"
                     />
-                  </div>
 
-                  <div className="contact-field">
-                    <label className="contact-label" htmlFor="email">
-                      Email
-                    </label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      className="contact-input"
-                      placeholder="your@email.com"
-                      autoComplete="email"
-                    />
-                  </div>
-
-                  <div className="contact-field">
-                    <label className="contact-label" htmlFor="message">
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      className="contact-input contact-textarea"
-                      placeholder="Your message"
-                      rows={5}
-                    />
-                  </div>
-
-                  <button type="submit" className="contact-submit">
-                    Send Message
-                  </button>
-                </form>
-              </div>
-
-              <div className="contact-stack">
-                <div className="contact-card">
-                  <div className="contact-row">
-                    <div className="contact-icon-box">
-                      <Mail className="contact-method-icon" aria-hidden="true" />
+                    <div className="contact-field">
+                      <label className="contact-label" htmlFor="name">
+                        {currentCopy.contact.name}
+                      </label>
+                      <input
+                        id="name"
+                        name="name"
+                        type="text"
+                        value={formValues.name}
+                        onChange={handleInputChange}
+                        className="contact-input"
+                        placeholder={currentCopy.contact.namePlaceholder}
+                        autoComplete="name"
+                        aria-invalid={Boolean(fieldErrors.name)}
+                        aria-describedby={fieldErrors.name ? "name-error" : undefined}
+                      />
+                      <p
+                        id="name-error"
+                        className="contact-field-status"
+                        role={fieldErrors.name ? "alert" : undefined}
+                      >
+                        {fieldErrors.name ?? ""}
+                      </p>
                     </div>
-                    <div className="contact-copy">
-                      <h3 className="contact-title">Email</h3>
-                      <a href="mailto:oskarortiz124@gmail.com" className="contact-link">
-                        oskarortiz124@gmail.com
-                      </a>
+
+                    <div className="contact-field">
+                      <label className="contact-label" htmlFor="email">
+                        {currentCopy.contact.email}
+                      </label>
+                      <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value={formValues.email}
+                        onChange={handleInputChange}
+                        className="contact-input"
+                        placeholder={currentCopy.contact.emailPlaceholder}
+                        autoComplete="email"
+                        aria-invalid={Boolean(fieldErrors.email)}
+                        aria-describedby={fieldErrors.email ? "email-error" : undefined}
+                      />
+                      <p
+                        id="email-error"
+                        className="contact-field-status"
+                        role={fieldErrors.email ? "alert" : undefined}
+                      >
+                        {fieldErrors.email ?? ""}
+                      </p>
                     </div>
-                  </div>
+
+                    <div className="contact-field contact-field-message">
+                      <label className="contact-label" htmlFor="message">
+                        {currentCopy.contact.message}
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={formValues.message}
+                        onChange={handleInputChange}
+                        className="contact-input contact-textarea"
+                        placeholder={currentCopy.contact.messagePlaceholder}
+                        rows={5}
+                        aria-invalid={Boolean(fieldErrors.message)}
+                        aria-describedby={fieldErrors.message ? "message-error" : undefined}
+                      />
+                      <p
+                        id="message-error"
+                        className="contact-field-status"
+                        role={fieldErrors.message ? "alert" : undefined}
+                      >
+                        {fieldErrors.message ?? ""}
+                      </p>
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="contact-submit"
+                      disabled={submitState === "submitting"}
+                    >
+                      {submitState === "submitting"
+                        ? currentCopy.contact.submitting
+                        : currentCopy.contact.submit}
+                    </button>
+
+                    <p
+                      className={`contact-feedback contact-feedback-${submitState}`}
+                      aria-live="polite"
+                    >
+                      {submitMessage}
+                    </p>
+                  </form>
                 </div>
 
-                <div className="contact-card">
-                  <div className="contact-row">
-                    <div className="contact-icon-box">
-                      <Phone className="contact-method-icon" aria-hidden="true" />
-                    </div>
-                    <div className="contact-copy">
-                      <h3 className="contact-title">Phone</h3>
-                      <a href="tel:+573225959974" className="contact-link">
-                        +57 3225959974
-                      </a>
+                <div className="contact-stack">
+                  <div className="contact-card">
+                    <div className="contact-row">
+                      <div className="contact-icon-box">
+                        <Mail className="contact-method-icon" aria-hidden="true" />
+                      </div>
+                      <div className="contact-copy">
+                        <h3 className="contact-title">{currentCopy.contact.emailTitle}</h3>
+                        <a href="mailto:oskarortiz124@gmail.com" className="contact-link">
+                          oskarortiz124@gmail.com
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="contact-card">
-                  <div className="contact-row">
-                    <div className="contact-icon-box">
-                      <MapPin className="contact-method-icon" aria-hidden="true" />
+                  <div className="contact-card">
+                    <div className="contact-row">
+                      <div className="contact-icon-box">
+                        <Phone className="contact-method-icon" aria-hidden="true" />
+                      </div>
+                      <div className="contact-copy">
+                        <h3 className="contact-title">{currentCopy.contact.phoneTitle}</h3>
+                        <a href="tel:+573225959974" className="contact-link">
+                          +57 3225959974
+                        </a>
+                      </div>
                     </div>
-                    <div className="contact-copy">
-                      <h3 className="contact-title">Location</h3>
-                      <p className="contact-text">Pasto, Narino, Colombia</p>
+                  </div>
+
+                  <div className="contact-card">
+                    <div className="contact-row">
+                      <div className="contact-icon-box">
+                        <MapPin className="contact-method-icon" aria-hidden="true" />
+                      </div>
+                      <div className="contact-copy">
+                        <h3 className="contact-title">{currentCopy.contact.locationTitle}</h3>
+                        <p className="contact-text">{currentCopy.hero.location}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
           </section>
         </main>
 
@@ -548,7 +645,7 @@ export function Portfolio() {
             <div className="footer-row">
               <div className="footer-copy">
                 <h3 className="footer-name">Oskar Julian Ortiz Ortiz</h3>
-                <p className="footer-role">Full Stack Developer</p>
+                <p className="footer-role">{currentCopy.hero.role}</p>
               </div>
 
               <div className="footer-socials">
@@ -557,8 +654,8 @@ export function Portfolio() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-link"
-                  aria-label="GitHub profile of Oskar Ortiz"
-                  title="GitHub profile of Oskar Ortiz"
+                  aria-label={currentCopy.footer.githubLabel}
+                  title={currentCopy.footer.githubLabel}
                 >
                   <Github size={18} aria-hidden="true" />
                 </a>
@@ -567,26 +664,26 @@ export function Portfolio() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-link"
-                  aria-label="LinkedIn profile of Oskar Ortiz"
-                  title="LinkedIn profile of Oskar Ortiz"
+                  aria-label={currentCopy.footer.linkedinLabel}
+                  title={currentCopy.footer.linkedinLabel}
                 >
                   <Linkedin size={18} aria-hidden="true" />
                 </a>
                 <a
-                  href="https://www.instagram.com/oskar_ortiz02"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="mailto:oskarortiz124@gmail.com"
                   className="social-link"
-                  aria-label="Instagram profile of Oskar Ortiz"
-                  title="Instagram profile of Oskar Ortiz"
+                  aria-label={currentCopy.footer.mailLabel}
+                  title={currentCopy.footer.mailLabel}
                 >
-                  <Instagram size={18} aria-hidden="true" />
+                  <Mail size={18} aria-hidden="true" />
                 </a>
               </div>
             </div>
 
             <div className="footer-legal">
-              <p className="footer-legal-copy">(c) 2026 Oskar Ortiz. All rights reserved.</p>
+              <p className="footer-legal-copy">
+                (c) 2026 Oskar Ortiz. {currentCopy.footer.rights}
+              </p>
             </div>
           </div>
         </footer>

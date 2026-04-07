@@ -1,15 +1,34 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Menu, Moon, Sun, X } from "lucide-react";
+import { Languages, Menu, Moon, Sun, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import { BrandMonogram } from "./BrandMonogram";
 
-type PortfolioHeaderProps = Readonly<{
-  navigationItems: readonly string[];
+type NavigationItem = Readonly<{
+  id: string;
+  label: string;
 }>;
 
-export function PortfolioHeader({ navigationItems }: PortfolioHeaderProps) {
+type PortfolioHeaderProps = Readonly<{
+  navigationItems: readonly NavigationItem[];
+  localeToggleLabel: string;
+  menuOpenLabel: string;
+  menuCloseLabel: string;
+  onToggleLocale: () => void;
+  themeLightLabel: string;
+  themeDarkLabel: string;
+}>;
+
+export function PortfolioHeader({
+  navigationItems,
+  localeToggleLabel,
+  menuOpenLabel,
+  menuCloseLabel,
+  onToggleLocale,
+  themeLightLabel,
+  themeDarkLabel,
+}: PortfolioHeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
@@ -20,8 +39,8 @@ export function PortfolioHeader({ navigationItems }: PortfolioHeaderProps) {
   }, []);
 
   const isDark = mounted && resolvedTheme === "dark";
-  const themeLabel = isDark ? "Switch to light mode" : "Switch to dark mode";
-  const menuLabel = mobileMenuOpen ? "Close navigation menu" : "Open navigation menu";
+  const themeLabel = isDark ? themeLightLabel : themeDarkLabel;
+  const menuLabel = mobileMenuOpen ? menuCloseLabel : menuOpenLabel;
 
   return (
     <header className="nav-shell">
@@ -37,11 +56,21 @@ export function PortfolioHeader({ navigationItems }: PortfolioHeaderProps) {
           <div className="nav-tools">
             <div className="desktop-nav">
               {navigationItems.map((item) => (
-                <a key={item} href={`#${item.toLowerCase()}`} className="nav-link">
-                  {item}
+                <a key={item.id} href={`#${item.id}`} className="nav-link">
+                  {item.label}
                 </a>
               ))}
             </div>
+
+            <button
+              type="button"
+              aria-label={localeToggleLabel}
+              title={localeToggleLabel}
+              className="theme-toggle"
+              onClick={onToggleLocale}
+            >
+              <Languages className="theme-toggle-icon" aria-hidden="true" />
+            </button>
 
             <button
               type="button"
@@ -59,6 +88,16 @@ export function PortfolioHeader({ navigationItems }: PortfolioHeaderProps) {
           </div>
 
           <div className="mobile-tools">
+            <button
+              type="button"
+              aria-label={localeToggleLabel}
+              title={localeToggleLabel}
+              className="theme-toggle"
+              onClick={onToggleLocale}
+            >
+              <Languages className="theme-toggle-icon" aria-hidden="true" />
+            </button>
+
             <button
               type="button"
               aria-label={themeLabel}
@@ -96,12 +135,12 @@ export function PortfolioHeader({ navigationItems }: PortfolioHeaderProps) {
             <div className="mobile-nav-list">
               {navigationItems.map((item) => (
                 <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
+                  key={item.id}
+                  href={`#${item.id}`}
                   className="mobile-nav-link"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  {item}
+                  {item.label}
                 </a>
               ))}
             </div>
