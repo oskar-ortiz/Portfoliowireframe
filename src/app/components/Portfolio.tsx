@@ -134,7 +134,11 @@ export function Portfolio() {
   };
 
   const handleCvClick = () => {
-    toast.info(currentCopy.hero.primaryActionPending);
+    const cvWindow = window.open("/cv", "_blank", "noopener,noreferrer");
+
+    if (!cvWindow) {
+      toast.error("Please allow pop-ups to open the CV.");
+    }
   };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
