@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "backToPortfolio": "Volver al portafolio",
+    "downloadPdf": "Descargar PDF",
+    "downloadPdfAria": "Descargar CV como PDF",
+    "documentAria": "Hoja de vida profesional de Oskar Ortiz",
+    "languageAria": "Cambiar idioma"
+  },
+  "header": {
+    "name": "Oskar Ortiz",
+    "role": "Estudiante de Ingeniería de Software | Enfoque Full-Stack",
+    "summary": "Estudiante de Ingeniería de Software con enfoque práctico en desarrollo full-stack, interfaces modernas y arquitectura cloud/serverless. Construye soluciones web con React, Next.js, TypeScript, Node.js y servicios AWS, aplicando arquitectura modular, optimización de rendimiento y visión de producto para entregar experiencias digitales mantenibles."
+  },
+  "contact": {
+    "title": "Información de contacto",
+    "location": "Pasto, Nariño, Colombia",
+    "email": "oskarortiz124@gmail.com",
+    "phone": "+57 3225959974",
+    "github": "https://github.com/oskar-ortiz",
+    "linkedin": "https://www.linkedin.com/in/oskar-ortiz-4862233b8/"
+  },
+  "sections": {
+    "skills": "Habilidades Técnicas",
+    "education": "Educación",
+    "certifications": "Certificaciones y Formación Continua",
+    "competencies": "Competencias Profesionales",
+    "profile": "Perfil Profesional",
+    "projects": "Experiencia en Proyectos"
+  },
+  "skillDomains": [
+    {
+      "title": "Frontend",
+      "items": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Responsive UI", "Figma"]
+    },
+    {
+      "title": "Backend",
+      "items": ["Node.js", "Integración de APIs REST", "Serverless Functions", "Arquitectura modular"]
+    },
+    {
+      "title": "Cloud",
+      "items": ["AWS Lambda", "API Gateway", "Arquitectura serverless", "Servicios web escalables"]
+    },
+    {
+      "title": "Herramientas y Flujo de Trabajo",
+      "items": ["Git", "GitHub", "Prototipado UI", "Desarrollo orientado al rendimiento"]
+    }
+  ],
+  "projectExperience": [
+    {
+      "title": "Cuyitech Pro",
+      "subtitle": "Aplicación de gestión técnica agrícola",
+      "bullets": [
+        "Desarrollo de una aplicación modular y escalable enfocada en la gestión técnica agrícola para entornos de producción de cuyes.",
+        "Implementación de un sistema de alertas para apoyar los flujos de monitoreo de salud animal y mejorar los tiempos de respuesta operativa.",
+        "Estructuración de funcionalidades de análisis técnico de riesgos para apoyar la toma de decisiones productivas mediante herramientas digitales.",
+        "Aplicación de patrones de arquitectura frontend mantenible para facilitar el crecimiento funcional y la usabilidad a largo plazo."
+      ]
+    },
+    {
+      "title": "Sistema Educativo 3D",
+      "subtitle": "Plataforma interactiva de visualización educativa",
+      "bullets": [
+        "Desarrollo de una aplicación educativa interactiva con Three.js y Vite para ofrecer experiencias de visualización en 3D.",
+        "Aplicación de principios de calidad ISO/IEC 25010 para orientar decisiones de software en usabilidad, rendimiento y mantenibilidad.",
+        "Optimización del rendimiento gráfico y del renderizado de escenas para mejorar la estabilidad y la experiencia de usuario en navegador."
+      ]
+    },
+    {
+      "title": "Arquitectura Cloud",
+      "subtitle": "Implementación de infraestructura serverless",
+      "bullets": [
+        "Diseño de infraestructura serverless con AWS Lambda y API Gateway para crear servicios web escalables y de bajo mantenimiento.",
+        "Enfoque en modelos de ejecución cloud eficientes para aplicaciones web modernas y flujos orientados por API.",
+        "Fortalecimiento de conocimientos prácticos en arquitectura distribuida, servicios event-driven y eficiencia de despliegue."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "title": "Ingeniería de Software",
+      "subtitle": "Estudios universitarios en curso",
+      "description": "Formación académica enfocada en desarrollo de software, arquitectura, resolución de problemas y prácticas modernas de ingeniería."
+    }
+  ],
+  "certifications": [
+    "Formación continua en React, Next.js y patrones modernos de desarrollo frontend.",
+    "Aprendizaje aplicado en arquitectura cloud serverless con AWS Lambda y API Gateway.",
+    "Estudio continuo de estándares de calidad de software, incluyendo ISO/IEC 25010, para evaluación práctica de proyectos."
+  ],
+  "competencies": [
+    "Resolución modular de problemas",
+    "Comunicación técnica",
+    "Desarrollo colaborativo",
+    "Adaptabilidad productiva",
+    "Implementación orientada al rendimiento",
+    "Mentalidad de aprendizaje continuo"
+  ],
+  "legalClause": "Autorizo el tratamiento de mis datos personales conforme a la Ley 1581 de 2012 para fines relacionados con procesos de selección y evaluación profesional."
+}

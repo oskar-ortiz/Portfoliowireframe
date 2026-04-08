@@ -1,13 +1,41 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { ArrowLeft, Download, Mail, Phone } from "lucide-react";
-import { cvData } from "./cv-data";
+import enCV from "@/locales/en/cv.json";
+import esCV from "@/locales/es/cv.json";
 import styles from "./CVViewer.module.css";
 
+type Locale = "es" | "en";
+
+const translations = {
+  es: esCV,
+  en: enCV,
+} as const;
+
+const CV_LOCALE_STORAGE_KEY = "cv-locale";
+
 export function CVViewer() {
+  const [locale, setLocale] = useState<Locale>("es");
+
+  useEffect(() => {
+    const storedLocale = window.localStorage.getItem(CV_LOCALE_STORAGE_KEY);
+
+    if (storedLocale === "es" || storedLocale === "en") {
+      setLocale(storedLocale);
+    }
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.lang = locale;
+    window.localStorage.setItem(CV_LOCALE_STORAGE_KEY, locale);
+  }, [locale]);
+
   const handlePrint = () => {
     window.print();
   };
+
+  const copy = translations[locale];
 
   return (
     <main className={styles.page}>
@@ -17,56 +45,81 @@ export function CVViewer() {
             <a
               href="/"
               className={styles.toolbarLink}
-              aria-label="Volver al portafolio principal"
+              aria-label={copy.meta.backToPortfolio}
             >
               <ArrowLeft size={18} aria-hidden="true" />
-              Volver al portafolio
+              {copy.meta.backToPortfolio}
             </a>
           </div>
 
           <div className={styles.toolbarGroup}>
+            <div className={styles.languageSwitch} role="group" aria-label={copy.meta.languageAria}>
+              <button
+                type="button"
+                onClick={() => setLocale("es")}
+                aria-label="Cambiar idioma"
+                aria-pressed={locale === "es"}
+                className={`${styles.languageButton} ${
+                  locale === "es" ? styles.languageButtonActive : ""
+                }`}
+              >
+                ES
+              </button>
+              <button
+                type="button"
+                onClick={() => setLocale("en")}
+                aria-label="Cambiar idioma"
+                aria-pressed={locale === "en"}
+                className={`${styles.languageButton} ${
+                  locale === "en" ? styles.languageButtonActive : ""
+                }`}
+              >
+                EN
+              </button>
+            </div>
+
             <button
               type="button"
               onClick={handlePrint}
               className={`${styles.toolbarButton} ${styles.toolbarButtonPrimary}`}
-              aria-label="Descargar CV como PDF"
+              aria-label={copy.meta.downloadPdfAria}
             >
               <Download size={18} aria-hidden="true" />
-              Descargar PDF
+              {copy.meta.downloadPdf}
             </button>
           </div>
         </div>
 
-        <article className={styles.document} aria-label="Hoja de vida profesional de Oskar Ortiz">
+        <article className={styles.document} aria-label={copy.meta.documentAria}>
           <header className={styles.header}>
             <div>
-              <h1 className={styles.name}>{cvData.name}</h1>
-              <p className={styles.role}>{cvData.role}</p>
-              <p className={styles.summary}>{cvData.profile}</p>
+              <h1 className={styles.name}>{copy.header.name}</h1>
+              <p className={styles.role}>{copy.header.role}</p>
+              <p className={styles.summary}>{copy.header.summary}</p>
             </div>
 
-            <aside className={styles.contactCard} aria-label="Información de contacto">
-              <h2 className={styles.contactTitle}>Contact Information</h2>
+            <aside className={styles.contactCard} aria-label={copy.contact.title}>
+              <h2 className={styles.contactTitle}>{copy.contact.title}</h2>
               <div className={styles.contactList}>
-                <div className={styles.contactItem}>{cvData.location}</div>
+                <div className={styles.contactItem}>{copy.contact.location}</div>
                 <div className={styles.contactItem}>
-                  <a href={`mailto:${cvData.email}`}>
-                    <Mail size={14} aria-hidden="true" /> {cvData.email}
+                  <a href={`mailto:${copy.contact.email}`}>
+                    <Mail size={14} aria-hidden="true" /> {copy.contact.email}
                   </a>
                 </div>
                 <div className={styles.contactItem}>
-                  <a href={`tel:${cvData.phone.replace(/\s+/g, "")}`}>
-                    <Phone size={14} aria-hidden="true" /> {cvData.phone}
+                  <a href={`tel:${copy.contact.phone.replace(/\s+/g, "")}`}>
+                    <Phone size={14} aria-hidden="true" /> {copy.contact.phone}
                   </a>
                 </div>
                 <div className={styles.contactItem}>
-                  <a href={cvData.github} target="_blank" rel="noopener noreferrer">
-                    GitHub: {cvData.github.replace("https://", "")}
+                  <a href={copy.contact.github} target="_blank" rel="noopener noreferrer">
+                    GitHub: {copy.contact.github.replace("https://", "")}
                   </a>
                 </div>
                 <div className={styles.contactItem}>
-                  <a href={cvData.linkedin} target="_blank" rel="noopener noreferrer">
-                    LinkedIn: {cvData.linkedin.replace("https://www.", "")}
+                  <a href={copy.contact.linkedin} target="_blank" rel="noopener noreferrer">
+                    LinkedIn: {copy.contact.linkedin.replace("https://www.", "")}
                   </a>
                 </div>
               </div>
@@ -77,9 +130,9 @@ export function CVViewer() {
             <div className={styles.column}>
               <section className={styles.section} aria-labelledby="cv-skills">
                 <h2 id="cv-skills" className={styles.sectionTitle}>
-                  Technical Skills
+                  {copy.sections.skills}
                 </h2>
-                {cvData.skillDomains.map((group) => (
+                {copy.skillDomains.map((group) => (
                   <div key={group.title} className={styles.skillGroup}>
                     <h3 className={styles.skillGroupTitle}>{group.title}</h3>
                     <ul className={styles.skillList}>
@@ -93,9 +146,9 @@ export function CVViewer() {
 
               <section className={styles.section} aria-labelledby="cv-education">
                 <h2 id="cv-education" className={styles.sectionTitle}>
-                  Education
+                  {copy.sections.education}
                 </h2>
-                {cvData.education.map((item) => (
+                {copy.education.map((item) => (
                   <div key={item.title} className={styles.entry}>
                     <h3 className={styles.entryTitle}>{item.title}</h3>
                     <p className={styles.entrySubtitle}>{item.subtitle}</p>
@@ -106,10 +159,10 @@ export function CVViewer() {
 
               <section className={styles.section} aria-labelledby="cv-certifications">
                 <h2 id="cv-certifications" className={styles.sectionTitle}>
-                  Certifications & Continuous Learning
+                  {copy.sections.certifications}
                 </h2>
                 <ul className={styles.plainList}>
-                  {cvData.certifications.map((item) => (
+                  {copy.certifications.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
@@ -117,10 +170,10 @@ export function CVViewer() {
 
               <section className={styles.section} aria-labelledby="cv-competencies">
                 <h2 id="cv-competencies" className={styles.sectionTitle}>
-                  Professional Competencies
+                  {copy.sections.competencies}
                 </h2>
                 <ul className={styles.plainList}>
-                  {cvData.competencies.map((item) => (
+                  {copy.competencies.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
@@ -130,16 +183,16 @@ export function CVViewer() {
             <div className={styles.column}>
               <section className={styles.section} aria-labelledby="cv-profile">
                 <h2 id="cv-profile" className={styles.sectionTitle}>
-                  Professional Profile
+                  {copy.sections.profile}
                 </h2>
-                <p className={styles.entryBody}>{cvData.profile}</p>
+                <p className={styles.entryBody}>{copy.header.summary}</p>
               </section>
 
               <section className={styles.section} aria-labelledby="cv-experience">
                 <h2 id="cv-experience" className={styles.sectionTitle}>
-                  Project Experience
+                  {copy.sections.projects}
                 </h2>
-                {cvData.projectExperience.map((project) => (
+                {copy.projectExperience.map((project) => (
                   <div key={project.title} className={styles.entry}>
                     <h3 className={styles.entryTitle}>{project.title}</h3>
                     <p className={styles.entrySubtitle}>{project.subtitle}</p>
@@ -155,7 +208,7 @@ export function CVViewer() {
           </div>
 
           <footer className={styles.footer}>
-            <p className={styles.legal}>{cvData.legalClause}</p>
+            <p className={styles.legal}>{copy.legalClause}</p>
           </footer>
         </article>
       </div>
