@@ -7,6 +7,7 @@ import { toast } from "sonner";
 import { PortfolioHeader } from "./PortfolioHeader";
 import {
   ContactField,
+  certifications,
   copy,
   DEFAULT_FORM_VALUES,
   experience,
@@ -48,7 +49,7 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
-import profilePhoto from "../../assets/dd46f9bf116f2c66285468845d839373c782ceec.png";
+const profilePhoto = "/images/oskar-ortiz-profile.png";
 
 const technologies = [
   { name: "CSS", icon: FaCss3Alt, toneClass: "skill-tone-css" },
@@ -277,7 +278,6 @@ export function Portfolio() {
                         alt="Portrait of Oskar Ortiz"
                         fill
                         priority
-                        placeholder="blur"
                         fetchPriority="high"
                         decoding="async"
                         sizes="(min-width: 1024px) 400px, 288px"
@@ -403,6 +403,33 @@ export function Portfolio() {
                       </div>
                     </div>
                   </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section id="certifications" className="section-wrapper" aria-labelledby="certifications-title">
+            <div className="section-container">
+              <div className="section-header">
+                <h2 id="certifications-title" className="section-title">
+                  {currentCopy.sections.certifications}
+                </h2>
+                <div className="section-divider"></div>
+              </div>
+              <div className="certifications-grid">
+                {certifications.map((certificate) => (
+                  <article key={certificate.file} className="certificate-card">
+                    <div className="certificate-icon" aria-hidden="true"><Award /></div>
+                    <div className="certificate-body">
+                      <p className="certificate-issuer">{certificate.issuer[locale]}</p>
+                      <h3 className="certificate-title">{certificate.title[locale]}</h3>
+                      <p className="certificate-detail">{certificate.detail[locale]}</p>
+                    </div>
+                    <a className="action-button-secondary certificate-link" href={certificate.file} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="project-action-icon" aria-hidden="true" />
+                      {currentCopy.certifications.view}
+                    </a>
+                  </article>
                 ))}
               </div>
             </div>

@@ -23,9 +23,30 @@ export const navigationIds = [
   "about",
   "skills",
   "projects",
-  "testimonials",
+  "certifications",
   "experience",
   "contact",
+] as const;
+
+export const certifications = [
+  {
+    title: { es: "Bootcamp Análisis de Datos Nivel Avanzado", en: "Advanced Data Analysis Bootcamp" },
+    issuer: { es: "UTP-AZ · Ministerio TIC", en: "UTP-AZ · Ministry of ICT" },
+    detail: { es: "159 horas · 16 de agosto de 2024", en: "159 hours · August 16, 2024" },
+    file: "/certificates/bootcamp-analisis-datos.pdf",
+  },
+  {
+    title: { es: "Aprendizaje automático: sostenibilidad", en: "Machine Learning: Sustainability" },
+    issuer: { es: "SkillsBuild", en: "SkillsBuild" },
+    detail: { es: "9 h 30 min · 14 de julio de 2026", en: "9 h 30 min · July 14, 2026" },
+    file: "/certificates/skillsbuild-machine-learning.pdf",
+  },
+  {
+    title: { es: "Getting Started with Cisco Packet Tracer", en: "Getting Started with Cisco Packet Tracer" },
+    issuer: { es: "Networking Academy · Cisco", en: "Networking Academy · Cisco" },
+    detail: { es: "4 de agosto de 2026", en: "August 4, 2026" },
+    file: "/certificates/cisco-packet-tracer.pdf",
+  },
 ] as const;
 
 export const projects = [
@@ -173,6 +194,7 @@ export const copy = {
       about: "Sobre mí",
       skills: "Skills",
       projects: "Proyectos",
+      certifications: "Certificaciones",
       testimonials: "Testimonios",
       experience: "Experiencia",
       contact: "Contacto",
@@ -185,10 +207,10 @@ export const copy = {
     skipToContent: "Saltar al contenido principal",
     hero: {
       status: "Disponible para trabajar",
-      role: "Desarrollador Full Stack",
-      location: "Pasto, Nariño, Colombia",
+      role: "Backend · Cloud AWS · DevOps",
+      location: "Pasto, Nariño, Colombia · 6.º semestre",
       intro:
-        "Una persona extrovertida y sociable que disfruta colaborar y mantener un ambiente de trabajo positivo. Apasionado por crear aplicaciones web modernas y aprender nuevas tecnologías de forma constante.",
+        "Estudiante de Ingeniería de Software orientado a backend, arquitecturas distribuidas y automatización. Construyo soluciones con Java, Spring Boot, Python, Docker y AWS, con foco en calidad, seguridad y escalabilidad.",
       primaryAction: "Descargar CV",
       primaryActionLabel: "Descargar hoja de vida de Oskar Ortiz",
       primaryActionPending: "CV disponible por solicitud al correo",
@@ -199,6 +221,7 @@ export const copy = {
       about: "Sobre mí",
       skills: "Skills & Tecnologías",
       projects: "Proyectos Destacados",
+      certifications: "Certificaciones",
       testimonials: "Testimonios",
       experience: "Experiencia Académica y Laboral",
       contact: "Ponte en Contacto",
@@ -209,6 +232,7 @@ export const copy = {
       body:
         "Le apasiona crear aplicaciones web modernas y aprender nuevas tecnologías continuamente para mantenerse a la vanguardia del desarrollo de software.",
     },
+    certifications: { view: "Ver certificado" },
     projectActions: {
       github: "GitHub",
       demo: "Demo",
@@ -248,6 +272,7 @@ export const copy = {
       about: "About",
       skills: "Skills",
       projects: "Projects",
+      certifications: "Certifications",
       testimonials: "Testimonials",
       experience: "Experience",
       contact: "Contact",
@@ -260,10 +285,10 @@ export const copy = {
     skipToContent: "Skip to main content",
     hero: {
       status: "Available for work",
-      role: "Full Stack Developer",
-      location: "Pasto, Narino, Colombia",
+      role: "Backend · AWS Cloud · DevOps",
+      location: "Pasto, Narino, Colombia · 6th semester",
       intro:
-        "An extroverted and sociable person who enjoys collaborating and maintaining a positive work environment. Passionate about building modern web applications and continuously learning new technologies.",
+        "Software Engineering student focused on backend systems, distributed architectures, and automation. I build solutions with Java, Spring Boot, Python, Docker, and AWS, with a focus on quality, security, and scalability.",
       primaryAction: "Download CV",
       primaryActionLabel: "Download Oskar Ortiz CV",
       primaryActionPending: "CV available by email request",
@@ -274,6 +299,7 @@ export const copy = {
       about: "About Me",
       skills: "Skills & Technologies",
       projects: "Featured Projects",
+      certifications: "Certifications",
       testimonials: "Testimonials",
       experience: "Academic & Work Experience",
       contact: "Get In Touch",
@@ -284,6 +310,7 @@ export const copy = {
       body:
         "He is passionate about building modern web applications and continuously learning new technologies to stay at the forefront of software development.",
     },
+    certifications: { view: "View certificate" },
     projectActions: {
       github: "GitHub",
       demo: "Demo",
