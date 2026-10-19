@@ -49,7 +49,7 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
-const profilePhoto = "/images/oskar-ortiz-profile.png";
+import profilePhoto from "./images/oskar-ortiz-profile.png";
 
 const technologies = [
   { name: "CSS", icon: FaCss3Alt, toneClass: "skill-tone-css" },
