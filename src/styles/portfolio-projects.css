@@ -32,4 +32,48 @@
   .project-card:hover .project-title {
     color: var(--portfolio-primary-strong);
   }
+
+  .certifications-grid {
+    @apply grid grid-cols-1 gap-5 md:grid-cols-3;
+  }
+
+  .certificate-card {
+    @apply flex flex-col gap-5 rounded-2xl border p-6;
+    border-color: var(--portfolio-border);
+    background: var(--portfolio-surface);
+  }
+
+  .certificate-icon {
+    @apply flex size-12 items-center justify-center rounded-xl;
+    color: var(--portfolio-primary-strong);
+    background: color-mix(in srgb, var(--portfolio-primary) 14%, transparent);
+  }
+
+  .certificate-icon svg {
+    @apply size-6;
+  }
+
+  .certificate-body {
+    @apply flex-1;
+  }
+
+  .certificate-issuer,
+  .certificate-detail {
+    @apply text-xs uppercase tracking-[0.16em];
+    color: var(--portfolio-text-muted);
+  }
+
+  .certificate-title {
+    @apply mt-2 text-lg font-semibold leading-snug;
+    color: var(--portfolio-text);
+  }
+
+  .certificate-detail {
+    @apply mt-3 normal-case tracking-normal;
+  }
+
+  .certificate-link {
+    @apply self-start;
+  }
 }
+

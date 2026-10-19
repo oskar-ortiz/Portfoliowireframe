@@ -23,86 +23,98 @@ export const navigationIds = [
   "about",
   "skills",
   "projects",
-  "testimonials",
+  "certifications",
   "experience",
   "contact",
 ] as const;
 
+export const certifications = [
+  {
+    title: { es: "Bootcamp Análisis de Datos Nivel Avanzado", en: "Advanced Data Analysis Bootcamp" },
+    issuer: { es: "UTP-AZ · Ministerio TIC", en: "UTP-AZ · Ministry of ICT" },
+    detail: { es: "159 horas · 16 de agosto de 2024", en: "159 hours · August 16, 2024" },
+    file: "/certificates/bootcamp-analisis-datos.pdf",
+  },
+  {
+    title: { es: "Aprendizaje automático: sostenibilidad", en: "Machine Learning: Sustainability" },
+    issuer: { es: "SkillsBuild", en: "SkillsBuild" },
+    detail: { es: "9 h 30 min · 14 de julio de 2026", en: "9 h 30 min · July 14, 2026" },
+    file: "/certificates/skillsbuild-machine-learning.pdf",
+  },
+  {
+    title: { es: "Getting Started with Cisco Packet Tracer", en: "Getting Started with Cisco Packet Tracer" },
+    issuer: { es: "Networking Academy · Cisco", en: "Networking Academy · Cisco" },
+    detail: { es: "4 de agosto de 2026", en: "August 4, 2026" },
+    file: "/certificates/cisco-packet-tracer.pdf",
+  },
+] as const;
+
 export const projects = [
   {
-    title: {
-      es: "Plataforma de Streaming KickLite",
-      en: "KickLite Streaming Platform",
-    },
+    title: { es: "Proyecto Electival", en: "Electival Project" },
     description: {
-      es: "Una plataforma de streaming inspirada en Kick donde los usuarios pueden ver e interactuar con transmisiones en vivo.",
-      en: "A streaming platform inspired by Kick where users can watch and interact with live streams.",
+      es: "Aplicación Django para el registro y gestión de cafés, desplegada en Vercel.",
+      en: "Django application for coffee registration and management, deployed on Vercel.",
     },
-    image:
-      "https://www.programme-tv.net/imgre/fit/~1~tel~2023~07~10~d92dc94e-f290-4a92-bfb7-2a28eb06938d.jpeg/1200x600/crop-from/top/quality/80/kick-quelle-est-cette-plateforme-controversee-de-streaming-qui-fait-de-l-ombre-a-twitch.jpg",
-    githubUrl: "https://github.com/oskar-ortiz/kicklite-frontend",
-    demoUrl: "https://github.com/oskar-ortiz/kicklite-frontend",
-    tech: ["React", "Node.js", "WebRTC"],
+    image: "https://opengraph.githubassets.com/1/oskar-ortiz/proyecto-electival",
+    githubUrl: "https://github.com/oskar-ortiz/proyecto-electival",
+    demoUrl: "https://github.com/oskar-ortiz/proyecto-electival",
+    tech: ["Django", "Python", "Vercel"],
   },
   {
-    title: {
-      es: "Aplicación Web de Delivery",
-      en: "Food Delivery Web App",
-    },
+    title: { es: "Arquitectura AWS", en: "AWS Architecture Project" },
     description: {
-      es: "Una plataforma moderna de domicilios donde los usuarios pueden explorar restaurantes y pedir comida en línea.",
-      en: "A modern food delivery platform where users can browse restaurants and order food online.",
+      es: "Proyecto técnico en TypeScript enfocado en servicios cloud y arquitectura de soluciones en AWS.",
+      en: "TypeScript technical project focused on cloud services and solution architecture on AWS.",
     },
-    image:
-      "https://images.unsplash.com/photo-1729860649884-40ec104f9dfd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb29kJTIwZGVsaXZlcnklMjBtb2JpbGUlMjBhcHB8ZW58MXx8fHwxNzczNjUyNzYzfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    githubUrl: "https://github.com/oskar-ortiz/-Delivery_de-_Comida",
-    demoUrl: "https://github.com/oskar-ortiz/-Delivery_de-_Comida",
-    tech: ["Next.js", "MongoDB", "Tailwind"],
+    image: "https://opengraph.githubassets.com/1/oskar-ortiz/aws_proyecto",
+    githubUrl: "https://github.com/oskar-ortiz/aws_proyecto",
+    demoUrl: "https://github.com/oskar-ortiz/aws_proyecto",
+    tech: ["TypeScript", "AWS", "Cloud"],
   },
   {
-    title: {
-      es: "Aplicación Web Reproductor de Música",
-      en: "Music Player Web Application",
-    },
+    title: { es: "Hotel Spring Boot V1", en: "Hotel Spring Boot V1" },
     description: {
-      es: "Un reproductor musical responsive con playlists, controles de reproducción y visualización de audio.",
-      en: "A responsive music player with playlists, playback controls, and audio visualization.",
+      es: "Backend empresarial para gestión hotelera construido con Java y Spring Boot.",
+      en: "Enterprise hotel management backend built with Java and Spring Boot.",
     },
-    image:
-      "https://images.unsplash.com/photo-1511379938547-c1f69419868d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-    githubUrl: "https://github.com/oskar-ortiz/music-player-react-ts",
-    demoUrl: "https://github.com/oskar-ortiz/music-player-react-ts",
-    tech: ["React", "Web Audio API", "CSS"],
+    image: "https://opengraph.githubassets.com/1/oskar-ortiz/HotelSpringBoot_V1",
+    githubUrl: "https://github.com/oskar-ortiz/HotelSpringBoot_V1",
+    demoUrl: "https://github.com/oskar-ortiz/HotelSpringBoot_V1",
+    tech: ["Java", "Spring Boot", "REST API"],
   },
   {
-    title: {
-      es: "Plataforma de Matemáticas y Visualización de Grafos",
-      en: "Mathematics and Graph Visualization Platform",
-    },
+    title: { es: "Laboratorio ETL con Scrapy", en: "ETL Scrapy Laboratory" },
     description: {
-      es: "Una aplicación web para resolver problemas matemáticos y visualizar grafos en 3D y 4D.",
-      en: "A web application for solving mathematical problems and visualizing graphs in 3D and 4D.",
+      es: "Laboratorio de extracción, transformación y procesamiento de datos usando scraping con Python.",
+      en: "Laboratory for data extraction, transformation, and processing using Python web scraping.",
     },
-    image:
-      "https://images.unsplash.com/photo-1717501217912-933d2792d493?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXRoZW1hdGljcyUyMDNkJTIwZ3JhcGglMjB2aXN1YWxpemF0aW9ufGVufDF8fHx8MTc3MzcyMDEzNHww&ixlib=rb-4.1.0&q=80&w=1080",
-    githubUrl: "https://github.com/oskar-ortiz",
-    demoUrl: "https://github.com/oskar-ortiz",
-    tech: ["Python", "Three.js", "TypeScript"],
+    image: "https://opengraph.githubassets.com/1/oskar-ortiz/Laboratorio_ETL_SCRAPY",
+    githubUrl: "https://github.com/oskar-ortiz/Laboratorio_ETL_SCRAPY",
+    demoUrl: "https://github.com/oskar-ortiz/Laboratorio_ETL_SCRAPY",
+    tech: ["Python", "Scrapy", "ETL"],
   },
   {
-    title: {
-      es: "Reloj Inteligente con Calendario",
-      en: "Smart Clock with Calendar",
-    },
+    title: { es: "Laboratorio Spark", en: "Spark Laboratory" },
     description: {
-      es: "Una aplicación de reloj digital con integración de calendario y utilidades basadas en el tiempo.",
-      en: "A digital clock application with calendar integration and time-based utilities.",
+      es: "Exploración de procesamiento distribuido y análisis de datos con Apache Spark y Python.",
+      en: "Exploration of distributed processing and data analysis with Apache Spark and Python.",
     },
-    image:
-      "https://images.unsplash.com/photo-1641567535859-c58187ac4954?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwY2xvY2slMjBjYWxlbmRhciUyMGludGVyZmFjZXxlbnwxfHx8fDE3NzM3MjAxMzR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    githubUrl: "https://github.com/oskar-ortiz/Reloj_python",
-    demoUrl: "https://github.com/oskar-ortiz/Reloj_python",
-    tech: ["JavaScript", "HTML", "CSS"],
+    image: "https://opengraph.githubassets.com/1/oskar-ortiz/Laboratorio_Spark",
+    githubUrl: "https://github.com/oskar-ortiz/Laboratorio_Spark",
+    demoUrl: "https://github.com/oskar-ortiz/Laboratorio_Spark",
+    tech: ["Python", "Apache Spark", "Data"],
+  },
+  {
+    title: { es: "Senda Café de Nariño", en: "Senda Café de Nariño" },
+    description: {
+      es: "Proyecto colaborativo de comercio y experiencia digital alrededor del café de Nariño.",
+      en: "Collaborative commerce and digital experience project around coffee from Nariño.",
+    },
+    image: "https://opengraph.githubassets.com/1/DieryValencia/Senda-Cafe-de-Narino",
+    githubUrl: "https://github.com/DieryValencia/Senda-Cafe-de-Narino",
+    demoUrl: "https://github.com/DieryValencia/Senda-Cafe-de-Narino",
+    tech: ["TypeScript", "Web", "Team Project"],
   },
 ] as const;
 
@@ -173,6 +185,7 @@ export const copy = {
       about: "Sobre mí",
       skills: "Skills",
       projects: "Proyectos",
+      certifications: "Certificaciones",
       testimonials: "Testimonios",
       experience: "Experiencia",
       contact: "Contacto",
@@ -185,10 +198,10 @@ export const copy = {
     skipToContent: "Saltar al contenido principal",
     hero: {
       status: "Disponible para trabajar",
-      role: "Desarrollador Full Stack",
-      location: "Pasto, Nariño, Colombia",
+      role: "Backend · Cloud AWS · DevOps",
+      location: "Pasto, Nariño, Colombia · 6.º semestre",
       intro:
-        "Una persona extrovertida y sociable que disfruta colaborar y mantener un ambiente de trabajo positivo. Apasionado por crear aplicaciones web modernas y aprender nuevas tecnologías de forma constante.",
+        "Estudiante de Ingeniería de Software orientado a backend, arquitecturas distribuidas y automatización. Construyo soluciones con Java, Spring Boot, Python, Docker y AWS, con foco en calidad, seguridad y escalabilidad.",
       primaryAction: "Descargar CV",
       primaryActionLabel: "Descargar hoja de vida de Oskar Ortiz",
       primaryActionPending: "CV disponible por solicitud al correo",
@@ -199,6 +212,7 @@ export const copy = {
       about: "Sobre mí",
       skills: "Skills & Tecnologías",
       projects: "Proyectos Destacados",
+      certifications: "Certificaciones",
       testimonials: "Testimonios",
       experience: "Experiencia Académica y Laboral",
       contact: "Ponte en Contacto",
@@ -209,6 +223,7 @@ export const copy = {
       body:
         "Le apasiona crear aplicaciones web modernas y aprender nuevas tecnologías continuamente para mantenerse a la vanguardia del desarrollo de software.",
     },
+    certifications: { view: "Ver certificado" },
     projectActions: {
       github: "GitHub",
       demo: "Demo",
@@ -248,6 +263,7 @@ export const copy = {
       about: "About",
       skills: "Skills",
       projects: "Projects",
+      certifications: "Certifications",
       testimonials: "Testimonials",
       experience: "Experience",
       contact: "Contact",
@@ -260,10 +276,10 @@ export const copy = {
     skipToContent: "Skip to main content",
     hero: {
       status: "Available for work",
-      role: "Full Stack Developer",
-      location: "Pasto, Narino, Colombia",
+      role: "Backend · AWS Cloud · DevOps",
+      location: "Pasto, Narino, Colombia · 6th semester",
       intro:
-        "An extroverted and sociable person who enjoys collaborating and maintaining a positive work environment. Passionate about building modern web applications and continuously learning new technologies.",
+        "Software Engineering student focused on backend systems, distributed architectures, and automation. I build solutions with Java, Spring Boot, Python, Docker, and AWS, with a focus on quality, security, and scalability.",
       primaryAction: "Download CV",
       primaryActionLabel: "Download Oskar Ortiz CV",
       primaryActionPending: "CV available by email request",
@@ -274,6 +290,7 @@ export const copy = {
       about: "About Me",
       skills: "Skills & Technologies",
       projects: "Featured Projects",
+      certifications: "Certifications",
       testimonials: "Testimonials",
       experience: "Academic & Work Experience",
       contact: "Get In Touch",
@@ -284,6 +301,7 @@ export const copy = {
       body:
         "He is passionate about building modern web applications and continuously learning new technologies to stay at the forefront of software development.",
     },
+    certifications: { view: "View certificate" },
     projectActions: {
       github: "GitHub",
       demo: "Demo",
