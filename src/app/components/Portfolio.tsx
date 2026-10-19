@@ -49,7 +49,6 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
-import profilePhoto from "./images/oskar-ortiz-profile.png";
 
 const technologies = [
   { name: "CSS", icon: FaCss3Alt, toneClass: "skill-tone-css" },
@@ -274,7 +273,7 @@ export function Portfolio() {
                     <div className="hero-portrait-aura"></div>
                     <div className="hero-portrait-frame">
                       <Image
-                        src={profilePhoto}
+                        src="/images/oskar-ortiz-profile.png"
                         alt="Portrait of Oskar Ortiz"
                         fill
                         priority
