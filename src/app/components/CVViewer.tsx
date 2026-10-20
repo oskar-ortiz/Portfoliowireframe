@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowLeft, Download, Mail, Phone } from "lucide-react";
+import { ArrowLeft, Download, Mail } from "lucide-react";
 import enCV from "@/locales/en/cv.json";
 import esCV from "@/locales/es/cv.json";
 import styles from "./CVViewer.module.css";
@@ -105,11 +105,6 @@ export function CVViewer() {
                 <div className={styles.contactItem}>
                   <a href={`mailto:${copy.contact.email}`}>
                     <Mail size={14} aria-hidden="true" /> {copy.contact.email}
-                  </a>
-                </div>
-                <div className={styles.contactItem}>
-                  <a href={`tel:${copy.contact.phone.replace(/\s+/g, "")}`}>
-                    <Phone size={14} aria-hidden="true" /> {copy.contact.phone}
                   </a>
                 </div>
                 <div className={styles.contactItem}>

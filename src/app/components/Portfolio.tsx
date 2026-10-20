@@ -28,7 +28,6 @@ import {
   Linkedin,
   Mail,
   MapPin,
-  Phone,
   Sparkles,
   Star,
   User,
@@ -130,14 +129,6 @@ export function Portfolio() {
     if (submitState !== "idle") {
       setSubmitState("idle");
       setSubmitMessage("");
-    }
-  };
-
-  const handleCvClick = () => {
-    const cvWindow = window.open("/cv", "_blank", "noopener,noreferrer");
-
-    if (!cvWindow) {
-      toast.error("Please allow pop-ups to open the CV.");
     }
   };
 
@@ -243,16 +234,16 @@ export function Portfolio() {
                   <p className="hero-copy hero-copy-lead">{currentCopy.hero.intro}</p>
 
                   <div className="hero-actions">
-                    <button
-                      type="button"
+                    <a
+                      href="/Oskar_Ortiz_CV.pdf"
+                      download
                       className="hero-primary-action group"
                       aria-label={currentCopy.hero.primaryActionLabel}
                       title={currentCopy.hero.primaryActionLabel}
-                      onClick={handleCvClick}
                     >
                       <Download className="hero-action-icon" aria-hidden="true" />
                       {currentCopy.hero.primaryAction}
-                    </button>
+                    </a>
                     <a href="#projects" className="hero-secondary-action">
                       {currentCopy.hero.projectsAction}
                     </a>
@@ -634,20 +625,6 @@ export function Portfolio() {
                         <h3 className="contact-title">{currentCopy.contact.emailTitle}</h3>
                         <a href="mailto:oskarortiz124@gmail.com" className="contact-link">
                           oskarortiz124@gmail.com
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="contact-card">
-                    <div className="contact-row">
-                      <div className="contact-icon-box">
-                        <Phone className="contact-method-icon" aria-hidden="true" />
-                      </div>
-                      <div className="contact-copy">
-                        <h3 className="contact-title">{currentCopy.contact.phoneTitle}</h3>
-                        <a href="tel:+573225959974" className="contact-link">
-                          +57 3225959974
                         </a>
                       </div>
                     </div>

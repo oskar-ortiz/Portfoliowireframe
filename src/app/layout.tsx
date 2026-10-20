@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import { Providers } from "./providers";
+import { siteDescription, siteName, siteTitle, siteUrl } from "../lib/site";
 import "../styles/index.css";
 
 const inter = Inter({
@@ -15,17 +16,19 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://portfoliowireframe-beta.vercel.app"),
-  title: "Oskar Ortiz | Backend · AWS · DevOps",
-  description:
-    "Java, Spring Boot, FastAPI, AWS, Docker, Terraform, Prometheus y Grafana. Proyectos de backend, cloud y IA aplicada.",
+  metadataBase: new URL(siteUrl),
+  title: siteTitle,
+  description: siteDescription,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
-    siteName: "Oskar Ortiz",
-    title: "Oskar Ortiz | Backend · AWS · DevOps",
-    description:
-      "Java, Spring Boot, FastAPI, AWS, Docker, Terraform, Prometheus y Grafana. Proyectos de backend, cloud y IA aplicada.",
-    url: "https://portfoliowireframe-beta.vercel.app",
+    locale: "es_CO",
+    siteName,
+    title: siteTitle,
+    description: siteDescription,
+    url: siteUrl,
     images: [
       {
         url: "/og-banner.png",
@@ -37,9 +40,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Oskar Ortiz | Backend · AWS · DevOps",
-    description:
-      "Java, Spring Boot, FastAPI, AWS, Docker, Terraform, Prometheus y Grafana. Proyectos de backend, cloud y IA aplicada.",
+    title: siteTitle,
+    description: siteDescription,
     images: ["/og-banner.png"],
   },
   icons: {
@@ -52,11 +54,30 @@ type RootLayoutProps = Readonly<{
 }>;
 
 export default function RootLayout({ children }: RootLayoutProps) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: siteName,
+    jobTitle: "Backend Developer · Cloud AWS · DevOps",
+    url: siteUrl,
+    sameAs: [
+      "https://github.com/oskar-ortiz",
+      "https://www.linkedin.com/in/oskar-ortiz-4862233b8/",
+    ],
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Pasto",
+      addressRegion: "Nariño",
+      addressCountry: "CO",
+    },
+  };
+
   return (
-    <html lang="es" suppressHydrationWarning>
+    <html lang="es-CO" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </head>
       <body className={`${inter.variable} ${poppins.variable}`}>
         <Providers>{children}</Providers>

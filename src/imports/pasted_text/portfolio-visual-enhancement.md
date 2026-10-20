@@ -11,7 +11,6 @@ Name: Oskar Julian Ortiz Ortiz
 Role: Full Stack Developer
 Location: Pasto, Nariño, Colombia
 Email: [oskarortiz124@gmail.com](mailto:oskarortiz124@gmail.com)
-Phone: +57 3225959974
 GitHub: https://github.com/oskar-ortiz
 LinkedIn: https://www.linkedin.com/in/oskar-ortiz-4862233b8/
 Instagram: https://www.instagram.com/oskar_ortiz02
@@ -91,7 +90,6 @@ Message
 Also display direct contact information:
 
 Email: [oskarortiz124@gmail.com](mailto:oskarortiz124@gmail.com)
-Phone: +57 3225959974
 
 Footer section:
 Include social links and developer credits.

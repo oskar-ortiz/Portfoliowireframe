@@ -1,6 +1,9 @@
 node_modules
 .next
 .next-app
+.env
+.env.*
+.atl/
 out
 coverage
 npm-debug.log*
