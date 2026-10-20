@@ -15,8 +15,36 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Oskar Ortiz Portfolio",
-  description: "Portfolio website built with Next.js App Router, TypeScript, and Tailwind CSS.",
+  metadataBase: new URL("https://portfoliowireframe-beta.vercel.app"),
+  title: "Oskar Ortiz | Backend · AWS · DevOps",
+  description:
+    "Java, Spring Boot, FastAPI, AWS, Docker, Terraform, Prometheus y Grafana. Proyectos de backend, cloud y IA aplicada.",
+  openGraph: {
+    type: "website",
+    siteName: "Oskar Ortiz",
+    title: "Oskar Ortiz | Backend · AWS · DevOps",
+    description:
+      "Java, Spring Boot, FastAPI, AWS, Docker, Terraform, Prometheus y Grafana. Proyectos de backend, cloud y IA aplicada.",
+    url: "https://portfoliowireframe-beta.vercel.app",
+    images: [
+      {
+        url: "/og-banner.png",
+        width: 1200,
+        height: 627,
+        alt: "Oskar Ortiz — Backend, Cloud AWS y DevOps",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Oskar Ortiz | Backend · AWS · DevOps",
+    description:
+      "Java, Spring Boot, FastAPI, AWS, Docker, Terraform, Prometheus y Grafana. Proyectos de backend, cloud y IA aplicada.",
+    images: ["/og-banner.png"],
+  },
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 type RootLayoutProps = Readonly<{
@@ -25,7 +53,7 @@ type RootLayoutProps = Readonly<{
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />

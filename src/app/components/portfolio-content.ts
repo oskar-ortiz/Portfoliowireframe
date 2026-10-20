@@ -312,7 +312,7 @@ export const copy = {
       name: "Name",
       email: "Email",
       message: "Message",
-      namePlaceholder: "Your name",
+      namePlaceholder: "Name",
       emailPlaceholder: "your@email.com",
       messagePlaceholder: "Your message",
       submit: "Send Message",
