@@ -16,7 +16,7 @@ const translations = {
 const CV_LOCALE_STORAGE_KEY = "cv-locale";
 
 export function CVViewer() {
-  const [locale, setLocale] = useState<Locale>("es");
+  const [locale, setLocale] = useState<Locale>("en");
 
   useEffect(() => {
     const storedLocale = window.localStorage.getItem(CV_LOCALE_STORAGE_KEY);
@@ -27,7 +27,7 @@ export function CVViewer() {
   }, []);
 
   useEffect(() => {
-    document.documentElement.lang = locale;
+    document.documentElement.lang = locale === "es" ? "es-CO" : "en-US";
     window.localStorage.setItem(CV_LOCALE_STORAGE_KEY, locale);
   }, [locale]);
 

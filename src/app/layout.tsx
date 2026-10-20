@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "es_CO",
+    locale: "en_US",
     siteName,
     title: siteTitle,
     description: siteDescription,
@@ -73,7 +73,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   };
 
   return (
-    <html lang="es-CO" suppressHydrationWarning>
+    <html lang="en-US" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />

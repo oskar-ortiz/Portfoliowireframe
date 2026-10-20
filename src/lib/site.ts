@@ -5,4 +5,4 @@ export const siteUrl =
 export const siteName = "Oskar Ortiz";
 export const siteTitle = "Oskar Ortiz | Backend · AWS · DevOps";
 export const siteDescription =
-  "Java, Spring Boot, FastAPI, AWS, Docker, Terraform, Prometheus y Grafana. Proyectos de backend, cloud y IA aplicada.";
+  "Java, Spring Boot, FastAPI, AWS, Docker, Terraform, Prometheus, and Grafana. Backend, cloud, and applied AI projects.";

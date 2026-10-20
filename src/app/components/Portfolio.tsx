@@ -67,7 +67,7 @@ const technologies = [
 ];
 
 export function Portfolio() {
-  const [locale, setLocale] = useState<Locale>("es");
+  const [locale, setLocale] = useState<Locale>("en");
   const [formValues, setFormValues] = useState(DEFAULT_FORM_VALUES);
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [submitState, setSubmitState] = useState<"idle" | "submitting" | "success" | "error">(
@@ -86,7 +86,7 @@ export function Portfolio() {
   }, []);
 
   useEffect(() => {
-    document.documentElement.lang = locale;
+    document.documentElement.lang = locale === "es" ? "es-CO" : "en-US";
     window.localStorage.setItem(LOCALE_STORAGE_KEY, locale);
   }, [locale]);
 
