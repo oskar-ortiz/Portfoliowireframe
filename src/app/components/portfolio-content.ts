@@ -112,8 +112,8 @@ export const projects = [
       en: "Collaborative commerce and digital experience project around coffee from Nariño.",
     },
     image: "/images/projects/senda-cafe.jpg",
-    githubUrl: "https://github.com/DieryValencia/Senda-Cafe-de-Narino",
-    demoUrl: "https://github.com/DieryValencia/Senda-Cafe-de-Narino",
+    githubUrl: "https://github.com/DieryValencia/Senda-Caf--de-Nari-o.git",
+    demoUrl: "https://github.com/DieryValencia/Senda-Caf--de-Nari-o.git",
     tech: ["TypeScript", "Web", "Team Project"],
   },
 ] as const;
