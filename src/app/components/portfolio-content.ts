@@ -36,7 +36,7 @@ export const certifications = [
     file: "/certificates/bootcamp-analisis-datos.pdf",
   },
   {
-    title: { es: "Aprendizaje automático: sostenibilidad", en: "Machine Learning: Sustainability" },
+    title: { es: "Aprendizaje automático: ejemplos prácticos en sostenibilidad", en: "Machine Learning: Sustainability" },
     issuer: { es: "SkillsBuild", en: "SkillsBuild" },
     detail: { es: "9 h 30 min · 14 de julio de 2026", en: "9 h 30 min · July 14, 2026" },
     file: "/certificates/skillsbuild-machine-learning.pdf",
@@ -182,8 +182,8 @@ export const experience = [
 export const copy = {
   es: {
     navigation: {
-      about: "Sobre mí",
-      skills: "Skills",
+      about: "Acerca de mí",
+      skills: "Habilidades",
       projects: "Proyectos",
       certifications: "Certificaciones",
       testimonials: "Testimonios",
@@ -209,19 +209,19 @@ export const copy = {
       contactAction: "Contacto",
     },
     sections: {
-      about: "Sobre mí",
-      skills: "Skills & Tecnologías",
+      about: "Acerca de mí",
+      skills: "Habilidades y tecnologías",
       projects: "Proyectos Destacados",
       certifications: "Certificaciones",
       testimonials: "Testimonios",
-      experience: "Experiencia Académica y Laboral",
+      experience: "Experiencia académica y laboral",
       contact: "Ponte en Contacto",
     },
     about: {
       lead:
-        "Oskar es una persona extrovertida y sociable que disfruta colaborar y mantener un ambiente de trabajo positivo. En su tiempo libre le gusta caminar, jugar fútbol, escuchar música y también es músico profesional.",
+        "Soy estudiante de Ingeniería de Software, orientado al desarrollo backend, las arquitecturas distribuidas y la automatización. Me interesa colaborar y mantener un ambiente de trabajo positivo.",
       body:
-        "Le apasiona crear aplicaciones web modernas y aprender nuevas tecnologías continuamente para mantenerse a la vanguardia del desarrollo de software.",
+        "Trabajo con Java, Spring Boot, Python, Docker y AWS, con foco en calidad, seguridad y escalabilidad. Me apasiona crear aplicaciones web modernas y aprender continuamente nuevas tecnologías. En mi tiempo libre disfruto caminar, jugar fútbol y escuchar música; también soy músico profesional.",
     },
     certifications: { view: "Ver certificado" },
     projectActions: {
