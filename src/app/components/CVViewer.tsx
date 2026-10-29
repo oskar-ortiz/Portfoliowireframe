@@ -13,7 +13,7 @@ const translations = {
   en: enCV,
 } as const;
 
-const CV_LOCALE_STORAGE_KEY = "cv-locale";
+const CV_LOCALE_STORAGE_KEY = "cv-locale-v2";
 
 export function CVViewer() {
   const [locale, setLocale] = useState<Locale>("es");

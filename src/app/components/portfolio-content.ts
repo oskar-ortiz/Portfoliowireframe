@@ -10,7 +10,7 @@ export type ContactFormValues = {
 export type ContactField = keyof Omit<ContactFormValues, "honey">;
 export type FieldErrors = Partial<Record<ContactField, string>>;
 
-export const LOCALE_STORAGE_KEY = "portfolio-locale";
+export const LOCALE_STORAGE_KEY = "portfolio-locale-v2";
 export const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export const DEFAULT_FORM_VALUES: ContactFormValues = {
   name: "",
