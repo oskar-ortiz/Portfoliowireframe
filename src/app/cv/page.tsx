@@ -3,8 +3,8 @@ import { CVViewer } from "../components/CVViewer";
 import { siteUrl } from "../../lib/site";
 
 export const metadata: Metadata = {
-  title: "CV | Oskar Ortiz",
-  description: "Professional CV of Oskar Ortiz, focused on backend, AWS cloud, and DevOps.",
+  title: "Hoja de vida | Oskar Ortiz",
+  description: "Hoja de vida profesional de Oskar Ortiz, orientada a backend, cloud AWS y DevOps.",
   alternates: {
     canonical: `${siteUrl}/cv`,
   },

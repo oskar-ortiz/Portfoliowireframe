@@ -67,7 +67,7 @@ const technologies = [
 ];
 
 export function Portfolio() {
-  const [locale, setLocale] = useState<Locale>("en");
+  const [locale, setLocale] = useState<Locale>("es");
   const [formValues, setFormValues] = useState(DEFAULT_FORM_VALUES);
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [submitState, setSubmitState] = useState<"idle" | "submitting" | "success" | "error">(
