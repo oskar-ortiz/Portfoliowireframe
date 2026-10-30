@@ -14,7 +14,6 @@ import {
   LOCALE_STORAGE_KEY,
   navigationIds,
   projects,
-  testimonials,
   validateForm,
 } from "./portfolio-content";
 import type { FieldErrors, Locale } from "./portfolio-content";
@@ -29,42 +28,23 @@ import {
   Mail,
   MapPin,
   Sparkles,
-  Star,
-  User,
 } from "lucide-react";
 import {
   FaAws,
-  FaCss3Alt,
   FaGitAlt,
   FaJava,
-  FaNodeJs,
   FaPython,
   FaReact,
 } from "react-icons/fa";
-import {
-  SiMongodb,
-  SiNextdotjs,
-  SiPostman,
-  SiTailwindcss,
-  SiTypescript,
-} from "react-icons/si";
+import { SiNextdotjs } from "react-icons/si";
 
 const technologies = [
-  { name: "CSS", icon: FaCss3Alt, toneClass: "skill-tone-css" },
-  { name: "TypeScript", icon: SiTypescript, toneClass: "skill-tone-typescript" },
-  { name: "React", icon: FaReact, toneClass: "skill-tone-react" },
-  { name: "Next.js", icon: SiNextdotjs, toneClass: "skill-tone-nextjs" },
-  { name: "Tailwind CSS", icon: SiTailwindcss, toneClass: "skill-tone-tailwind" },
-  { name: "Node.js", icon: FaNodeJs, toneClass: "skill-tone-nodejs" },
-  { name: "Git", icon: FaGitAlt, toneClass: "skill-tone-git" },
-  { name: "Python", icon: FaPython, toneClass: "skill-tone-python" },
-  { name: "Java", icon: FaJava, toneClass: "skill-tone-java" },
-  { name: "MongoDB", icon: SiMongodb, toneClass: "skill-tone-mongodb" },
-  { name: "Postman", icon: SiPostman, toneClass: "skill-tone-postman" },
-  { name: "AWS Cloud", icon: FaAws, toneClass: "skill-tone-aws" },
-  { name: "DevSecOps", icon: Award, toneClass: "skill-tone-devsecops" },
-  { name: "LLM Integration", icon: Sparkles, toneClass: "skill-tone-llm" },
-];
+  "Java", "Spring Boot", "Python", "FastAPI", "Amazon Web Services (AWS)", "Docker", "PostgreSQL", "REST APIs", "Microservices", "MySQL", "Git", "Linux", "ETL", "Apache Spark", "Pandas", "Power BI", "CI/CD", "GitHub Actions", "NGINX", "Amazon EC2", "AWS Lambda", "Amazon RDS", "Amazon VPC", "Amazon CloudWatch", "React", "Next.js", "Ionic", "JPA/Hibernate", "Maven", "SQL",
+].map((name, index) => ({
+  name,
+  icon: [FaJava, Award, FaPython, Sparkles, FaAws, Award, Award, Award, Award, Award, FaGitAlt, Award, Award, Award, Award, Award, Award, Award, Award, FaAws, FaAws, FaAws, FaAws, FaAws, FaReact, SiNextdotjs, FaReact, Award, Award, Award][index],
+  toneClass: "skill-tone-default",
+}));
 
 export function Portfolio() {
   const [locale, setLocale] = useState<Locale>("es");
@@ -425,44 +405,6 @@ export function Portfolio() {
             </div>
           </section>
 
-          <section
-            id="testimonials"
-            className="section-wrapper"
-            aria-labelledby="testimonials-title"
-          >
-            <div className="section-container">
-              <div className="section-header">
-                <h2 id="testimonials-title" className="section-title">
-                  {currentCopy.sections.testimonials}
-                </h2>
-                <div className="section-divider"></div>
-              </div>
-
-              <div className="testimonials-grid">
-                {testimonials.map((testimonial) => (
-                  <div key={testimonial.name} className="testimonial-card">
-                    <div className="testimonial-head">
-                      <div className="avatar-badge">
-                        <User className="testimonial-avatar-icon" aria-hidden="true" />
-                      </div>
-                      <div className="testimonial-copy-block">
-                        <h3 className="testimonial-meta">{testimonial.name}</h3>
-                        <p className="testimonial-role">{testimonial.role[locale]}</p>
-                      </div>
-                    </div>
-
-                    <p className="testimonial-copy">"{testimonial.comment[locale]}"</p>
-
-                    <div className="testimonial-stars">
-                      {[...Array(5)].map((_, index) => (
-                        <Star key={index} className="testimonial-star-icon" aria-hidden="true" />
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
 
           <section id="experience" className="section-wrapper" aria-labelledby="experience-title">
             <div className="section-container">

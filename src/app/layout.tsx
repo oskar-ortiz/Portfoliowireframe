@@ -34,7 +34,7 @@ export const metadata: Metadata = {
         url: "/og-banner.png",
         width: 1200,
         height: 627,
-        alt: "Oskar Ortiz — Backend, Cloud AWS y DevOps",
+        alt: "Oskar Ortiz — Backend Engineer | Java, Spring Boot, AWS",
       },
     ],
   },
@@ -58,7 +58,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     "@context": "https://schema.org",
     "@type": "Person",
     name: siteName,
-    jobTitle: "Backend Developer · Cloud AWS · DevOps",
+    jobTitle: "Backend Engineer · Cloud AWS · Applied AI",
     url: siteUrl,
     sameAs: [
       "https://github.com/oskar-ortiz",

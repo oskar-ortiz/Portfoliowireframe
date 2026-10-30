@@ -118,63 +118,29 @@ export const projects = [
   },
 ] as const;
 
-export const testimonials = [
-  {
-    name: "Maria Gonzalez",
-    role: {
-      es: "Product Manager",
-      en: "Product Manager",
-    },
-    comment: {
-      es: "Oskar es un desarrollador excepcional con gran atención al detalle. Su ética de trabajo es sobresaliente.",
-      en: "Oskar is an exceptional developer with great attention to detail. His work ethic is outstanding.",
-    },
-  },
-  {
-    name: "Carlos Rodriguez",
-    role: {
-      es: "Senior Developer",
-      en: "Senior Developer",
-    },
-    comment: {
-      es: "Trabajar con Oskar fue un placer. Aporta creatividad y excelencia técnica a cada proyecto.",
-      en: "Working with Oskar was a pleasure. He brings creativity and technical excellence to every project.",
-    },
-  },
-  {
-    name: "Ana Martinez",
-    role: {
-      es: "Diseñadora UX",
-      en: "UX Designer",
-    },
-    comment: {
-      es: "Oskar tiene excelentes habilidades de colaboración y siempre entrega implementaciones de alta calidad y muy cuidadas.",
-      en: "Oskar has excellent collaboration skills and always delivers high-quality, pixel-perfect implementations.",
-    },
-  },
-] as const;
-
 export const experience = [
   {
-    year: "2024 - Present",
-    title: {
-      es: "Estudiante de Ingeniería de Software",
-      en: "Software Engineering Student",
-    },
+    year: "jul. 2025 – ene. 2026",
+    title: { es: "Backend Developer — Stealth Startup", en: "Backend Developer — Stealth Startup" },
     description: {
-      es: "Actualmente cursando la carrera de ingeniería de software, con enfoque en desarrollo web moderno y arquitectura de software.",
-      en: "Currently pursuing software engineering degree, focusing on modern web development and software architecture.",
+      es: "Remoto · Jornada completa · Confidencial. Desarrollé backend para un cliente bajo NDA, construí APIs REST con Java/Spring Boot y Python/FastAPI sobre PostgreSQL, contenericé servicios con Docker y desplegué cargas de trabajo en AWS. Referencia profesional disponible bajo solicitud.",
+      en: "Remote · Full-time · Confidential. Built backend systems for an NDA-protected client, maintained REST APIs with Java/Spring Boot and Python/FastAPI on PostgreSQL, containerized services with Docker, and deployed workloads on AWS. Professional reference available upon request.",
     },
   },
   {
-    year: "2023",
-    title: {
-      es: "Curso de Desarrollo Web",
-      en: "Web Development Course",
-    },
+    year: "feb. 2026 – actualidad",
+    title: { es: "Software Engineer — CuyiElite", en: "Software Engineer — CuyiElite" },
     description: {
-      es: "Completó una formación integral en desarrollo web cubriendo tecnologías full stack y buenas prácticas.",
-      en: "Completed comprehensive web development training covering full-stack technologies and best practices.",
+      es: "Proyecto independiente · San Juan de Pasto, Colombia. Arquitectura y backend de una plataforma de apoyo a decisiones para productores de cuy, con sincronización offline-first, PostgreSQL con pgvector, clasificador Random Forest y motor RAG con LLM.",
+      en: "Independent project · San Juan de Pasto, Colombia. Architecture and backend for a decision-support platform for guinea pig producers, combining offline-first synchronization, PostgreSQL with pgvector, a Random Forest classifier, and an LLM-powered RAG engine.",
+    },
+  },
+  {
+    year: "En curso · Graduación estimada: finales de 2027",
+    title: { es: "Ingeniería de Software — Universidad Cooperativa de Colombia", en: "Software Engineering — Universidad Cooperativa de Colombia" },
+    description: {
+      es: "Pasto, Colombia.",
+      en: "Pasto, Colombia.",
     },
   },
 ] as const;
@@ -198,10 +164,10 @@ export const copy = {
     skipToContent: "Saltar al contenido principal",
     hero: {
       status: "Disponible para trabajar",
-      role: "Backend · Cloud AWS · DevOps",
-      location: "Pasto, Nariño, Colombia · 6.º semestre",
+      role: "Backend · Cloud AWS · Applied AI",
+      location: "Pasto, Nariño, Colombia",
       intro:
-        "Estudiante de Ingeniería de Software orientado a backend, arquitecturas distribuidas y automatización. Construyo soluciones con Java, Spring Boot, Python, Docker y AWS, con foco en calidad, seguridad y escalabilidad.",
+        "Backend engineer focused on data-heavy systems on AWS. Construyo APIs y servicios con Java, Spring Boot, Python y FastAPI, con PostgreSQL, pgvector y Docker.",
       primaryAction: "Descargar CV",
       primaryActionLabel: "Descargar hoja de vida de Oskar Ortiz",
       primaryActionPending: "CV disponible por solicitud al correo",
@@ -214,14 +180,14 @@ export const copy = {
       projects: "Proyectos Destacados",
       certifications: "Certificaciones",
       testimonials: "Testimonios",
-      experience: "Experiencia académica y laboral",
+      experience: "Experiencia",
       contact: "Ponte en Contacto",
     },
     about: {
       lead:
-        "Soy estudiante de Ingeniería de Software, orientado al desarrollo backend, las arquitecturas distribuidas y la automatización. Me interesa colaborar y mantener un ambiente de trabajo positivo.",
+        "Ingeniero de software enfocado en desarrollo backend y arquitectura cloud en AWS. Construyo APIs y servicios con alta carga de datos con Java/Spring Boot y Python/FastAPI, sobre PostgreSQL y contenerizados con Docker.",
       body:
-        "Trabajo con Java, Spring Boot, Python, Docker y AWS, con foco en calidad, seguridad y escalabilidad. Me apasiona crear aplicaciones web modernas y aprender continuamente nuevas tecnologías. En mi tiempo libre disfruto caminar, jugar fútbol y escuchar música; también soy músico profesional.",
+        "En infraestructura diseño VPCs con subredes públicas y privadas, cómputo autoescalable, bases gestionadas con réplica de lectura y pipelines serverless con Lambda, SQS y SES, con observabilidad en CloudWatch. Mi trabajo más reciente es la arquitectura y el backend de CuyiElite, una plataforma desarrollada con el Centro Agropecuario Lope del SENA, que combina sincronización offline-first, PostgreSQL con pgvector, un clasificador Random Forest y un motor RAG con LLM. También construyo pipelines de datos con Python, Pandas y PySpark.",
     },
     certifications: { view: "Ver certificado" },
     projectActions: {
@@ -275,10 +241,10 @@ export const copy = {
     skipToContent: "Skip to main content",
     hero: {
       status: "Available for work",
-      role: "Backend · AWS Cloud · DevOps",
-      location: "Pasto, Narino, Colombia · 6th semester",
+      role: "Backend · Cloud AWS · Applied AI",
+      location: "Pasto, Narino, Colombia",
       intro:
-        "Software Engineering student focused on backend systems, distributed architectures, and automation. I build solutions with Java, Spring Boot, Python, Docker, and AWS, with a focus on quality, security, and scalability.",
+        "Backend engineer focused on data-heavy systems on AWS. I build APIs and services with Java, Spring Boot, Python, and FastAPI, using PostgreSQL, pgvector, and Docker.",
       primaryAction: "Download CV",
       primaryActionLabel: "Download Oskar Ortiz CV",
       primaryActionPending: "CV available by email request",
@@ -291,14 +257,14 @@ export const copy = {
       projects: "Featured Projects",
       certifications: "Certifications",
       testimonials: "Testimonials",
-      experience: "Academic & Work Experience",
+      experience: "Experience",
       contact: "Get In Touch",
     },
     about: {
       lead:
-        "Oskar is an extroverted and sociable person who enjoys collaborating and maintaining a positive work environment. In his free time he enjoys walking, playing football, listening to music, and he is also a professional musician.",
+        "Software engineer focused on backend development and cloud architecture on AWS. I build data-intensive APIs and services with Java/Spring Boot and Python/FastAPI, backed by PostgreSQL and containerized with Docker.",
       body:
-        "He is passionate about building modern web applications and continuously learning new technologies to stay at the forefront of software development.",
+        "I design VPCs with public and private subnets, autoscaling compute, managed databases with read replicas, and serverless pipelines using Lambda, SQS, and SES, with observability through CloudWatch. My most recent work is the architecture and backend of CuyiElite, a platform developed with Centro Agropecuario Lope del SENA that combines offline-first synchronization, PostgreSQL with pgvector, a Random Forest classifier, and an LLM-powered RAG engine. I also build data pipelines with Python, Pandas, and PySpark.",
     },
     certifications: { view: "View certificate" },
     projectActions: {
