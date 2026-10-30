@@ -4,7 +4,7 @@ import { siteUrl } from "../../lib/site";
 
 export const metadata: Metadata = {
   title: "Hoja de vida | Oskar Ortiz",
-  description: "Hoja de vida profesional de Oskar Ortiz, orientada a backend, cloud AWS y DevOps.",
+  description: "Hoja de vida profesional de Oskar Ortiz, enfocada en backend, Java, Spring Boot y cloud AWS.",
   alternates: {
     canonical: `${siteUrl}/cv`,
   },

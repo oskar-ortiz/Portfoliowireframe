@@ -183,7 +183,8 @@
   }
 
   .skill-icon-frame {
-    @apply flex h-14 w-14 items-center justify-center rounded-lg p-3 shadow-lg transition-transform duration-300 group-hover:scale-110;
+    @apply flex h-14 w-14 items-center justify-center rounded-lg border border-white/25 p-3 shadow-lg transition-transform duration-300 group-hover:scale-110;
+    color: #ffffff;
   }
 
   .project-card {

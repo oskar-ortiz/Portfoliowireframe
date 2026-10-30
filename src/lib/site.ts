@@ -1,8 +1,8 @@
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "https://portfoliowireframe-beta.vercel.app";
+  "https://portfoliowireframe.vercel.app";
 
 export const siteName = "Oskar Ortiz";
-export const siteTitle = "Oskar Ortiz | Backend · AWS · DevOps";
+export const siteTitle = "Oskar Ortiz — Backend Engineer | Java, Spring Boot, AWS";
 export const siteDescription =
-  "Java, Spring Boot, FastAPI, AWS, Docker, Terraform, Prometheus y Grafana. Proyectos de backend, cloud e inteligencia artificial aplicada.";
+  "Backend engineer focused on data-heavy systems on AWS. Java, Spring Boot, FastAPI, PostgreSQL, pgvector and Docker.";
