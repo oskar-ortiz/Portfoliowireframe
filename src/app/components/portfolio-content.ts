@@ -51,7 +51,7 @@ export const certifications = [
 
 export const projects = [
   {
-    title: { es: "Proyecto Electival", en: "Electival Project" },
+    title: { es: "Plataforma de Gestión de Cafés", en: "Coffee Management Platform" },
     description: {
       es: "Aplicación Django para el registro y gestión de cafés, desplegada en Vercel.",
       en: "Django application for coffee registration and management, deployed on Vercel.",
@@ -62,7 +62,7 @@ export const projects = [
     tech: ["Django", "Python", "Vercel"],
   },
   {
-    title: { es: "Arquitectura AWS", en: "AWS Architecture Project" },
+    title: { es: "Arquitectura de Soluciones Cloud en AWS", en: "AWS Cloud Solution Architecture" },
     description: {
       es: "Proyecto técnico en TypeScript enfocado en servicios cloud y arquitectura de soluciones en AWS.",
       en: "TypeScript technical project focused on cloud services and solution architecture on AWS.",
@@ -73,7 +73,7 @@ export const projects = [
     tech: ["TypeScript", "AWS", "Cloud"],
   },
   {
-    title: { es: "Hotel Spring Boot V1", en: "Hotel Spring Boot V1" },
+    title: { es: "Backend de Gestión Hotelera con Spring Boot", en: "Spring Boot Hotel Management Backend" },
     description: {
       es: "Backend empresarial para gestión hotelera construido con Java y Spring Boot.",
       en: "Enterprise hotel management backend built with Java and Spring Boot.",
@@ -84,7 +84,7 @@ export const projects = [
     tech: ["Java", "Spring Boot", "REST API"],
   },
   {
-    title: { es: "Laboratorio ETL con Scrapy", en: "ETL Scrapy Laboratory" },
+    title: { es: "Pipeline ETL para Extracción de Datos", en: "Data Extraction ETL Pipeline" },
     description: {
       es: "Laboratorio de extracción, transformación y procesamiento de datos usando scraping con Python.",
       en: "Laboratory for data extraction, transformation, and processing using Python web scraping.",
@@ -95,7 +95,7 @@ export const projects = [
     tech: ["Python", "Scrapy", "ETL"],
   },
   {
-    title: { es: "Laboratorio Spark", en: "Spark Laboratory" },
+    title: { es: "Procesamiento Distribuido con Apache Spark", en: "Distributed Processing with Apache Spark" },
     description: {
       es: "Exploración de procesamiento distribuido y análisis de datos con Apache Spark y Python.",
       en: "Exploration of distributed processing and data analysis with Apache Spark and Python.",
@@ -106,7 +106,7 @@ export const projects = [
     tech: ["Python", "Apache Spark", "Data"],
   },
   {
-    title: { es: "Senda Café de Nariño", en: "Senda Café de Nariño" },
+    title: { es: "Senda Café de Nariño — Plataforma Digital", en: "Senda Café de Nariño — Digital Platform" },
     description: {
       es: "Proyecto colaborativo de comercio y experiencia digital alrededor del café de Nariño.",
       en: "Collaborative commerce and digital experience project around coffee from Nariño.",
