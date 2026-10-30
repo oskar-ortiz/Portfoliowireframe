@@ -64,13 +64,13 @@ export const projects = [
   {
     title: { es: "Arquitectura de Soluciones Cloud en AWS", en: "AWS Cloud Solution Architecture" },
     description: {
-      es: "Proyecto técnico en TypeScript enfocado en servicios cloud y arquitectura de soluciones en AWS.",
-      en: "TypeScript technical project focused on cloud services and solution architecture on AWS.",
+      es: "Plataforma web de alta disponibilidad diseñada y desplegada en AWS con VPC multi-AZ, subredes públicas y privadas, EC2 detrás de Application Load Balancer con Auto Scaling, RDS MySQL con réplica de lectura, correo asíncrono con Lambda, SES y SQS, y monitoreo con CloudWatch.",
+      en: "Highly available web platform designed and deployed on AWS with a multi-AZ VPC, public and private subnets, EC2 behind an Application Load Balancer with Auto Scaling, RDS MySQL with a read replica, asynchronous email with Lambda, SES and SQS, and CloudWatch monitoring.",
     },
     image: "/images/projects/aws-proyecto.jpg",
     githubUrl: "https://github.com/oskar-ortiz/aws_proyecto",
     demoUrl: "https://github.com/oskar-ortiz/aws_proyecto",
-    tech: ["TypeScript", "AWS", "Cloud"],
+    tech: ["Python", "Next.js", "React", "AWS", "PowerShell", "AWS CLI", "Nginx"],
   },
   {
     title: { es: "Backend de Gestión Hotelera con Spring Boot", en: "Spring Boot Hotel Management Backend" },
