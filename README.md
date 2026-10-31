@@ -2,7 +2,7 @@
 
 Portafolio profesional de Oskar Ortiz, orientado a backend, cloud AWS y DevOps.
 El sitio está construido con Next.js App Router, TypeScript y Tailwind CSS, y
-se sirve actualmente desde [portfoliowireframe-beta.vercel.app](https://portfoliowireframe-beta.vercel.app).
+se sirve actualmente desde [oskar-ortiz.vercel.app](https://oskar-ortiz.vercel.app).
 
 ![Banner Open Graph del portafolio](public/og-banner.png)
 

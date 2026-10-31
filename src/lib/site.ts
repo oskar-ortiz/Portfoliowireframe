@@ -1,6 +1,6 @@
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "https://portfoliowireframe.vercel.app";
+  "https://oskar-ortiz.vercel.app";
 
 export const siteName = "Oskar Ortiz";
 export const siteTitle = "Oskar Ortiz — Backend Engineer | Java, Spring Boot, AWS";
