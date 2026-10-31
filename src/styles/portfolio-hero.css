@@ -47,6 +47,14 @@
     @apply flex flex-wrap justify-center gap-3 lg:justify-start;
   }
 
+  .hero-cv-actions {
+    @apply flex flex-wrap gap-3;
+  }
+
+  .hero-cv-actions .hero-primary-action {
+    @apply min-w-[168px];
+  }
+
   .hero-copy-lead {
     @apply mb-10;
   }
