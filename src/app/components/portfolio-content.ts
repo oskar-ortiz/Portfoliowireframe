@@ -59,7 +59,7 @@ export const projects = [
       es: "Backend en Spring Boot 3 con Java 17 y PostgreSQL empaquetado en Docker. Despliegue orquestado con Docker Compose detrás de un Nginx Reverse Proxy, aislamiento de redes internas y persistencia de datos.",
       en: "Spring Boot 3 backend with Java 17 and PostgreSQL packaged in Docker. Orchestrated with Docker Compose behind an Nginx Reverse Proxy, with internal network isolation and persistent data storage.",
     },
-    image: "/images/projects/proyecto-electival.jpg",
+    image: "/images/projects/ecoair-backend.png",
     githubUrl: "https://github.com/oskar-ortiz/ecoair-docker-backend",
     demoUrl: "https://github.com/oskar-ortiz/ecoair-docker-backend",
     tech: ["Java 17", "Spring Boot", "Docker", "Docker Compose", "Nginx", "PostgreSQL"],
