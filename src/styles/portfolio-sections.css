@@ -5,6 +5,8 @@
 
   .section-wrapper {
     @apply py-20 lg:py-24;
+    content-visibility: visible;
+    contain: layout style paint;
   }
 
   .section-container {
@@ -33,13 +35,6 @@
 
   .section-solo-card {
     @apply mx-auto max-w-3xl;
-  }
-
-  @supports (content-visibility: auto) {
-    .section-wrapper:not(#about) {
-      content-visibility: auto;
-      contain-intrinsic-size: 1px 960px;
-    }
   }
 
   @media (max-width: 768px) {
