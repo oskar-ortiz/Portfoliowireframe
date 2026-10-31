@@ -51,15 +51,18 @@ export const certifications = [
 
 export const projects = [
   {
-    title: { es: "Plataforma de Gestión de Cafés", en: "Coffee Management Platform" },
+    title: {
+      es: "EcoAir Backend — Infraestructura Dockerizada y Microservicios",
+      en: "EcoAir Backend — Dockerized Infrastructure & Microservices",
+    },
     description: {
-      es: "Aplicación Django para el registro y gestión de cafés, desplegada en Vercel.",
-      en: "Django application for coffee registration and management, deployed on Vercel.",
+      es: "Backend en Spring Boot 3 con Java 17 y PostgreSQL empaquetado en Docker. Despliegue orquestado con Docker Compose detrás de un Nginx Reverse Proxy, aislamiento de redes internas y persistencia de datos.",
+      en: "Spring Boot 3 backend with Java 17 and PostgreSQL packaged in Docker. Orchestrated with Docker Compose behind an Nginx Reverse Proxy, with internal network isolation and persistent data storage.",
     },
     image: "/images/projects/proyecto-electival.jpg",
-    githubUrl: "https://github.com/oskar-ortiz/proyecto-electival",
-    demoUrl: "https://github.com/oskar-ortiz/proyecto-electival",
-    tech: ["Django", "Python", "Vercel"],
+    githubUrl: "https://github.com/oskar-ortiz/ecoair-docker-backend",
+    demoUrl: "https://github.com/oskar-ortiz/ecoair-docker-backend",
+    tech: ["Java 17", "Spring Boot", "Docker", "Docker Compose", "Nginx", "PostgreSQL"],
   },
   {
     title: { es: "Arquitectura de Soluciones Cloud en AWS", en: "AWS Cloud Solution Architecture" },
@@ -73,18 +76,15 @@ export const projects = [
     tech: ["Python", "Next.js", "React", "AWS", "PowerShell", "AWS CLI", "Nginx"],
   },
   {
-    title: {
-      es: "EcoAir Backend — Infraestructura Dockerizada y Microservicios",
-      en: "EcoAir Backend — Dockerized Infrastructure & Microservices",
-    },
+    title: { es: "Hotel Spring Boot V1", en: "Hotel Spring Boot V1" },
     description: {
-      es: "Backend en Spring Boot 3 con Java 17 y PostgreSQL empaquetado en Docker. Despliegue orquestado con Docker Compose detrás de un Nginx Reverse Proxy, aislamiento de redes internas y persistencia de datos.",
-      en: "Spring Boot 3 backend with Java 17 and PostgreSQL packaged in Docker. Orchestrated with Docker Compose behind an Nginx Reverse Proxy, with internal network isolation and persistent data storage.",
+      es: "Backend empresarial para gestión hotelera construido con Java y Spring Boot.",
+      en: "Enterprise hotel management backend built with Java and Spring Boot.",
     },
     image: "/images/projects/hotel-springboot.jpg",
-    githubUrl: "https://github.com/oskar-ortiz/ecoair-docker-backend",
-    demoUrl: "https://github.com/oskar-ortiz/ecoair-docker-backend",
-    tech: ["Java 17", "Spring Boot", "Docker", "Docker Compose", "Nginx", "PostgreSQL"],
+    githubUrl: "https://github.com/oskar-ortiz/HotelSpringBoot_V1",
+    demoUrl: "https://github.com/oskar-ortiz/HotelSpringBoot_V1",
+    tech: ["Java", "Spring Boot", "REST API"],
   },
   {
     title: { es: "Pipeline ETL para Extracción de Datos", en: "Data Extraction ETL Pipeline" },
