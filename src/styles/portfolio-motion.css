@@ -48,6 +48,8 @@
     animation: portfolio-float 11s ease-in-out infinite;
     will-change: transform;
     transform: translateZ(0);
+    backface-visibility: hidden;
+    contain: layout paint;
   }
 
   .portfolio-glow-orbit {
@@ -58,6 +60,8 @@
     filter: blur(0.2px);
     will-change: transform;
     transform: translateZ(0);
+    backface-visibility: hidden;
+    contain: layout paint;
   }
 
   .portfolio-glow-orbit::after {
@@ -80,6 +84,8 @@
     animation: portfolio-drift 15s ease-in-out infinite;
     will-change: transform;
     transform: translateZ(0);
+    backface-visibility: hidden;
+    contain: layout paint;
   }
 
   .portfolio-ambient-panel {
@@ -91,6 +97,8 @@
     border: 1px solid rgb(255 255 255 / 0.14);
     filter: blur(0.2px);
     opacity: 0.95;
+    backface-visibility: hidden;
+    contain: layout paint;
   }
 
   .portfolio-ambient-panel::before {
@@ -124,6 +132,8 @@
     animation: portfolio-float 14s ease-in-out infinite;
     will-change: transform;
     transform: translateZ(0);
+    backface-visibility: hidden;
+    contain: layout paint;
   }
 
   .portfolio-ambient-arc::before,
@@ -150,6 +160,8 @@
     animation: portfolio-pulse-soft 9s ease-in-out infinite;
     will-change: transform;
     transform: translateZ(0);
+    backface-visibility: hidden;
+    contain: layout paint;
   }
 
   @media (max-width: 768px) {
