@@ -214,16 +214,28 @@ export function Portfolio() {
                   <p className="hero-copy hero-copy-lead">{currentCopy.hero.intro}</p>
 
                   <div className="hero-actions">
-                    <a
-                      href="/Oskar_Ortiz_CV.pdf"
-                      download
-                      className="hero-primary-action group"
-                      aria-label={currentCopy.hero.primaryActionLabel}
-                      title={currentCopy.hero.primaryActionLabel}
-                    >
-                      <Download className="hero-action-icon" aria-hidden="true" />
-                      {currentCopy.hero.primaryAction}
-                    </a>
+                    <div className="hero-cv-actions" aria-label="Download CV">
+                      <a
+                        href="/Oskar_Ortiz_CV_EN.pdf"
+                        download
+                        className="hero-primary-action group"
+                        aria-label="Download CV (EN)"
+                        title="Download CV (EN)"
+                      >
+                        <Download className="hero-action-icon" aria-hidden="true" />
+                        Download CV (EN)
+                      </a>
+                      <a
+                        href="/Oskar_Ortiz_CV_ES.pdf"
+                        download
+                        className="hero-primary-action group"
+                        aria-label="Descargar CV (ES)"
+                        title="Descargar CV (ES)"
+                      >
+                        <Download className="hero-action-icon" aria-hidden="true" />
+                        Descargar CV (ES)
+                      </a>
+                    </div>
                     <a href="#projects" className="hero-secondary-action">
                       {currentCopy.hero.projectsAction}
                     </a>
